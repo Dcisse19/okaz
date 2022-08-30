@@ -2,6 +2,7 @@
 require_once './includes/header.php';
 require_once './signup.php'; // Formulaire d'inscription - modal 
 ?>
+
 <!-- SECTION NOS DERNIERS MEUBLES -->
 <section class="bg-white shadow-slate-400 shadow-md py-24 px-40">
     <h1 class="text-4xl text-center font-light uppercase mb-14">Nos derniers meubles d'occasions</h1>
@@ -44,9 +45,63 @@ require_once './signup.php'; // Formulaire d'inscription - modal
 
 <!-- FIN SECTION NOS DERNIERS MEUBLES -->
 
+    <!-- --- section 3-4-->
 
+    <section id="quiSommeNous" class="p-20 text-white">
+        <h1 class="text-5xl text-justify font-bold uppercase"> QUI SOMMES NOUS ? </h1>
+        <div class = "flex justify-between">
+            <div class ="w-3/4 flex-col">
+                <div class="my-10 text-2xl tracking-wider">
+                    <p class = "py-4" > 
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores, reprehenderit pariatur? Dignissimos, voluptate eligendi rem pariatur repudiandae at, aliquid qui a, odit in ducimus illo suscipit praesentium id sed quod? Lorem ipsum dolor sit amet consectetur, adipisicing elit.</br>
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio obcaecati dicta deleniti molestias.</br>
+                    </p>
 
-<!-- Modals -->
+                </div>
+               
+                <div>
+                    <a href="#" class="py-3 px-10  rounded-full bg-blue-500 hover:bg-blue-700 text-white font-bold text-2xl">
+                        <i class="fa-solid fa-eye mr-2 mt-10"></i>En savoir plus
+                      </a>
+                </div>
+                
+            </div>
+            
+           <div class = "w-1/4">
+                <figure class="flex flex-col items-center">
+                    <img src="./images/istockphoto-1194667952-612x612.jpg" alt="pdg de okaz" class="rounded-full w-72 mr-10 my-4">
+                    <figcaption class ="text-center pr-10 font-bold text-2xl tracking-wider "> 
+                        Ahmed Diarra </br> PDG de OKAZ
+                    </figcaption>
+
+                </figure>
+           </div>
+
+        </div>
+       
+
+    </section>
+
+    <section id="searchStore" > 
+        <div class="flex flex-col items-center my-14" >
+            <div>
+                <h1 class ="text-4xl font-bold uppercase mb-14" id="searchTitle"> trouver un magazin Okaz près de chez vous </h1>
+            </div>
+            <form action="#" class="flex rounded-full items-center mb-10" id="search" >
+                <div class="" >
+                    <input class="my-5 ml-2  w-full text-2xl" type="text" name="search" placeholder="Entrer votre région ou votre code postal" id="searchInput">
+                </div>
+                <div>
+                    <button class="w-full p-3">
+                        <i id="searchIcon" class=" fas fa-light fa-magnifying-glass-location fa-3x"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
 
 <!-- Javascript -->
 <script src="./JS/index.js"></script>
