@@ -102,6 +102,27 @@ require_once './signup.php'; // Formulaire d'inscription - modal
         </div>
     </section>
 
+    <!-- ---- footer----- -->
+    <footer class="text-3xl">
+        <div class="bloc footer-apropos">
+            <!-- <h3>A propos</h3> -->
+            <ul>
+                <li><a href="#">Politique confidentialité</a></li>
+                <li><a href="#">CGU et CGV</a></li>
+                <li><a href="#">Plan du site</a></li>
+            </ul>
+        </div>
+
+        <div class="bloc footer-assistance">
+            <!-- <h3>Assistance</h3> -->
+            <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Nous contacter</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
 
 <!-- Javascript -->
 <script src="./JS/index.js"></script>
