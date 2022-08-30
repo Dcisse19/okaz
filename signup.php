@@ -1,3 +1,4 @@
+
 <div id="signupModal" class="fixed hidden inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full ">
         <form class=" relative top-20 w-1/2 mx-auto bg-white border rounded p-8 shadow-md">
             <h1 class="text-4xl font-light text-center mb-10 uppercase">Inscription</h1>
