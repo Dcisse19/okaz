@@ -6,7 +6,7 @@
         </button>
 
         <div class="flex flex-col">
-            <h1 class="text-4xl text-center mb-6 uppercase text-darkblue tracking-wide">Inscription</h1>
+            <h1 class="text-4xl text-center mb-6 uppercase text-darkblue tracking-wide">Connexion</h1>
             <p class="text-center text-lg mb-8">Déja inscrit ? <br />Merci de vous identifier</p>
         </div>
 
