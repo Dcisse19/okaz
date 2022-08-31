@@ -1,7 +1,7 @@
 <?php
 require_once './includes/header.php';
 require_once './signup_form.php'; // Formulaire d'inscription - modal 
-// require_once './login_form.php'; // Formulaire de connexion - modal 
+require_once './login_form.php'; // Formulaire de connexion - modal 
 
 ?>
 
@@ -108,7 +108,7 @@ require_once './signup_form.php'; // Formulaire d'inscription - modal
             </p>
 
             <div>
-                <a href="#" class="py-3 px-8 rounded-full bg-blue hover-text-darkgrey text-white font-semibold text-lg">
+                <a href="#" class="py-3 px-8 rounded-full bg-blue hover-bg-darkgrey text-white font-semibold text-lg">
                 <i class="fas fa-regular fa-eye mr-2"></i>En savoir plus
                 </a>
             </div>
