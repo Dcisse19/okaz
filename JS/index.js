@@ -48,14 +48,14 @@ cross.onclick = function() {
 
             // remove active status from all dots
             for (i = 0; i < dots.length; i++) {
-                dots[i].classList.remove('bg-yellow-500');
-                dots[i].classList.add('bg-green-600');
+                dots[i].classList.remove('bg-orange');
+                dots[i].classList.add('bg-blue');
             }
 
             // show the active slide
             slides[slideIndex - 1].classList.remove('hidden');
 
             // highlight the active dot
-            dots[slideIndex - 1].classList.remove('bg-green-600');
-            dots[slideIndex - 1].classList.add('bg-yellow-500');
+            dots[slideIndex - 1].classList.remove('bg-blue');
+            dots[slideIndex - 1].classList.add('bg-orange');
         }

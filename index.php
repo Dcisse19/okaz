@@ -3,33 +3,70 @@ require_once './includes/header.php';
 require_once './signup.php'; // Formulaire d'inscription - modal 
 ?>
 
+<!-- SECTION BANNIERE -->
+<section class="bg-black bg-opacity-40 bg-blend-darken bg-hero bg-no-repeat bg-cover bg-center bg-fixed py-40 px-80">
+    <div class="container mx-auto flex-col items-center ">
+        <h1 class="text-4xl text-center text-white font-bold uppercase tracking-wider leading-10 mb-8">OKAZ, ACHAT ET VENTE DE MEUBLES D'OCCASION EN LIGNE ET EN MAGASIN </h1>
+        <div class="flex justify-center gap-5">
+            <div class=" bg-orange hover-bg-darkgrey rounded-full flex py-2 px-8">
+                <a href="#" class="text-white text-lg font-bold tracking-wider">J'achète</a>
+            </div>
+            <div class=" bg-blue hover-bg-darkgrey rounded-full flex py-2 px-8">
+                <a href="#" class="text-white text-lg font-bold tracking-wider">Je vends</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- FIN SECTION BANNIERE -->
+
 <!-- SECTION NOS DERNIERS MEUBLES -->
 <section class="bg-white shadow-slate-400 shadow-md py-24 px-40">
-    <h1 class="text-4xl text-center font-light uppercase mb-14">Nos derniers meubles d'occasions</h1>
+    <h1 class="text-4xl text-center text-darkblue font-semibold uppercase mb-14 font-sans">Nos derniers meubles d'occasions</h1>
 
     <!-- Implement the carousel -->
     <div class="relative w-[600px] mx-auto">
         <div class="slide relative">
             <img class="w-full h-[300px] object-cover" src="https://www.kindacode.com/wp-content/uploads/2022/07/flower-1.jpeg">
-            <div class="absolute bottom-0 w-full px-5 py-3 bg-black/40 text-center text-white">Flower One Caption</div>
+            <a href="#">
+                <div class="absolute bottom-0 w-full px-5 py-3 bg-black/40 text-center text-white">Nom de l'article</div>
+            </a>
         </div>
 
         <div class="slide relative">
             <img class="w-full h-[300px] object-cover" src="https://www.kindacode.com/wp-content/uploads/2022/07/flower-2.jpeg">
-            <div class="absolute bottom-0 w-full px-5 py-3 bg-black/40 text-center text-white">Flower Two Caption</div>
+            <a href="#">
+                <div class="absolute bottom-0 w-full px-5 py-3 bg-black/40 text-center text-white">Nom de l'article</div>
+            </a>
         </div>
 
         <div class="slide relative">
             <img class="w-full h-[300px] object-cover" src="https://www.kindacode.com/wp-content/uploads/2022/07/flower-3.jpeg">
-            <div class="absolute bottom-0 w-full px-5 py-3 bg-black/40 text-center text-white">Flower Three Caption
-            </div>
+            <a href="#">
+                <div class="absolute bottom-0 w-full px-5 py-3 bg-black/40 text-center text-white">Nom de l'article</div>
+            </a>
+        </div>
+
+        <div class="slide relative">
+            <img class="w-full h-[300px] object-cover" src="https://www.kindacode.com/wp-content/uploads/2022/07/flower-1.jpeg">
+            <a href="#">
+                <div class="absolute bottom-0 w-full px-5 py-3 bg-black/40 text-center text-white">Nom de l'article</div>
+            </a>
+        </div>
+
+        <div class="slide relative">
+            <img class="w-full h-[300px] object-cover" src="https://www.kindacode.com/wp-content/uploads/2022/07/flower-2.jpeg">
+            <a href="#">
+                <div class="absolute bottom-0 w-full px-5 py-3 bg-black/40 text-center text-white">Nom de l'article</div>
+            </a>
         </div>
 
         <!-- The previous button -->
-        <a class="absolute left-0 top-1/2 p-4 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white hover:text-amber-500 cursor-pointer" onclick="moveSlide(-1)">❮</a>
+        <a class="absolute left-0 top-1/2 p-4 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white hover-text-orange cursor-pointer" onclick="moveSlide(-1)">❮</a>
 
         <!-- The next button -->
-        <a class="absolute right-0 top-1/2 p-4 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white hover:text-amber-500 cursor-pointer" onclick="moveSlide(1)">❯</a>
+        <a class="absolute right-0 top-1/2 p-4 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white hover-text-orange cursor-pointer" onclick="moveSlide(1)">❯</a>
 
     </div>
     <br>
@@ -39,88 +76,62 @@ require_once './signup.php'; // Formulaire d'inscription - modal
         <div class="dot w-4 h-4 rounded-full cursor-pointer" onclick="currentSlide(1)"></div>
         <div class="dot w-4 h-4 rounded-full cursor-pointer" onclick="currentSlide(2)"></div>
         <div class="dot w-4 h-4 rounded-full cursor-pointer" onclick="currentSlide(3)"></div>
+        <div class="dot w-4 h-4 rounded-full cursor-pointer" onclick="currentSlide(4)"></div>
+        <div class="dot w-4 h-4 rounded-full cursor-pointer" onclick="currentSlide(5)"></div>
     </div>
     <button></button>
 </section>
 
 <!-- FIN SECTION NOS DERNIERS MEUBLES -->
 
-    <!-- --- section 3-4-->
+<!-- SECTION QUI SOMMES-NOUS-->
 
-    <section id="quiSommeNous" class="p-20 text-white">
-        <h1 class="text-5xl text-justify font-bold uppercase"> QUI SOMMES NOUS ? </h1>
-        <div class = "flex justify-between">
-            <div class ="w-3/4 flex-col">
-                <div class="my-10 text-2xl tracking-wider">
-                    <p class = "py-4" > 
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores, reprehenderit pariatur? Dignissimos, voluptate eligendi rem pariatur repudiandae at, aliquid qui a, odit in ducimus illo suscipit praesentium id sed quod? Lorem ipsum dolor sit amet consectetur, adipisicing elit.</br>
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio obcaecati dicta deleniti molestias.</br>
-                    </p>
+<section id="quiSommeNous" class="py-20 px-36 bg-orange">
+    <div class="container mx-auto text-white flex justify-between">
+        <div class="w-3/4 flex-col px-16">
+            <h1 class="text-4xl text-justify font-bold uppercase font-sans mb-10"> QUI SOMMES-NOUS ? </h1>
+            <p class="text-xl tracking-wider font-sans mb-10">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores, reprehenderit pariatur? Dignissimos, voluptate eligendi rem pariatur repudiandae at, aliquid qui a, odit in ducimus illo suscipit praesentium id sed quod? Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                </br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio obcaecati dicta deleniti molestias.
+            </p>
 
-                </div>
-               
-                <div>
-                    <a href="#" class="py-3 px-10  rounded-full bg-blue-500 hover:bg-blue-700 text-white font-bold text-2xl">
-                        <i class="fa-solid fa-eye mr-2 mt-10"></i>En savoir plus
-                      </a>
-                </div>
-                
-            </div>
-            
-           <div class = "w-1/4">
-                <figure class="flex flex-col items-center">
-                    <img src="./images/istockphoto-1194667952-612x612.jpg" alt="pdg de okaz" class="rounded-full w-72 mr-10 my-4">
-                    <figcaption class ="text-center pr-10 font-bold text-2xl tracking-wider "> 
-                        Ahmed Diarra </br> PDG de OKAZ
-                    </figcaption>
-
-                </figure>
-           </div>
-
-        </div>
-       
-
-    </section>
-
-    <section id="searchStore" > 
-        <div class="flex flex-col items-center my-14" >
             <div>
-                <h1 class ="text-4xl font-bold uppercase mb-14" id="searchTitle"> trouver un magazin Okaz près de chez vous </h1>
+                <a href="#" class="py-3 px-8 rounded-full bg-blue hover-text-darkgrey text-white font-bold text-lg">
+                    <i class="fa-solid fa-eye mr-2"></i>En savoir plus
+                </a>
             </div>
-            <form action="#" class="flex rounded-full items-center mb-10" id="search" >
-                <div class="" >
-                    <input class="my-5 ml-2  w-full text-2xl" type="text" name="search" placeholder="Entrer votre région ou votre code postal" id="searchInput">
-                </div>
-                <div>
-                    <button class="w-full p-3">
-                        <i id="searchIcon" class=" fas fa-light fa-magnifying-glass-location fa-3x"></i>
-                    </button>
-                </div>
-            </form>
-        </div>
-    </section>
-
-    <!-- ---- footer----- -->
-    <footer class="text-3xl">
-        <div class="bloc footer-apropos">
-            <!-- <h3>A propos</h3> -->
-            <ul>
-                <li><a href="#">Politique confidentialité</a></li>
-                <li><a href="#">CGU et CGV</a></li>
-                <li><a href="#">Plan du site</a></li>
-            </ul>
         </div>
 
-        <div class="bloc footer-assistance">
-            <!-- <h3>Assistance</h3> -->
-            <ul>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Nous contacter</a></li>
-            </ul>
+        <div class="w-1/4">
+            <figure class="flex flex-col items-center mt-10">
+                <img src="./images/istockphoto-1194667952-612x612.jpg" alt="pdg_de_okaz" class="rounded-full w-60 mb-4">
+                <figcaption class="text-center font-semibold text-xl tracking-wider ">
+                    Ahmed Diarra </br> PDG de OKAZ
+                </figcaption>
+            </figure>
         </div>
-    </footer>
+    </div>
+</section>
+
+<!-- FIN SECTION QUI SOMMES-NOUS-->
+
+<!-- SECTION RECHERCHE MAGASIN -->
+
+<section id="searchStore" class="py-28 px-36 bg-grey">
+    <div class="flex flex-col items-center">
+        <h1 class="text-4xl font-semibold uppercase font-sans mb-14 text-center" id="searchTitle"> Trouvez un magazin Okaz près de chez vous </h1>
+        <form action="#" class="flex rounded-full border-2 border-orange gap-x-20 w-1/2 py-2 px-4 bg-white" id="search">
+            <input class="text-xl w-full outline-none" type="text" name="search" placeholder="Entrer votre région ou votre code postal" id="searchInput">
+            <button class="">
+                <i id="searchIcon" class="fas fa-regular fa-magnifying-glass-location fa-2x"></i>
+            </button>
+        </form>
+    </div>
+</section>
+<!-- FIN SECTION RECHERCHE MAGASIN -->
+
+<!-- ---- footer----- -->
+<?php require_once './includes/footer.php'; ?>
 
 
 

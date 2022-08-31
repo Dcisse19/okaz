@@ -94,3 +94,23 @@
 .active-text-darkgrey:active {
     color: #525252;
 }
+
+/* borders */
+.border-orange {
+    border-color: #FF6B35;
+}
+.border-blue {
+    border-color: #336FBB;
+}
+.border-darkblue {
+    border-color: #031926;
+}
+.border-eggshell {
+    border-color: #F3EFE0;
+}
+.border-grey {
+    border-color: #F4F3F3;
+}
+.border-darkgrey {
+    border-color: #525252;
+}

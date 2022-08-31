@@ -7,89 +7,16 @@
 
 /* ----- body---- */
 
-body {
-    font-family: 'Open Sans', sans-serif;
-    /*width: 1440px;*/
-    margin: auto;
+.font-open {
+    font-family: 'Open Sans' ;
 }
 
-#quiSommeNous{
-    background-color: #FF6B35;
-}
-
-#searchStore{
-    background-color: #F4f3f3;
-}
-
-#searchTitle{
-    color:#031926;
+.bg-hero  {
+    background-image: url('../images/banner_hero.jpg'); 
 }
 
 
-#search{
 
-    border:3px solid #FF6B35;
-    width: 900px;
-    height:70px
-}
-#searchInput{
-    width: 800px;
-    border: none;
-    outline: none;
-    
-}
-
-#searchIcon{
-    color: #FF6B35;
-    
-}
-
-#searchIcon:hover{
-    color:orangered
-}
-
-/* Footer */
-
-footer {
-
-    display: flex;
-    justify-content: start;
-    align-items: flex-start;
-    color: white;
-    background-color: #031926;
-    padding: 2rem;
-    box-sizing: border-box;
-    
-   
-    
-   
-}
-footer div, footer ul {
-    display: flex;
-    flex-direction: column;
-
-}
-footer li {
-    margin-bottom: 1rem;
-    list-style:disc;
-}
-
-.footer-assistance {
-    margin-left: 15rem;
-}
-
-.footer-apropos {
-    margin-left: 5rem
-}
-
-footer a {
-    text-decoration: none;
-    color: white;
-}
-
-footer a:hover {
-    color:#F3EFE0;
-}
 
 
 

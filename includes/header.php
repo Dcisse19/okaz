@@ -31,14 +31,14 @@ $whoops->register();
                     <i class="fa-brands fa-instagram fa-lg"></i>
                     <i class="fa-brands fa-twitter fa-lg"></i>
                 </div>
-                <div class="flex justify-between items-center gap-5">
+                <!-- <div class="flex justify-between items-center gap-5">
                     <div class=" bg-orange hover-bg-blue rounded-lg flex gap-3 place-items-center">
                         <i class="pl-2 fa-solid fa-circle-user"></i>
                         <p class="pr-4 text-white">Mon compte</p>
                     </div>
                     <i class="place-self-center fa-solid fa-cart-arrow-down fa-lg"></i>
-                </div>
-                <!-- <div class="flex justify-between items-center gap-5">
+                </div> -->
+                <div class="flex justify-between items-center gap-5">
                     <ul class="list-none flex gap-6 justify-between items-center">
                         <li>
                             <a id="loginLink" class="text-lg font-light text-white hover-text-orange" href="#" data-bs-toggle="modal">
@@ -49,7 +49,7 @@ $whoops->register();
                                 <i class="fa-solid fa-inbox mr-3"></i>Inscription</a>
                         </li>
                     </ul>
-                </div> -->
+                </div> 
             </div>
         </header>
 
@@ -75,12 +75,5 @@ $whoops->register();
             </div>
         </nav>
 
-        <!-- SECTION TITRE PAGE DYNAMIQUE  -->
-        <!-- Modifier en PHP variable titre et paragraphe -->
-        <section class="bg-grey shadow-slate-400 shadow-md py-24 px-40">
-            <div class="container mx-auto flex-col items-center">
-                <h1 class="text-5xl text-center font-light text-darkgrey uppercase mb-10 ">Titre</h1>
-                <p class="text-center font-light">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit ab modi earum perferendis eos nulla eaque, illum officia cupiditate asperiores velit ullam at veniam. Dicta dolorem quo mollitia sequi rerum perspiciatis corrupti iusto esse expedita. Provident expedita aperiam sed numquam explicabo. Iure, aspernatur quidem iusto totam quis perferendis modi error.</p>
-            </div>
-        </section>
+
     </div>
