@@ -60,13 +60,13 @@ $whoops->register();
                 </a>
                 <ul class="list-none flex gap-6 justify-between items-center">
                     <li>
-                        <a class="text-lg text-darkgrey hover-text-orange active-text-orange" href="index.php">Acceuil</a>
+                        <a class="text-xl  text-darkgrey hover-text-orange active-text-orange" href="index.php">Acceuil</a>
                     </li>
                     <li>
-                        <a class="text-lg text-darkgrey hover-text-orange active:text-orange" href="#">A propos</a>
+                        <a class="text-xl text-darkgrey hover-text-orange active:text-orange" href="#">A propos</a>
                     </li>
                     <li>
-                        <a class="text-lg text-darkgrey hover-text-orange active-text-orange" href="#">Boutique</a>
+                        <a class="text-lg text-darkgrey hover-text-orange active-text-orange" href="shop.php">Boutique</a>
                     </li>
                     <li>
                         <a class="text-lg text-darkgrey hover-text-orange active-text-orange" href="#">Contact</a>

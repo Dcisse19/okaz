@@ -1,7 +1,8 @@
 
-<div id="signupModal" class="fixed hidden inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full ">
-        <form class=" relative top-20 w-1/2 mx-auto bg-white border rounded p-8 shadow-md">
-            <h1 class="text-4xl font-light text-center mb-10 uppercase">Inscription</h1>
+<div id="signupModal" class="fixed hidden inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
+        <form class=" relative top-20 w-1/2 mx-auto bg-eggshell border rounded p-8 shadow-md z-20">
+            <h1 class="text-4xl  text-center mb-6 uppercase">Inscription</h1>
+            <p class="text-center text-lg mb-10">Nouveau ? <br /> Créez votre compte</p>
 
             <div class="flex gap-6 mb-4">
                 <div class="w-1/2">
