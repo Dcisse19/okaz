@@ -11,7 +11,7 @@ require_once './login_form.php'; // Formulaire de connexion - modal
         <h1 class="text-4xl text-center text-white font-semibold uppercase tracking-wider leading-10 mb-8">OKAZ, ACHAT ET VENTE DE MEUBLES D'OCCASION EN LIGNE ET EN MAGASIN </h1>
         <div class="flex justify-center gap-5">
             <div class=" bg-orange hover-bg-darkgrey rounded-full flex py-2 px-8">
-                <a href="#" class="text-white text-lg font-semibold tracking-wider">J'achète</a>
+                <a href="shop.php" class="text-white text-lg font-semibold tracking-wider">J'achète</a>
             </div>
             <div class=" bg-blue hover-bg-darkgrey rounded-full flex py-2 px-8">
                 <a href="#" class="text-white text-lg font-semibold tracking-wider">Je vends</a>

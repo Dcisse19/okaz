@@ -27,29 +27,31 @@ $whoops->register();
         <header class="py-3 px-20 bg-darkblue">
             <div class="container flex mx-auto justify-between items-center">
                 <div class="flex place-items-center gap-3">
-                    <i class="fa-brands fa-facebook-f fa-lg" style="--fa-primary-color: white"></i>
-                    <i class="fa-brands fa-instagram fa-lg"></i>
-                    <i class="fa-brands fa-twitter fa-lg"></i>
+                    <i class="fa-brands fa-facebook-f fa-xl" style="--fa-primary-color: white"></i>
+                    <i class="fa-brands fa-instagram fa-xl"></i>
+                    <i class="fa-brands fa-twitter fa-xl"></i>
+                </div>
+                <div class="flex justify-between items-center gap-5">
+                    <a href="myaccount.php">
+                        <div class=" bg-orange py-1 px-3 hover-bg-blue rounded-2xl flex gap-3 place-items-center">
+                            <i class="fa-solid fa-circle-user text-white fa-xl"></i>
+                            <p class="text-lg text-white font-semibold">Mon compte</p>
+                        </div>
+                    </a>
+                    <a href="cart.php"> <i class="place-self-center text-white fa-solid fa-cart-arrow-down fa-xl"></i></a>
                 </div>
                 <!-- <div class="flex justify-between items-center gap-5">
-                    <div class=" bg-orange hover-bg-blue rounded-lg flex gap-3 place-items-center">
-                        <i class="pl-2 fa-solid fa-circle-user"></i>
-                        <p class="pr-4 text-white">Mon compte</p>
-                    </div>
-                    <i class="place-self-center fa-solid fa-cart-arrow-down fa-lg"></i>
-                </div> -->
-                <div class="flex justify-between items-center gap-5">
                     <ul class="list-none flex gap-6 justify-between items-center">
                         <li>
-                            <a id="loginLink" class="text-lg font-light text-white hover-text-orange" href="#" data-bs-toggle="modal">
+                            <a id="loginLink" class="text-lg text-white hover-text-orange" href="#" data-bs-toggle="modal">
                                 <i class="fa-solid fa-arrow-right-to-bracket mr-3"></i>Connexion</a>
                         </li>
                         <li>
-                            <a id="signupLink" class="text-lg font-light text-white hover-text-orange" href="#" data-bs-toggle="modal">
+                            <a id="signupLink" class="text-lg text-white hover-text-orange" href="#" data-bs-toggle="modal">
                                 <i class="fa-solid fa-inbox mr-3"></i>Inscription</a>
                         </li>
                     </ul>
-                </div> 
+                </div>  -->
             </div>
         </header>
 
@@ -63,13 +65,13 @@ $whoops->register();
                         <a class="text-xl  text-darkgrey hover-text-orange active-text-orange" href="index.php">Acceuil</a>
                     </li>
                     <li>
-                        <a class="text-xl text-darkgrey hover-text-orange active:text-orange" href="#">A propos</a>
+                        <a class="text-xl text-darkgrey hover-text-orange active:text-orange" href="about.php">A propos</a>
                     </li>
                     <li>
                         <a class="text-lg text-darkgrey hover-text-orange active-text-orange" href="shop.php">Boutique</a>
                     </li>
                     <li>
-                        <a class="text-lg text-darkgrey hover-text-orange active-text-orange" href="#">Contact</a>
+                        <a class="text-lg text-darkgrey hover-text-orange active-text-orange" href="contact.php">Contact</a>
                     </li>
                 </ul>
             </div>

@@ -14,6 +14,7 @@
 
 <!-- Javascript -->
 <script src="./JS/index.js"></script>
+<script src="./JS/product_page.js"></script>
 </body>
 
 </html>
