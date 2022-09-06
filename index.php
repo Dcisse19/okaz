@@ -14,7 +14,7 @@ require_once './login_form.php'; // Formulaire de connexion - modal
                 <a href="shop.php" class="text-white text-lg font-semibold tracking-wider">J'achète</a>
             </div>
             <div class=" bg-blue hover-bg-darkgrey rounded-full flex py-2 px-8">
-                <a href="#" class="text-white text-lg font-semibold tracking-wider">Je vends</a>
+                <a href="sell.php" class="text-white text-lg font-semibold tracking-wider">Je vends</a>
             </div>
         </div>
     </div>
@@ -101,14 +101,14 @@ require_once './login_form.php'; // Formulaire de connexion - modal
 <section id="quiSommeNous" class="py-20 px-36 bg-orange">
     <div class="container mx-auto text-white flex justify-between">
         <div class="w-3/4 flex-col px-16">
-            <h1 class="text-4xl text-justify font-bold uppercase  mb-10"> QUI SOMMES-NOUS ? </h1>
-            <p class="text-xl tracking-wider  mb-10">
+            <h1 class="text-4xl text-justify font-bold uppercase  mb-10"> Qui sommes-nous ? </h1>
+            <p class="text-xl tracking-wider mb-10">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores, reprehenderit pariatur? Dignissimos, voluptate eligendi rem pariatur repudiandae at, aliquid qui a, odit in ducimus illo suscipit praesentium id sed quod? Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 </br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio obcaecati dicta deleniti molestias.
             </p>
 
             <div>
-                <a href="#" class="py-3 px-8 rounded-full bg-blue hover-bg-darkgrey text-white font-semibold text-lg">
+                <a href="about.php" class="py-3 px-8 rounded-full bg-blue hover-bg-darkgrey text-white font-semibold text-lg">
                 <i class="fas fa-regular fa-eye mr-2"></i>En savoir plus
                 </a>
             </div>

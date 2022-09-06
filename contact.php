@@ -12,8 +12,8 @@ require_once './includes/title.php';
 <!-- Contenu de la page -->
 <div class="container px-40 py-20 mx-auto block">
     <div class="p-5 space-x-5 ">
-        <h1 class="text-4xl text-center uppercase">Envoyer une demande</h1>
-        <p class="text-center text-2xl mt-10 gap-y-3">Vous avez une question? <br /> Laissez-nous un message, nous nous ferons un plaisir de vous répondre.</p>
+        <h1 class="text-4xl text-center uppercase text-darkblue font-semibold">Envoyer une demande</h1>
+        <p class="text-center text-2xl mt-10 gap-y-3">Vous avez une question? <br />Laissez-nous un message, nous nous ferons un plaisir de vous répondre.</p>
 
 
         <form class="grid gap-y-6 p-16">
@@ -29,14 +29,14 @@ require_once './includes/title.php';
             </div>
             <div class="">
                 <label class="block mb-2" for="demande"><i class="fa-solid fa-question mr-2"></i>Ma demande concerne</label>
-                <select value="" class=" bg-eggshell border rounded border-darkgrey py-2 px-4 w-full outline-slate-800 shadow-lg" name="demande" id="demande">
-                    <option value="">-- Sélectionnez une option --</option>
-                    <option class="" value="">Une demande d'information</option>
-                    <option value="">Un problème technique</option>
-                    <option value="">Une question à propos de ma commande</option>
-                    <option value="">Vendre chez Okaz</option>
-                    <option value="">Un témoignage</option>
-                </select>
+                    <select value="" class=" bg-eggshell border rounded border-darkgrey py-2 px-4 w-full outline-slate-800 shadow-lg" name="demande" id="demande">
+                        <option value="">-- Sélectionnez une option --</option>
+                        <option class="" value="">Une demande d'information</option>
+                        <option value="">Un problème technique</option>
+                        <option value="">Une question à propos de ma commande</option>
+                        <option value="">Vendre chez Okaz</option>
+                        <option value="">Un témoignage</option>
+                    </select>
             </div>
 
             <div class="">

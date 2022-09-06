@@ -23,8 +23,7 @@ require_once './includes/title.php';
         </div>
         <div class="w-1/4">
             <figure class="flex flex-col items-center mt-10">
-                <img src="https://media.istockphoto.com/photos/multi-ethnic-guys-and-girls-taking-selfie-outdoors-with-backlight-picture-id1368965646?b=1&k=20&m=1368965646&s=170667a&w=0&h=9DO-7OKgwO8q7pzwNIb3aq2urlw3DNTmpKQyvvNDWgY=" alt="pdg_de_okaz" class="rounded-full w-60 mb-4">
-
+                <img src="https://media.istockphoto.com/photos/multi-ethnic-guys-and-girls-taking-selfie-outdoors-with-backlight-picture-id1368965646?b=1&k=20&m=1368965646&s=170667a&w=0&h=9DO-7OKgwO8q7pzwNIb3aq2urlw3DNTmpKQyvvNDWgY=" alt="pdg_de_okaz" class="w-[200px] h-[200px] rounded-full mb-4">
             </figure>
         </div>
     </div>

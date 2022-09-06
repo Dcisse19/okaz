@@ -59,14 +59,14 @@ require_once './includes/title.php';
 
             </div>
             <hr class="border-b-[1px] border-black">
-            <div class="flex justify-between pr-16">
+            <div class="flex space-x-72">
                 
                 <ul class="my-10">
                         <li class="font-bold text-xl"><h2 ><i class="fas fa-regular fa-lock fa-xl pr-5"></i>Votre mot de passe </h2></li>
                         <li class="pl-12"><p>********</p></li>          
                 </ul>
                 <div class="my-10">
-                    <a href="" class="py-2 px-8 border-[1px] border-black font-semibold text-lg">
+                    <a href="modify_password.php" class="py-2 px-8 border-[1px] border-black font-semibold text-lg">
                     <i class="fas fa-light fa-pencil mr-2"></i>Modifier
                     </a>
                 </div>

@@ -21,9 +21,7 @@ require_once './includes/title.php';
 
         <form action="profile.php" class="top-20 w-1/2 mx-auto border-rounded py-8 px-10">
 
-            <div class="flex flex-col">
-                <h1 class="text-4xl text-center mb-10 uppercase tracking-wide">MODIFIER MON PROFIL</h1>
-            </div>
+                <h1 class="text-3xl text-darkblue font-semibold text-center mb-16 uppercase tracking-wide">MODIFIER MON PROFIL</h1>
 
 
             <div class="flex gap-6 mb-4">
@@ -58,7 +56,7 @@ require_once './includes/title.php';
                     <label class="block mb-2" for="postal">Code postal</label>
                     <input value="" class="border rounded border-gray-200 py-2 px-4 w-full outline-slate-800 shadow-lg" placeholder="Code postal" type="text" name="postal" id="postal">
                 </div>
-                <div class="w-1/2">
+                <div class="w-1/2 ">
                     <label class="block mb-2" for="city">Ville</label>
                     <input value="" class="border rounded border-gray-200 py-2 px-4 w-full outline-slate-800 shadow-lg" placeholder="Ville" type="text" name="city" id="city">
                 </div>

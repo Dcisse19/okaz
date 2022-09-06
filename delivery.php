@@ -70,11 +70,11 @@ require_once './includes/title.php';
     <!-- END OF PROGRESS BAR  -->
     <hr class="block mx-auto w-2/3 border-darkgrey border-t-0 border-b-2 mb-32" />
     <div class="container mx-auto bg-eggshell px-16 py-20">
-        <p class="text-center text-3xl uppercase mb-20 font-light">Choisisssez votre mode de livraison</p>
+        <p class="text-center text-3xl uppercase mb-20 text-darkblue font-semibold">Choisisssez votre mode de livraison</p>
 
         <fieldset class="flex flex-col space-y-6 justify-center items-center">
             <div class="flex space-x-6">
-                <input type="radio" id="store_delivery" name="store_delivery" value="">
+                <input type="radio" id="store_delivery" name="choose_delivery" value="">
                 <div class="container mx-auto w-[500px] bg-white p-5">
                     <p class="text-xl mb-3">Retrait dans votre magasin :</p>
                     <h3 class="text-orange text-xl font-semibold">OKAZ Villeneuve-le-Roi</h3>
@@ -82,7 +82,7 @@ require_once './includes/title.php';
                 </div>
             </div>
             <div class="flex space-x-6">
-                <input type="radio" id="home_delivery" name="home_delivery" value="">
+                <input type="radio" id="home_delivery" name="choose_delivery" value="">
                 <div class="container  mx-auto w-[500px] bg-white p-5 ">
                     <p class="text-xl mb-3">Livraison à votre domicile au :</p>
                     <p class="text-lg mb-3"> <span class="font-bold">Adresse : </span>2 rue Jean Jaurès, 94290 Villeneuve-le-Roi </p>

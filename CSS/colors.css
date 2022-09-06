@@ -114,3 +114,17 @@
 .border-darkgrey {
     border-color: #525252;
 }
+
+/* outlines */
+.outline-orange {
+    outline-color: #FF6B35;
+}
+.outline-blue {
+    outline-color: #336FBB;
+}
+.outline-darkblue {
+    outline-color: #031926;
+}
+.outline-darkgrey {
+    outline-color: #525252;
+}

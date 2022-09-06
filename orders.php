@@ -26,7 +26,7 @@ require_once './includes/title.php';
         <!-- -------- MES INFOS --------------- -->
 
         <div class="container mx-auto w-3/4 pl-10 py-10 flex flex-col">
-            <h2 class="text-xl font-bold mb-10">Commande du 8 juin 2022 </h2>
+            <h2 class="text-2xl font-semibold mb-10 text-orange">Commande du 8 juin 2022 </h2>
             <div class="flex justify-start gap-32 mb-10 ">
                 <div>
                     <ul class="mb-5">
@@ -83,18 +83,17 @@ require_once './includes/title.php';
             <div class="flex space-x-10 bg-white p-5">
                 <img class=" h-[170px] w-[200px]" src="https://images.unsplash.com/photo-1573866926487-a1865558a9cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNvdWNofGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="Table_basse">
                 <div class="flex flex-col space-y-3">
-                    <h3 class="text-2xl uppercase font-light">Canapé en cuir matelassé</h3>
+                    <h3 class="text-2xl font-semibold">Canapé en cuir matelassé</h3>
                     <h3 class="font-normal text-xl">H 70 cm, L 170 cm, P 95 cm</h3>
-                    <h3 class="text-2xl">930,99€ TTC</h3>
+                    <h3 class="text-xl">930,99€ TTC</h3>
                 </div>
             </div>
-    
             <div class="flex space-x-10 bg-white p-5">
-                <img class=" h-[170px] w-[200px]" src="https://images.unsplash.com/photo-1573866926487-a1865558a9cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNvdWNofGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="Table_basse">
+                <img class=" h-[170px] w-[200px]" src="https://images.unsplash.com/photo-1595515106883-5d5da3043540?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y2FiaW5ldHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60" alt="Table_basse">
                 <div class="flex flex-col space-y-3">
-                    <h3 class="text-2xl uppercase font-light">Canapé en cuir matelassé</h3>
-                    <h3 class="font-normal text-xl">H 70 cm, L 170 cm, P 95 cm</h3>
-                    <h3 class="text-2xl">930,99€ TTC</h3>
+                    <h3 class="text-2xl font-semibold">Set de 2 meubles de rangement </h3>
+                    <h3 class="font-normal text-xl">H 90 cm, L 40 cm, P 38 cm et H 40 cm, L 100 cm, P 38 cm</h3>
+                    <h3 class="text-xl">410,99€ TTC</h3>
                 </div>
             </div>
         </div>

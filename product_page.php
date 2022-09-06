@@ -11,30 +11,16 @@ require_once './includes/title.php';
 
 <!-- Contenu de la page -->
 <section class="bg-white p-36">
-    <div class="container mx-auto flex gap-10">
+    <div class="container mx-auto">
 
         <!-- Présentation produit -->
-        <section class="container mx-auto px-20 py-10 bg-eggshell w-3/4">
-            <img class="h-[400px] w-full border-2 border-black" src="https://media.istockphoto.com/photos/wooden-coffee-table-isolated-on-white-background-picture-id1063885982?k=20&m=1063885982&s=612x612&w=0&h=bl537HeLMyE7g4UCoSnA4Rteq699e0l1AbbQjQIKLDQ=" alt="Table_basse_rectangulaire_bois">
+        <div class="px-32">
+            <h2 class="text-center text-4xl text-darkblue font-semibold mb-20 uppercase">Table basse rectangulaire en bois</h2>
+            <img class="h-[300px] w-[450px] block m-auto" src="https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y291Y2h8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60" alt="Table_basse_rectangulaire_bois">
 
+            <hr class="block mx-auto border-darkgrey border-t-0 border-b-2 my-14" />
             <!-- Description produit -->
-            <div class="container mx-auto p-10 bg-white rounded-3xl mt-10 ">
-                <h2 class="text-left text-4xl font-semibold mb-2">Table basse rectangulaire en bois</h2>
-                <p class="text-right text-orange text-3xl font-bold mb-10">120,65€</p>
-
-                <a href="cart.php">
-                    <div class=" bg-orange hover-bg-darkgrey w-fit rounded-full py-2 px-8 mb-6 block m-auto">
-                        <button class="text-white text-center text-lg font-semibold tracking-wider">Ajouter au panier</button>
-                    </div>
-                </a>
-
-
-                <a id="storeLink" href="#" data-bs-toggle="modal">
-                    <div class=" bg-blue hover-bg-darkgrey w-fit rounded-full py-2 px-6 mb-14 block m-auto">
-                        <button href="#" class="text-white text-center text-lg font-semibold tracking-wider">Acheter en magasin</button>
-                    </div>
-                </a>
-
+            <div class="flex justify-between mb-16">
                 <div class="flex flex-col items-start">
                     <!-- Description -->
                     <p class="mb-10 text-lg"><span class="font-bold text-xl mb-2">Description : </span><br />Table basse rectangulaire en bois chêne</p>
@@ -43,38 +29,59 @@ require_once './includes/title.php';
                     <p class="text-lg"> <span class="font-bold">Couleur : </span>bois marron clair </p>
                 </div>
 
-
+                <p class="text-right text-orange text-3xl font-bold">120,65€</p>
             </div>
-        </section>
 
+            <div class="flex space-x-10 justify-center ">
+                <a href="cart.php">
+                    <div class=" bg-orange hover-bg-darkgrey w-fit rounded-full py-2 px-6 mb-6 block m-auto">
+                        <button class="text-white text-center text-lg font-semibold tracking-wide">Ajouter au panier</button>
+                    </div>
+                </a>
+                <a id="storeLink" href="#" data-bs-toggle="modal">
+                    <div class=" bg-blue hover-bg-darkgrey w-fit rounded-full py-2 px-4 mb-14 block m-auto">
+                        <button href="#" class="text-white text-center text-lg font-semibold tracking-wide">Acheter en magasin</button>
+                    </div>
+                </a>
+            </div>
+            <hr class="block mx-auto border-darkgrey border-t-0 border-b-2 my-10 " />
+        </div>
+        
         <!-- Produits similaires -->
-        <aside class="container-mx-auto px-6 py-10 bg-eggshell w-1/4 flex flex-col items-center">
-            <h3 class="text-3xl font-semibold text-darkblue mb-10 text-centerr">Produits similaires</h3>
-            <div class="flex flex-col items-center gap-y-6">
+        <div class="container mx-auto p-6 bg-eggshell mt-20">
+            <h3 class="text-3xl font-semibold text-darkblue mb-10 text-center">Dans la même catégorie</h3>
+            <div class="flex items-center space-x-6">
 
-                <div class="bg-white container mx-auto p-5">
-                    <img class="border-2 border-black w-full" src=" https://media.istockphoto.com/photos/old-coffee-table-picture-id525954841?k=20&m=525954841&s=612x612&w=0&h=eVjoqEw6aoNbcwxmx6UbmHmiKUkzFhWU0JdSZXUCCqk=" alt="Table_basse_style_scandinave">
-                    <p class="text-lg font-semibold text-left">Table basse style scandinave</p>
-                    <p class="text-lg font-bold text-right">59,80€</p>
+                <div class="bg-white p-5 rounded-lg">
+                    <img class="h-[150px] w-[220px] mb-3" src=" https://media.istockphoto.com/photos/old-coffee-table-picture-id525954841?k=20&m=525954841&s=612x612&w=0&h=eVjoqEw6aoNbcwxmx6UbmHmiKUkzFhWU0JdSZXUCCqk=" alt="Table_basse_style_scandinave">
+                    <p class="text-lg font-semibold text-center">Table basse style scandinave</p>
+                    <p class="text-lg font-bold text-center">59,80€</p>
                 </div>
 
-                <div class="bg-white container mx-auto p-5">
-                    <img class="border-2 border-black w-full" src=" https://media.istockphoto.com/photos/old-coffee-table-picture-id525954841?k=20&m=525954841&s=612x612&w=0&h=eVjoqEw6aoNbcwxmx6UbmHmiKUkzFhWU0JdSZXUCCqk=" alt="Table_basse_style_scandinave">
-                    <p class="text-lg font-semibold text-left">Table basse style scandinave</p>
-                    <p class="text-lg font-bold text-right">59,80€</p>
+                <div class="bg-white p-5 rounded-lg">
+                    <img class="h-[150px] w-[220px] mb-3" src=" https://media.istockphoto.com/photos/stylish-bright-yellow-chair-chair-in-room-with-ears-and-armrest-picture-id1304184858?k=20&m=1304184858&s=612x612&w=0&h=EK2mwhWbCMMU8WxCoi9cb5BZS-bFzy8QpdYxLhclsE0=" alt="Table_basse_style_scandinave">
+                    <p class="text-lg font-semibold text-center">Table basse style scandinave</p>
+                    <p class="text-lg font-bold text-center">59,80€</p>
                 </div>
 
-                <div class="bg-white container mx-auto p-5">
-                    <img class="border-2 border-black w-full" src=" https://media.istockphoto.com/photos/old-coffee-table-picture-id525954841?k=20&m=525954841&s=612x612&w=0&h=eVjoqEw6aoNbcwxmx6UbmHmiKUkzFhWU0JdSZXUCCqk=" alt="Table_basse_style_scandinave">
-                    <p class="text-lg font-semibold text-left">Table basse style scandinave</p>
-                    <p class="text-lg font-bold text-right">59,80€</p>
+                <div class="bg-white p-5 rounded-lg">
+                    <img class="h-[150px] w-[220px] mb-3" src=" https://i.ibb.co/Wn754t5/buffet.jpg" alt="Table_basse_style_scandinave">
+                    <p class="text-lg font-semibold text-center">Table basse style scandinave</p>
+                    <p class="text-lg font-bold text-center">59,80€</p>
                 </div>
+
+                <div class="bg-white p-5 rounded-lg">
+                    <img class="h-[150px] w-[220px] mb-3" src=" https://i.ibb.co/Wn754t5/buffet.jpg" alt="Table_basse_style_scandinave">
+                    <p class="text-lg font-semibold text-center">Table basse style scandinave</p>
+                    <p class="text-lg font-bold text-center">59,80€</p>
+                </div>
+
                 <button>
-                    <i class=" fas fa-regular fa-chevron-down fa-3x"></i>
+                    <i class=" ml-3 fas fa-regular fa-chevron-right fa-3x text-orange"></i>
                 </button>
             </div>
 
-        </aside>
+</div>
     </div>
 </section>
 

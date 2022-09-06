@@ -70,21 +70,21 @@ require_once './includes/title.php';
     <!-- END OF PROGRESS BAR  -->
     <hr class="block mx-auto w-2/3 border-darkgrey border-t-0 border-b-2 mb-32" />
     <div class="container mx-auto bg-eggshell px-16 py-20">
-        <p class="text-center text-3xl uppercase mb-20 font-light">Paiement de votre commande</p>
+        <p class="text-center text-3xl uppercase mb-20 text-darkblue font-semibold">Paiement de votre commande</p>
 
         <form action="recap.php" class="px-20">
             <div class="mb-4">
-                <label class="block mb-2" for="email">N° de carte bancaire</label>
+                <label class="block mb-2 text-lg" for="email">N° de carte bancaire</label>
                 <input value="" class="border rounded border-gray-200 py-2 px-4 w-full outline-slate-800 shadow-lg" placeholder="N° de carte bancaire" type="text" name="card_number" id="card_number" required>
             </div>
 
             <div class="flex space-x-4">
                 <div class="">
-                    <label class="block mb-2" for="password">Date d'expiration</label>
+                    <label class="block mb-2 text-lg" for="password">Date d'expiration</label>
                     <input class="border rounded border-gray-200 py-2 px-4 w-full outline-slate-800 shadow-lg" placeholder="MM/AA" type="text" name="expiration_date" id="expiration_date" required>
                 </div>
                 <div class="">
-                    <label class="block mb-2" for="password">Code CVV</label>
+                    <label class="block mb-2 text-lg" for="password">Code CVV</label>
                     <input class="border rounded border-gray-200 py-2 px-4 w-full outline-slate-800 shadow-lg" placeholder="Code CVV" type="text"  name="cvv_code" id="cvv_code" required>
                 </div>
             </div>

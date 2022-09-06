@@ -69,28 +69,29 @@ require_once './includes/title.php';
     <!-- END OF PROGRESS BAR  -->
     <hr class="block mx-auto w-2/3 border-darkgrey border-t-0 border-b-2 mb-32" />
     <div class="container mx-auto bg-eggshell px-16 py-20">
-        <p class="text-center text-3xl uppercase mb-20 font-light">Votre panier a 2 articles</p>
+        <p class="text-center font-semibold text-3xl uppercase mb-20 text-darkblue">Votre panier a 2 articles</p>
 
             <div class="flex space-x-10 bg-white p-5">
                 <img class=" h-[170px] w-[200px]" src="https://images.unsplash.com/photo-1573866926487-a1865558a9cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNvdWNofGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="Table_basse">
                 <div class="flex flex-col space-y-3">
-                    <h3 class="text-2xl uppercase font-light">Canapé en cuir matelassé</h3>
+                    <h3 class="text-2xl font-semibold">Canapé en cuir matelassé</h3>
                     <h3 class="font-normal text-xl">H 70 cm, L 170 cm, P 95 cm</h3>
-                    <h3 class="text-2xl">930,99€ TTC</h3>
+                    <h3 class="text-xl">930,99€ TTC</h3>
                 </div>
             </div>
             <div class="flex space-x-10 bg-white p-5">
                 <img class=" h-[170px] w-[200px]" src="https://images.unsplash.com/photo-1595515106883-5d5da3043540?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y2FiaW5ldHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60" alt="Table_basse">
                 <div class="flex flex-col space-y-3">
-                    <h3 class="text-2xl uppercase font-light">Set de 2 meubles de rangement </h3>
+                    <h3 class="text-2xl font-semibold">Set de 2 meubles de rangement </h3>
                     <h3 class="font-normal text-xl">H 90 cm, L 40 cm, P 38 cm et H 40 cm, L 100 cm, P 38 cm</h3>
-                    <h3 class="text-2xl">410,99€ TTC</h3>
+                    <h3 class="text-xl">410,99€ TTC</h3>
                 </div>
             </div>
 
 
         <div class="flex flex-col justify-end space-y-6 mt-10">
             <h4 class="text-2xl uppercase text-center"> <span class="font-bold">Total : </span> 157€ TTC</h4>
+            <a href="shop.php" class="text-center uppercase text-xl font-semibold tracking-wider hover-text-orange">Continuer mes achats</a>
             <div class=" bg-orange hover-bg-darkgrey w-fit rounded-full py-2 px-8 block m-auto">
                 <a href="delivery.php" class="text-white text-lg font-semibold tracking-wider">Valider le panier</a>
             </div>

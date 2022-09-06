@@ -68,10 +68,10 @@ $whoops->register();
                         <a class="text-xl text-darkgrey hover-text-orange active:text-orange" href="about.php">A propos</a>
                     </li>
                     <li>
-                        <a class="text-lg text-darkgrey hover-text-orange active-text-orange" href="shop.php">Boutique</a>
+                        <a class="text-xl text-darkgrey hover-text-orange active-text-orange" href="shop.php">Boutique</a>
                     </li>
                     <li>
-                        <a class="text-lg text-darkgrey hover-text-orange active-text-orange" href="contact.php">Contact</a>
+                        <a class="text-xl text-darkgrey hover-text-orange active-text-orange" href="contact.php">Contact</a>
                     </li>
                 </ul>
             </div>
