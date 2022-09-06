@@ -1,9 +1,9 @@
 <?php
 require_once './vendor/autoload.php';
+require_once dirname(__DIR__) . "/configs/configs.php";
 $whoops = new \Whoops\Run;
 $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
 $whoops->register();
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +31,7 @@ $whoops->register();
                     <i class="fa-brands fa-instagram fa-xl"></i>
                     <i class="fa-brands fa-twitter fa-xl"></i>
                 </div>
-                <div class="flex justify-between items-center gap-5">
+                <!-- <div class="flex justify-between items-center gap-5">
                     <a href="myaccount.php">
                         <div class=" bg-orange py-1 px-3 hover-bg-blue rounded-2xl flex gap-3 place-items-center">
                             <i class="fa-solid fa-circle-user text-white fa-xl"></i>
@@ -39,8 +39,8 @@ $whoops->register();
                         </div>
                     </a>
                     <a href="cart.php"> <i class="place-self-center text-white fa-solid fa-cart-arrow-down fa-xl"></i></a>
-                </div>
-                <!-- <div class="flex justify-between items-center gap-5">
+                </div> -->
+                <div class="flex justify-between items-center gap-5">
                     <ul class="list-none flex gap-6 justify-between items-center">
                         <li>
                             <a id="loginLink" class="text-lg text-white hover-text-orange" href="#" data-bs-toggle="modal">
@@ -51,7 +51,7 @@ $whoops->register();
                                 <i class="fa-solid fa-inbox mr-3"></i>Inscription</a>
                         </li>
                     </ul>
-                </div>  -->
+                </div> 
             </div>
         </header>
 
@@ -79,3 +79,7 @@ $whoops->register();
 
 
     </div>
+
+    <?php require_once './signup_form.php'; // Formulaire d'inscription - modal 
+    require_once './login_form.php'; // Formulaire de connexion - modal 
+    ?>

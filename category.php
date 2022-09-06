@@ -1,16 +1,11 @@
 <?php
 require_once './includes/header.php';
-require_once './signup_form.php'; // Formulaire d'inscription - modal 
-require_once './login_form.php'; // Formulaire de connexion - modal 
-
-?>
-
-<!-- SECTION TITRE -->
-<?php
-$title = 'Les tables';
-$subTitle = 'Trouvez votre bonheur en parcourant notre catalogue de tables d’occasions.';
+require_once './src/CategoryModel.php';
+$categorymodel = new CategoryModel();
+$categoryInfo = $categorymodel->getOneCategory();
+$title = $categoryInfo->getName_category();
+$subTitle = $categoryInfo->getDescription_category();
 require_once './includes/title.php';
-
 ?>
 
 <!-- FIN SECTION TITRE -->
@@ -66,7 +61,7 @@ require_once './includes/title.php';
         <div class=" grid grid-cols-4 gap-x-10 gap-y-16">
             <article class="p-4 flex flex-col items-center bg-eggshell rounded-xl ">
                 <figure class="flex flex-col items-center mb-4 space-y-6">
-                    <img class="h-[200px] w-[250px]" src="./images/canape.jpg " alt="canape">
+                    <img class="h-[200px] w-[250px]" src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGNoYWlyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60 " alt="canape">
                     <figcaption>
                         <h3 class="text-center text-2xl font-semibold mb-2">Nom du produit</h3>
                         <p class="text-center text-2xl font-bold">120 €</p>
