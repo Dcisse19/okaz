@@ -1,8 +1,11 @@
 <?php
 require_once './includes/header.php';
-require_once './signup_form.php'; // Formulaire d'inscription - modal 
-require_once './login_form.php'; // Formulaire de connexion - modal 
-
+require_once './src/ProductModel.php';
+require_once './src/StoreModel.php';
+$productmodel = new ProductModel();
+$product = $productmodel->getOneProduct();
+$storemodel = new StoreModel();
+$store = $storemodel->getStoreByProduct();
 
 $title = 'Les tables'; // change selon l'id de la catégorie
 $subTitle = "Trouvez votre bonheur en parcourant notre catalogue de tables d'occasion"; // change selon l'id de la catégorie
@@ -15,21 +18,21 @@ require_once './includes/title.php';
 
         <!-- Présentation produit -->
         <div class="px-32">
-            <h2 class="text-center text-4xl text-darkblue font-semibold mb-20 uppercase">Table basse rectangulaire en bois</h2>
-            <img class="h-[300px] w-[450px] block m-auto" src="https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y291Y2h8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60" alt="Table_basse_rectangulaire_bois">
+            <h2 class="text-center text-4xl text-darkblue font-semibold mb-20 uppercase"><?= $product->getName() ?></h2>
+            <img class="h-[300px] w-[450px] block m-auto" src="<?= $product->getImage() ?>" alt="<?= $product->getName() ?>">
 
             <hr class="block mx-auto border-darkgrey border-t-0 border-b-2 my-14" />
             <!-- Description produit -->
             <div class="flex justify-between mb-16">
                 <div class="flex flex-col items-start">
                     <!-- Description -->
-                    <p class="mb-10 text-lg"><span class="font-bold text-xl mb-2">Description : </span><br />Table basse rectangulaire en bois chêne</p>
-                    <p class="text-lg"> <span class="font-bold">Etat : </span>Très bon état</p>
-                    <p class="text-lg"> <span class="font-bold">Dimensions : </span>H 45cm, L 120cm, P 60cm</p>
-                    <p class="text-lg"> <span class="font-bold">Couleur : </span>bois marron clair </p>
+                    <p class="mb-10 text-lg"><span class="font-bold text-xl mb-2">Description : </span><br /><?= $product->getDescription() ?></p>
+                    <p class="text-lg"> <span class="font-bold">Etat : </span><?= $product->getProduct_condition() ?></p>
+                    <p class="text-lg"> <span class="font-bold">Dimensions : </span><?= $product->getDimensions() ?></p>
+                    <p class="text-lg"> <span class="font-bold">Couleur : </span><?= $product->getColor() ?></p>
                 </div>
 
-                <p class="text-right text-orange text-3xl font-bold">120,65€</p>
+                <p class="text-right text-orange text-3xl font-bold"><?= $product->getPrice() ?>€</p>
             </div>
 
             <div class="flex space-x-10 justify-center ">
@@ -92,11 +95,11 @@ require_once './includes/title.php';
         <button class="rounded p-2 bg-blue hover-bg-darkgrey float-right">
             <i id="closeStoreModal" class="fa-solid fa-xmark fa-xl"></i>
         </button>
-        <h3 class="text-darkblue text-2xl text-center mb-10"> Votre produit : <span class="font-semibold"> "Table basse rectangulaire en bois"</span> <br /> est disponible dans votre magasin :</h3>
+        <h3 class="text-darkblue text-2xl text-center mb-10"> Votre produit : <span class="font-semibold">"<?= $store["name"]?>"</span> <br /> est disponible dans votre magasin :</h3>
         <div class="flex flex-col gap-y-4">
-            <h3 class="text-orange text-2xl font-semibold">OKAZ Villeneuve-le-Roi</h3>
-            <p class="text-lg"> <span class="font-bold">Adresse : </span>15 Avenue Dumarché, 94290 Villeneuve-le-Roi </p>
-            <p class="text-lg"> <span class="font-bold">Téléphone : </span>0126482030</p>
+            <h3 class="text-orange text-2xl font-semibold uppercase"><?= $store["store_name"]?></h3>
+            <p class="text-lg"> <span class="font-bold">Adresse : </span><?= $store["store_address"].", " . $store["store_postal_code"] ." ". $store["store_city"]?></p>
+            <p class="text-lg"> <span class="font-bold">Téléphone : </span><?= $store["store_telephone"]?></p>
             <p class="text-lg"> <span class="font-bold">Horaires d'ouverture : </span>
                 <br />Du Lundi au Vendredi : de 10h à 18h
                 <br />Samedi : de 9h30 à 19h
@@ -106,5 +109,6 @@ require_once './includes/title.php';
         <!-- </div> -->
     </div>
 </section>
+<script src="./JS/product_page.js"></script>
 
 <?php require_once './includes/footer.php'; ?>

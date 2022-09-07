@@ -1,3 +1,8 @@
+<?php 
+// require_once dirname(__DIR__) . '/signup_form.php';
+// require_once dirname(__DIR__) . '/login_form.php';
+
+?>
 <footer class="py-16 px-28 bg-darkblue">
     <div class="container mx-auto flex justify-start  gap-x-28">
         <ul class="text-white text-2xl  list-disc">
@@ -13,8 +18,7 @@
 </footer>
 
 <!-- Javascript -->
-<script src="./JS/index.js"></script>
-<script src="./JS/product_page.js"></script>
+<!-- <script src="./JS/header.js"></script> -->
 </body>
 
 </html>

@@ -1,7 +1,6 @@
 <?php
 require_once './includes/header.php';
-require_once './signup_form.php'; // Formulaire d'inscription - modal 
-require_once './login_form.php'; // Formulaire de connexion - modal 
+
 
 
 $title = 'Je passe commande';
@@ -77,6 +76,9 @@ require_once './includes/title.php';
                     <h3 class="text-2xl font-semibold">Canapé en cuir matelassé</h3>
                     <h3 class="font-normal text-xl">H 70 cm, L 170 cm, P 95 cm</h3>
                     <h3 class="text-xl">930,99€ TTC</h3>
+                    <form action="">
+                        <button class="hover-text-orange underline">Retirer du panier</button>
+                    </form>
                 </div>
             </div>
             <div class="flex space-x-10 bg-white p-5">
@@ -85,6 +87,9 @@ require_once './includes/title.php';
                     <h3 class="text-2xl font-semibold">Set de 2 meubles de rangement </h3>
                     <h3 class="font-normal text-xl">H 90 cm, L 40 cm, P 38 cm et H 40 cm, L 100 cm, P 38 cm</h3>
                     <h3 class="text-xl">410,99€ TTC</h3>
+                    <form action="">
+                        <button class="hover-text-orange underline">Retirer du panier</button>
+                    </form>
                 </div>
             </div>
 

@@ -4,6 +4,7 @@ require_once dirname(__DIR__) . "/configs/configs.php";
 $whoops = new \Whoops\Run;
 $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
 $whoops->register();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,11 +44,11 @@ $whoops->register();
                 <div class="flex justify-between items-center gap-5">
                     <ul class="list-none flex gap-6 justify-between items-center">
                         <li>
-                            <a id="loginLink" class="text-lg text-white hover-text-orange" href="#" data-bs-toggle="modal">
+                            <a class="text-lg text-white hover-text-orange" href="login.php">
                                 <i class="fa-solid fa-arrow-right-to-bracket mr-3"></i>Connexion</a>
                         </li>
                         <li>
-                            <a id="signupLink" class="text-lg text-white hover-text-orange" href="#" data-bs-toggle="modal">
+                            <a class="text-lg text-white hover-text-orange" href="signup.php">
                                 <i class="fa-solid fa-inbox mr-3"></i>Inscription</a>
                         </li>
                     </ul>
@@ -76,10 +77,4 @@ $whoops->register();
                 </ul>
             </div>
         </nav>
-
-
     </div>
-
-    <?php require_once './signup_form.php'; // Formulaire d'inscription - modal 
-    require_once './login_form.php'; // Formulaire de connexion - modal 
-    ?>

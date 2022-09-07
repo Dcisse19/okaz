@@ -1,7 +1,6 @@
 <?php
 require_once './includes/header.php';
-require_once './signup_form.php'; // Formulaire d'inscription - modal 
-require_once './login_form.php'; // Formulaire de connexion - modal 
+
 
 
 $title = 'Boutique';
@@ -10,18 +9,15 @@ require_once './includes/title.php';
 // Include des classes
 require_once './src/CategoryModel.php';
 
-
 // Instanciation
 $categorymodel = new CategoryModel();
-
-
 $categories = $categorymodel->getAllCategories();
 ?>
 
 <!-- Contenu de la page -->
 <section class="p-20">
-    <div class="container mx-auto grid gap-y-5">
-        <h2 class="uppercase text-darkblue font-semibold text-4xl text-center">Découvrez nos produits classés par catégories</h2>
+    <div class="container mx-auto">
+        <h2 class="uppercase text-darkblue font-semibold text-4xl text-center mb-10">Découvrez nos produits classés par catégories</h2>
 
         <div class="container mx-auto p-28 grid grid-cols-2 gap-12">
            <?php foreach ($categories as $category) { ?>

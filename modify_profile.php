@@ -1,8 +1,5 @@
 <?php
 require_once './includes/header.php';
-require_once './signup_form.php'; // Formulaire d'inscription - modal 
-require_once './login_form.php'; // Formulaire de connexion - modal 
-
 ?>
 
 <!-- SECTION TITRE -->
@@ -21,9 +18,7 @@ require_once './includes/title.php';
 
         <form action="profile.php" class="top-20 w-1/2 mx-auto border-rounded py-8 px-10">
 
-                <h1 class="text-3xl text-darkblue font-semibold text-center mb-16 uppercase tracking-wide">MODIFIER MON PROFIL</h1>
-
-
+            <h1 class="text-3xl text-darkblue font-semibold text-center mb-16 uppercase tracking-wide">MODIFIER MON PROFIL</h1>
             <div class="flex gap-6 mb-4">
                 <div class="w-1/2">
                     <label class="block mb-2" for="firstname">Prénom</label>

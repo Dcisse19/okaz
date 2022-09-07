@@ -125,7 +125,8 @@ require_once './includes/header.php';
 <!-- FIN SECTION QUI SOMMES-NOUS-->
 
 <!-- SECTION RECHERCHE MAGASIN -->
-<?php require_once './components/search_store.php'; ?>
 
+<?php require_once './components/search_store.php'; ?>
+<script src="./JS/index.js"></script>
 
 <?php require_once './includes/footer.php'; ?>
