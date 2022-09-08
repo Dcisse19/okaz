@@ -1,10 +1,11 @@
 <?php
+session_start();
+require_once dirname(__DIR__) . "/utils/utils.php";
 require_once './vendor/autoload.php';
-require_once dirname(__DIR__) . "/configs/configs.php";
 $whoops = new \Whoops\Run;
 $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
 $whoops->register();
-
+$user = getLoggedUser();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,15 +33,25 @@ $whoops->register();
                     <i class="fa-brands fa-instagram fa-xl"></i>
                     <i class="fa-brands fa-twitter fa-xl"></i>
                 </div>
-                <!-- <div class="flex justify-between items-center gap-5">
-                    <a href="myaccount.php">
-                        <div class=" bg-orange py-1 px-3 hover-bg-blue rounded-2xl flex gap-3 place-items-center">
-                            <i class="fa-solid fa-circle-user text-white fa-xl"></i>
-                            <p class="text-lg text-white font-semibold">Mon compte</p>
-                        </div>
-                    </a>
-                    <a href="cart.php"> <i class="place-self-center text-white fa-solid fa-cart-arrow-down fa-xl"></i></a>
-                </div> -->
+                <?php if($user) {?>
+                <div class="flex justify-between items-center space-x-14">
+                    <div class="flex items-center space-x-5">
+                        <a href="myaccount.php">
+                            <div class=" bg-orange py-1 px-3 hover-bg-blue rounded-2xl flex gap-3 place-items-center">
+                                <i class="fa-solid fa-circle-user text-white  fa-xl"></i>
+                                <p class="text-lg text-white font-semibold">Mon compte</p>
+                            </div>
+                        </a>
+                        <a href="cart.php"> <i class="place-self-center text-white hover:text-gray-300 fa-solid fa-cart-arrow-down fa-xl"></i></a>
+                    </div>
+                    <form action="logout.php" class="ml-6" method="post">
+                        <button class="text-white hover:text-gray-300">
+                            <i class="place-self-center fa-solid fa-power-off fa-xl"></i>
+                        </button>
+                    </form>
+                    <!-- <a href="logout.php.php"> <i class="place-self-center text-white hover:text-gray-300 fa-solid fa-power-off fa-xl"></i></a> -->
+                </div>
+                <?php }else{ ?>
                 <div class="flex justify-between items-center gap-5">
                     <ul class="list-none flex gap-6 justify-between items-center">
                         <li>
@@ -53,6 +64,7 @@ $whoops->register();
                         </li>
                     </ul>
                 </div> 
+                <?php } ?>
             </div>
         </header>
 

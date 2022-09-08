@@ -1,7 +1,9 @@
 <?php
+require_once "./src/UserModel.php";
 require_once './includes/header.php';
-
-
+isLogged();
+$userModel = new UserModel();
+$user = $userModel->getUser(); 
 ?>
 
 <!-- SECTION TITRE -->
@@ -24,7 +26,7 @@ require_once './includes/title.php';
         <!-- -------- message --------------- -->
 
         <div class="w-3/4 px-20 py-20 flex flex-col ">
-            <h2 class="text-xl font-bold mb-10"> Bonjour, Dior :)</h2>
+            <h2 class="text-xl font-bold mb-10"> Bonjour, <?= $user["firstname"]?> :)</h2>
             <p class="text-xl mb-10">
                 Bienvenue sur votre espace client OKAZ.com </br>
                 Ici, vous pouvez gérer vos commandes, ainsi que vos informations personnelles.

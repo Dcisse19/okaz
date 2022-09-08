@@ -22,7 +22,7 @@ $categories = $categorymodel->getAllCategories();
         <div class="container mx-auto p-28 grid grid-cols-2 gap-12">
            <?php foreach ($categories as $category) { ?>
                 <div class="flex space-x-10">
-                    <img class=" h-[170px] w-[200px]" src="<?= $category->getImage_category() ?>" alt="<?= $category->getName_category() ?>">
+                    <img class="h-[170px] min-w-[200px] w-[200px]" src="<?= $category->getImage_category() ?>" alt="<?= $category->getName_category() ?>">
                     <div class="flex flex-col space-y-3">
                         <a href="category.php?id=<?=$category->getId() ?>" class="text-2xl uppercase text-orange font-semibold"><?= $category->getName_category() ?></a>
                         <hr class="border-darkgrey border-t-0 border-b-2 mb-32" />

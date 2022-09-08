@@ -1,8 +1,8 @@
-<section id="searchStore" class="py-28 px-36 bg-eggshell">
+<section id="" class="py-28 px-36 bg-eggshell ">
     <div class="flex flex-col items-center">
         <h1 class="text-4xl font-semibold uppercase font-sans mb-14 text-center" id="searchTitle"> Trouvez un magazin Okaz près de chez vous <i id="searchIcon" class="ml-4 fas fa-regular fa-magnifying-glass-location fa-lg"></i></h1>
-        <form action="#" class="rounded-full w-2/3 border-2 border-orange px-4 py-3 bg-white">
-        <select value="" class="bg-white w-full text-lg" name="select_store" id="select_store">
+        <form id="searchStoreForm"  action="" method="POST" class="rounded-full w-2/3 border-2 border-orange px-4 py-3 bg-white" data-bs-toggle="modal">
+        <select value="" class="bg-white w-full text-lg outline-none" name="select_store" id="select_store" onchange="">
                     <option value="">-- Sélectionnez un magasin --</option>
                     <option class="" value="">Okaz - Villeneuve-le-Roi</option>
                     <option class="" value="">Okaz - Evry</option>
@@ -17,3 +17,5 @@
         </form>
     </div>
 </section>
+
+<script src="./JS/search_store.js"></script>

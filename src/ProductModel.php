@@ -29,4 +29,13 @@ class ProductModel extends MainModel
         }
         return $product;
     }
+
+    public function getOneProductById($id)
+    {
+      // On effectue notre query SQL pour retourner une donnée unique
+      $query = $this->pdo->query("SELECT * FROM dda_product WHERE id = $id");
+      $query->setFetchMode(PDO::FETCH_CLASS, "Product");
+      $product = $query->fetch();
+      return $product;
+    }
 }

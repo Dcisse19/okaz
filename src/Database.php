@@ -1,4 +1,5 @@
 <?php
+require_once dirname(__DIR__) . "/configs/configs.php";
 class Database
 {
   public function connection()

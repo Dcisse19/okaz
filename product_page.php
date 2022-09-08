@@ -2,10 +2,13 @@
 require_once './includes/header.php';
 require_once './src/ProductModel.php';
 require_once './src/StoreModel.php';
+require_once './src/CartModel.php';
 $productmodel = new ProductModel();
+$cartmodel = new CartModel();
 $product = $productmodel->getOneProduct();
 $storemodel = new StoreModel();
 $store = $storemodel->getStoreByProduct();
+$error = $cartmodel->addToCart($product->getId());
 
 $title = 'Les tables'; // change selon l'id de la catégorie
 $subTitle = "Trouvez votre bonheur en parcourant notre catalogue de tables d'occasion"; // change selon l'id de la catégorie
@@ -18,9 +21,11 @@ require_once './includes/title.php';
 
         <!-- Présentation produit -->
         <div class="px-32">
-            <h2 class="text-center text-4xl text-darkblue font-semibold mb-20 uppercase"><?= $product->getName() ?></h2>
+            <h2 class="text-center text-4xl text-darkblue font-semibold mb-14 uppercase"><?= $product->getName() ?></h2>
+            <?php if(isset($error) && !empty($error["errorProduct_exist"])) {?>
+                <p class="text-red-400 text-center text-xl mb-14"><?= $error["errorProduct_exist"] ?></p>
+            <?php }  ?>
             <img class="h-[300px] w-[450px] block m-auto" src="<?= $product->getImage() ?>" alt="<?= $product->getName() ?>">
-
             <hr class="block mx-auto border-darkgrey border-t-0 border-b-2 my-14" />
             <!-- Description produit -->
             <div class="flex justify-between mb-16">
@@ -36,11 +41,16 @@ require_once './includes/title.php';
             </div>
 
             <div class="flex space-x-10 justify-center ">
-                <a href="cart.php">
+                <form action="" method="POST">
                     <div class=" bg-orange hover-bg-darkgrey w-fit rounded-full py-2 px-6 mb-6 block m-auto">
                         <button class="text-white text-center text-lg font-semibold tracking-wide">Ajouter au panier</button>
                     </div>
-                </a>
+                </form>
+                <!-- <a href="cart.php">
+                    <div class=" bg-orange hover-bg-darkgrey w-fit rounded-full py-2 px-6 mb-6 block m-auto">
+                        <button class="text-white text-center text-lg font-semibold tracking-wide">Ajouter au panier</button>
+                    </div>
+                </a> -->
                 <a id="storeLink" href="#" data-bs-toggle="modal">
                     <div class=" bg-blue hover-bg-darkgrey w-fit rounded-full py-2 px-4 mb-14 block m-auto">
                         <button href="#" class="text-white text-center text-lg font-semibold tracking-wide">Acheter en magasin</button>
@@ -49,7 +59,7 @@ require_once './includes/title.php';
             </div>
             <hr class="block mx-auto border-darkgrey border-t-0 border-b-2 my-10 " />
         </div>
-        
+
         <!-- Produits similaires -->
         <div class="container mx-auto p-6 bg-eggshell mt-20">
             <h3 class="text-3xl font-semibold text-darkblue mb-10 text-center">Dans la même catégorie</h3>
@@ -84,7 +94,7 @@ require_once './includes/title.php';
                 </button>
             </div>
 
-</div>
+        </div>
     </div>
 </section>
 
@@ -95,11 +105,11 @@ require_once './includes/title.php';
         <button class="rounded p-2 bg-blue hover-bg-darkgrey float-right">
             <i id="closeStoreModal" class="fa-solid fa-xmark fa-xl"></i>
         </button>
-        <h3 class="text-darkblue text-2xl text-center mb-10"> Votre produit : <span class="font-semibold">"<?= $store["name"]?>"</span> <br /> est disponible dans votre magasin :</h3>
+        <h3 class="text-darkblue text-2xl text-center mb-10"> Votre produit : <span class="font-semibold">"<?= $store["name"] ?>"</span> <br /> est disponible dans votre magasin :</h3>
         <div class="flex flex-col gap-y-4">
-            <h3 class="text-orange text-2xl font-semibold uppercase"><?= $store["store_name"]?></h3>
-            <p class="text-lg"> <span class="font-bold">Adresse : </span><?= $store["store_address"].", " . $store["store_postal_code"] ." ". $store["store_city"]?></p>
-            <p class="text-lg"> <span class="font-bold">Téléphone : </span><?= $store["store_telephone"]?></p>
+            <h3 class="text-orange text-2xl font-semibold uppercase"><?= $store["store_name"] ?></h3>
+            <p class="text-lg"> <span class="font-bold">Adresse : </span><?= $store["store_address"] . ", " . $store["store_postal_code"] . " " . $store["store_city"] ?></p>
+            <p class="text-lg"> <span class="font-bold">Téléphone : </span><?= $store["store_telephone"] ?></p>
             <p class="text-lg"> <span class="font-bold">Horaires d'ouverture : </span>
                 <br />Du Lundi au Vendredi : de 10h à 18h
                 <br />Samedi : de 9h30 à 19h

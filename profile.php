@@ -1,7 +1,9 @@
 <?php
+require_once "./src/UserModel.php";
 require_once './includes/header.php';
-
-
+isLogged();
+$userModel = new UserModel();
+$user = $userModel->getUser(); 
 ?>
 
 <!-- SECTION TITRE -->
@@ -29,27 +31,27 @@ require_once './includes/title.php';
                 <div>
                     <ul class="mb-10">
                         <li class="font-bold text-xl"><h2 >Nom </h2></li>
-                        <li class=""><p>Durand</p></li>          
+                        <li class=""><p><?= $user["lastname"]?></p></li>          
                     </ul>
                     <ul class="mb-10">
                         <li class="font-bold text-xl"><h2>Prénom </h2></li>
-                        <li class="mb-5"><p>Dior</p></li>       
+                        <li class="mb-5"><p><?= $user["firstname"]?></p></li>       
                     </ul>
                 </div>
                 <div>
                     <ul class="mb-10">
                         <li class="font-bold text-xl"><h2> N° de téléphone </h2></li>
-                        <li class=""><p>0625347890</p></li>          
+                        <li class=""><p><?= $user["telephone"]?></p></li>          
                     </ul>
                     <ul class="">
                         <li class="font-bold text-xl"><h2>Adresse </h2></li>
-                        <li class=""><p>5 rue de la paix 75008 Paris</p></li> 
+                        <li class=""><p><?= $user["address"] . ", " . $user["postal_code"] . " " . $user["city"]?></p></li> 
                     </ul>
                 </div>
                 <div>
                     <ul class="mb-16">
                         <li class="font-bold text-xl"><h2>Votre adresse e-mail </h2></li>
-                        <li class=""><p>dior.durand@gmail.com</p></li>          
+                        <li class=""><p><?= $user["email"]?></p></li>          
                     </ul>
                     <a href="modify_profile.php" class="py-2 px-8 border-[1px] border-black font-semibold text-lg ">
                       <i class="fas fa-light fa-pencil mr-2"></i>Modifier

@@ -1,7 +1,16 @@
 <?php
 require_once './includes/header.php';
+isLogged();
+require_once './src/CartModel.php';
+$cm = new CartModel();
 
+$cart = $cm->getCart();
+$productNumber = $cm->getProductNumberByCart();
+$total = $cm->getFullPrice($cart);
 
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $cm->removeFromCart($_GET['product_id']);
+}
 
 $title = 'Je passe commande';
 $subTitle = '';
@@ -68,39 +77,47 @@ require_once './includes/title.php';
     <!-- END OF PROGRESS BAR  -->
     <hr class="block mx-auto w-2/3 border-darkgrey border-t-0 border-b-2 mb-32" />
     <div class="container mx-auto bg-eggshell px-16 py-20">
-        <p class="text-center font-semibold text-3xl uppercase mb-20 text-darkblue">Votre panier a 2 articles</p>
-
-            <div class="flex space-x-10 bg-white p-5">
-                <img class=" h-[170px] w-[200px]" src="https://images.unsplash.com/photo-1573866926487-a1865558a9cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNvdWNofGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="Table_basse">
-                <div class="flex flex-col space-y-3">
-                    <h3 class="text-2xl font-semibold">Canapé en cuir matelassé</h3>
-                    <h3 class="font-normal text-xl">H 70 cm, L 170 cm, P 95 cm</h3>
-                    <h3 class="text-xl">930,99€ TTC</h3>
-                    <form action="">
-                        <button class="hover-text-orange underline">Retirer du panier</button>
-                    </form>
+        <?php if (empty($cart)) { ?>
+            <div class="flex flex-col justify-center">
+                <p class="text-center font-semibold text-3xl uppercase mb-20 text-darkblue">Votre panier est vide</p>
+                <div class="block m-auto">
+                    <a href="shop.php" class="py-3 px-8 rounded-lg bg-orange hover-bg-darkgrey text-white font-semibold text-lg uppercase">
+                        Commencer mes achats <i class="fas fa-regular fa-cart-plus text-white ml-2 fa-xl"></i>
+                    </a>
                 </div>
             </div>
-            <div class="flex space-x-10 bg-white p-5">
-                <img class=" h-[170px] w-[200px]" src="https://images.unsplash.com/photo-1595515106883-5d5da3043540?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y2FiaW5ldHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60" alt="Table_basse">
-                <div class="flex flex-col space-y-3">
-                    <h3 class="text-2xl font-semibold">Set de 2 meubles de rangement </h3>
-                    <h3 class="font-normal text-xl">H 90 cm, L 40 cm, P 38 cm et H 40 cm, L 100 cm, P 38 cm</h3>
-                    <h3 class="text-xl">410,99€ TTC</h3>
-                    <form action="">
-                        <button class="hover-text-orange underline">Retirer du panier</button>
-                    </form>
+        <?php } else { ?>
+            <?php if ($productNumber["product_number"] === "1") { ?>
+            <p class="text-center font-semibold text-3xl uppercase mb-20 text-darkblue">Votre panier a <?= $productNumber["product_number"] ?> article</p>
+            <?php } else { ?>
+            <p class="text-center font-semibold text-3xl uppercase mb-20 text-darkblue">Votre panier a <?= $productNumber["product_number"] ?> articles</p>
+            <?php } ?>
+            <?php foreach ($cart as $product) { ?>
+                <div class="flex space-x-10 bg-white p-5">
+                    <a href="product_page.php?id=<?= $product->getId() ?>">
+                        <img class=" h-[170px] w-[200px]" src="<?= $product->getImage() ?>" alt="<?= $product->getName() ?>">
+                    </a>
+                    <div class="flex flex-col space-y-3">
+                        <a href="product_page.php?id=<?= $product->getId() ?>">
+                            <h3 class="text-2xl font-semibold"><?= $product->getName() ?></h3>
+                        </a>
+                        <h3 class="font-normal text-xl"><?= $product->getDimensions() ?></h3>
+                        <h3 class="text-xl"><?= $product->getPrice() ?>€ TTC</h3>
+                        <form action="cart.php?product_id=<?= $product->getId() ?>" method="POST">
+                            <button class="hover-text-orange underline">Retirer du panier</button>
+                        </form>
+                    </div>
+                </div>
+            <?php } ?>
+
+            <div class="flex flex-col justify-end space-y-6 mt-10">
+                <h4 class="text-2xl uppercase text-center"> <span class="font-bold">Total : </span> <?= $total ?>€ TTC</h4>
+                <a href="shop.php" class="text-center uppercase text-xl font-semibold tracking-wider hover-text-orange">Continuer mes achats</a>
+                <div class=" bg-orange hover-bg-darkgrey w-fit rounded-full py-2 px-8 block m-auto">
+                    <a href="delivery.php" class="text-white text-lg font-semibold tracking-wider">Valider le panier</a>
                 </div>
             </div>
-
-
-        <div class="flex flex-col justify-end space-y-6 mt-10">
-            <h4 class="text-2xl uppercase text-center"> <span class="font-bold">Total : </span> 157€ TTC</h4>
-            <a href="shop.php" class="text-center uppercase text-xl font-semibold tracking-wider hover-text-orange">Continuer mes achats</a>
-            <div class=" bg-orange hover-bg-darkgrey w-fit rounded-full py-2 px-8 block m-auto">
-                <a href="delivery.php" class="text-white text-lg font-semibold tracking-wider">Valider le panier</a>
-            </div>
-        </div>
+        <?php } ?>
     </div>
 
 </section>

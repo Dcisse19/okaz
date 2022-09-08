@@ -1,4 +1,10 @@
 <?php
+// Fonction pour récupérer l'utilisateur connecté
+function getLoggedUser()
+{
+  if (isset($_SESSION["okaz_logged_user"])) return $_SESSION["okaz_logged_user"];
+  else return false;
+}
 
 function redirect()
 {
@@ -19,4 +25,9 @@ function checkQueryId()
         redirect();
     }
     return (int)$_GET["id"];
+}
+
+function isLogged()
+{
+  if (!getLoggedUser()) redirect();
 }

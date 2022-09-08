@@ -63,122 +63,22 @@ $products = $productmodel->getProductsByCategory();
 <main class="p-20 mb-20">
     <section class="container mx-auto px-10">
         <div class=" grid grid-cols-4 gap-x-10 gap-y-16">
-            <?php foreach ($products as $product) {?>
-            <article class="p-4 flex flex-col items-center bg-eggshell rounded-xl">
-                <figure class="flex flex-col items-center mb-4 space-y-6">
-                    <img class="h-[200px] w-[250px]" src="<?= $product->getImage()?>" alt="<?= $product->getName()?>">
-                    <figcaption class="block">
-                        <h3 class="text-center text-xl font-semibold"><?= $product->getName()?></h3>
-                        <p class="text-center text-2xl font-bold"><?= $product->getPrice()?>€</p>
-                    </figcaption>
-                </figure>
-                <div class="py-1 px-4 rounded-full bg-orange hover-bg-blue">
-                    <a href="product_page.php?id=<?= $product->getId()?>" class="text-center text-white font-semibold text-lg">
-                        <i class="fas fa-regular fa-eye mr-2"></i>Voir le produit
-                    </a>
-                </div>
-            </article>
+            <?php foreach ($products as $product) { ?>
+                <article class="py-6 px-4 flex flex-col items-center bg-eggshell rounded-xl">
+                    <figure class="flex flex-col items-center mb-4 space-y-6">
+                        <img class="h-[200px] w-[250px]" src="<?= $product->getImage() ?>" alt="<?= $product->getName() ?>">
+                        <figcaption class="block w-[250px]">
+                            <h3 class="text-center text-xl font-semibold truncate"><?= $product->getName() ?></h3>
+                            <p class="text-center text-2xl font-bold"><?= $product->getPrice() ?>€</p>
+                        </figcaption>
+                    </figure>
+                    <div class="py-1 px-4 rounded-full bg-orange hover-bg-blue">
+                        <a href="product_page.php?id=<?= $product->getId() ?>" class="text-center text-white font-semibold text-lg">
+                            <i class="fas fa-regular fa-eye mr-2"></i>Voir le produit
+                        </a>
+                    </div>
+                </article>
             <?php } ?>
-
-            <!-- <article class="p-4 flex flex-col items-center bg-eggshell rounded-xl ">
-                <figure class="flex flex-col items-center mb-4 space-y-6">
-                    <img class="h-[200px] w-[250px]" src="./images/canape.jpg " alt="canape">
-                    <figcaption>
-                        <h3 class="text-center text-2xl font-semibold mb-2">Nom du produit</h3>
-                        <p class="text-center text-2xl font-bold">120 €</p>
-                    </figcaption>
-                </figure>
-                <div class="py-1 px-4 rounded-full bg-orange hover-bg-blue">
-                    <a href="product_page.php" class="text-center text-white font-semibold text-lg">
-                        <i class="fas fa-regular fa-eye mr-2"></i>Voir le produit
-                    </a>
-                </div>
-            </article>
-            <article class="p-4 flex flex-col items-center bg-eggshell rounded-xl ">
-                <figure class="flex flex-col items-center mb-4 space-y-6">
-                    <img class="h-[200px] w-[250px]" src="./images/canape.jpg " alt="canape">
-                    <figcaption>
-                        <h3 class="text-center text-2xl font-semibold mb-2">Nom du produit</h3>
-                        <p class="text-center text-2xl font-bold">120 €</p>
-                    </figcaption>
-                </figure>
-                <div class="py-1 px-4 rounded-full bg-orange hover-bg-blue">
-                    <a href="product_page.php" class="text-center text-white font-semibold text-lg">
-                        <i class="fas fa-regular fa-eye mr-2"></i>Voir le produit
-                    </a>
-                </div>
-            </article>
-            <article class="p-4 flex flex-col items-center bg-eggshell rounded-xl ">
-                <figure class="flex flex-col items-center mb-4 space-y-6">
-                    <img class="h-[200px] w-[250px]" src="./images/canape.jpg " alt="canape">
-                    <figcaption>
-                        <h3 class="text-center text-2xl font-semibold mb-2">Nom du produit</h3>
-                        <p class="text-center text-2xl font-bold">120 €</p>
-                    </figcaption>
-                </figure>
-                <div class="py-1 px-4 rounded-full bg-orange hover-bg-blue">
-                    <a href="product_page.php" class="text-center text-white font-semibold text-lg">
-                        <i class="fas fa-regular fa-eye mr-2"></i>Voir le produit
-                    </a>
-                </div>
-            </article>
-            <article class="p-4 flex flex-col items-center bg-eggshell rounded-xl ">
-                <figure class="flex flex-col items-center mb-4 space-y-6">
-                    <img class="h-[200px] w-[250px]" src="./images/canape.jpg " alt="canape">
-                    <figcaption>
-                        <h3 class="text-center text-2xl font-semibold mb-2">Nom du produit</h3>
-                        <p class="text-center text-2xl font-bold">120 €</p>
-                    </figcaption>
-                </figure>
-                <div class="py-1 px-4 rounded-full bg-orange hover-bg-blue">
-                    <a href="product_page.php" class="text-center text-white font-semibold text-lg">
-                        <i class="fas fa-regular fa-eye mr-2"></i>Voir le produit
-                    </a>
-                </div>
-            </article>
-            <article class="p-4 flex flex-col items-center bg-eggshell rounded-xl ">
-                <figure class="flex flex-col items-center mb-4 space-y-6">
-                    <img class="h-[200px] w-[250px]" src="./images/canape.jpg " alt="canape">
-                    <figcaption>
-                        <h3 class="text-center text-2xl font-semibold mb-2">Nom du produit</h3>
-                        <p class="text-center text-2xl font-bold">120 €</p>
-                    </figcaption>
-                </figure>
-                <div class="py-1 px-4 rounded-full bg-orange hover-bg-blue">
-                    <a href="product_page.php" class="text-center text-white font-semibold text-lg">
-                        <i class="fas fa-regular fa-eye mr-2"></i>Voir le produit
-                    </a>
-                </div>
-            </article>
-            <article class="p-4 flex flex-col items-center bg-eggshell rounded-xl ">
-                <figure class="flex flex-col items-center mb-4 space-y-6">
-                    <img class="h-[200px] w-[250px]" src="./images/canape.jpg " alt="canape">
-                    <figcaption>
-                        <h3 class="text-center text-2xl font-semibold mb-2">Nom du produit</h3>
-                        <p class="text-center text-2xl font-bold">120 €</p>
-                    </figcaption>
-                </figure>
-                <div class="py-1 px-4 rounded-full bg-orange hover-bg-blue">
-                    <a href="product_page.php" class="text-center text-white font-semibold text-lg">
-                        <i class="fas fa-regular fa-eye mr-2"></i>Voir le produit
-                    </a>
-                </div>
-            </article>
-            <article class="p-4 flex flex-col items-center bg-eggshell rounded-xl ">
-                <figure class="flex flex-col items-center mb-4 space-y-6">
-                    <img class="h-[200px] w-[250px]" src="./images/canape.jpg " alt="canape">
-                    <figcaption>
-                        <h3 class="text-center text-2xl font-semibold mb-2">Nom du produit</h3>
-                        <p class="text-center text-2xl font-bold">120 €</p>
-                    </figcaption>
-                </figure>
-                <div class="py-1 px-4 rounded-full bg-orange hover-bg-blue">
-                    <a href="product_page.php" class="text-center text-white font-semibold text-lg">
-                        <i class="fas fa-regular fa-eye mr-2"></i>Voir le produit
-                    </a>
-                </div>
-            </article> -->
-
         </div>
     </section>
 </main>

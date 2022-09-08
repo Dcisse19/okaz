@@ -1,13 +1,9 @@
 <?php
-require_once './includes/header.php';
+ini_set('display_errors', 'on');
 require_once './src/UserModel.php';
 $usermodel = new UserModel();
 $data = $usermodel->setupUser();
-
-
-// $title = 'Inscription';
-// $subTitle = 'Ceci est la page boutique';
-// require_once './includes/title.php';
+require_once './includes/header.php';
 ?>
 
 <!-- Contenu de la page -->
@@ -46,7 +42,7 @@ $data = $usermodel->setupUser();
             <div class="w-1/2">
                 <label class="block mb-2" for="telephone">Numéro de télephone</label>
                 <input value="<?= isset($data) && empty($data["errorTelephone"]) ? $data["telephone"] : "" ?>" class="border rounded border-gray-200 py-2 px-4 w-full outline-slate-800 shadow-lg" placeholder="Numéro de télephone" type="text" name="telephone" id="telephone" maxlength="10">
-                <?php if (isset($data) && !empty($data["errorTelephone"])) { ?>
+                <?php if (isset($data) && !empty($data["errorTelephone"]) && !empty($data["telephone"])) { ?>
                     <p class="text-red-400 text-sm mt-2"><?php echo ($data["errorTelephone"])  ?></p>
                 <?php } ?>
             </div>
