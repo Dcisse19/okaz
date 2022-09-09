@@ -1,5 +1,6 @@
 <?php
 require_once './includes/header.php';
+$_SESSION['okaz_logged_user']["orderComplete"] = '';
 ?>
 
 <!-- SECTION BANNIERE -->

@@ -81,7 +81,7 @@ class UserModel extends MainModel
             $password = $_POST["password_signup"];
             $confirm = $_POST["confirm"];
 
-            $query = $this->pdo->query("SELECT * FROM `dda_users` WHERE email = $email");
+            $query = $this->pdo->query("SELECT * FROM `dda_users` WHERE email = $email"); // pb ici quand on entre un nouvel e-mail
             $query->setFetchMode(PDO::FETCH_CLASS, "User");
             $user = $query->fetch();
 

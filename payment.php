@@ -2,6 +2,7 @@
 require_once './includes/header.php';
 if ($_SESSION['okaz_logged_user']["orderComplete"] == 'yes') {
     header("Location: index.php");
+    exit;
 }
 isLogged();
 require_once './src/OrderModel.php';

@@ -66,11 +66,11 @@ class OrderModel extends MainModel
         $cartmodel = new CartModel();
         $cart_id = $cartmodel->getCartById();
 
-        $query = $this->pdo->query("
+    /*    $query = $this->pdo->query("
         SELECT `id_dda_users`, `product_id`, `order_id` FROM `dda_order`
         JOIN `dda_order_products` ON `dda_order_products`.`order_id` = `dda_order`.`id`
-        WHERE `cart_id` = " . $cart_id["id"]
-      );
+       WHERE `cart_id` = " . $cart_id["id"] // on a pas de cart_id ici
+      );*/
         $formatedOrder = [];
         $order = $query->fetchAll(PDO::FETCH_ASSOC);
         foreach ($order as $product) {

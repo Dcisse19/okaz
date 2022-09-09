@@ -1,7 +1,9 @@
 <?php
 require_once './includes/header.php';
+// dd($_SESSION);
 if ($_SESSION['okaz_logged_user']["orderComplete"] == 'yes') {
     header("Location: index.php");
+    exit;
 }
 require_once './src/CartModel.php';
 require_once "./src/UserModel.php";
@@ -11,8 +13,8 @@ $userModel = new UserModel();
 $cm = new CartModel();
 $ordermodel = new OrderModel();
 $user = $userModel->getUser();
-$order = $ordermodel->getOrder();
-dd($order);
+$cart = $cm->getCart();
+// dd($order);
 $orderInfo = $ordermodel->getOrderInfo();
 $data = $ordermodel->getOrderInfoByCart();
 
@@ -85,7 +87,7 @@ require_once './includes/title.php';
         <p class="text-center text-3xl uppercase mb-20 text-darkblue font-semibold">Récapitulatif de votre commande</p>
 
         <div class="bg-white p-10">
-            <?php foreach ($order as $product) { ?>
+            <?php foreach ($cart as $product) { ?>
                 <div class="flex space-x-10 bg-white p-5">
                     <img class=" h-[170px] w-[200px]" src="<?= $product->getImage() ?>" alt="<?= $product->getName() ?>">
                     <div class="flex flex-col space-y-3">
@@ -113,6 +115,6 @@ require_once './includes/title.php';
 
 </section>
 <?php
-$_SESSION['okaz_logged_user']["orderComplete"] == 'yes';
+$_SESSION['okaz_logged_user']["orderComplete"] = 'yes';
 $ordermodel->transferCartToOrder();
 require_once './includes/footer.php'; ?>
