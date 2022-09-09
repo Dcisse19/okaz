@@ -1,7 +1,20 @@
 <?php
 require_once './includes/header.php';
+if ($_SESSION['okaz_logged_user']["orderComplete"] == 'yes') {
+    header("Location: index.php");
+}
+require_once './src/CartModel.php';
+require_once "./src/UserModel.php";
+require_once './src/OrderModel.php';
 isLogged();
-
+$userModel = new UserModel();
+$cm = new CartModel();
+$ordermodel = new OrderModel();
+$user = $userModel->getUser();
+$order = $ordermodel->getOrder();
+dd($order);
+$orderInfo = $ordermodel->getOrderInfo();
+$data = $ordermodel->getOrderInfoByCart();
 
 $title = 'Je passe commande';
 $subTitle = '';
@@ -72,40 +85,34 @@ require_once './includes/title.php';
         <p class="text-center text-3xl uppercase mb-20 text-darkblue font-semibold">Récapitulatif de votre commande</p>
 
         <div class="bg-white p-10">
-            <div class="flex space-x-10 bg-white p-5">
-                <img class=" h-[170px] w-[200px]" src="https://images.unsplash.com/photo-1573866926487-a1865558a9cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNvdWNofGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="Table_basse">
-                <div class="flex flex-col space-y-3">
-                    <h3 class="text-2xl font-semibold">Canapé en cuir matelassé</h3>
-                    <h3 class="font-normal text-xl">H 70 cm, L 170 cm, P 95 cm</h3>
-                    <h3 class="text-xl">930,99€ TTC</h3>
+            <?php foreach ($order as $product) { ?>
+                <div class="flex space-x-10 bg-white p-5">
+                    <img class=" h-[170px] w-[200px]" src="<?= $product->getImage() ?>" alt="<?= $product->getName() ?>">
+                    <div class="flex flex-col space-y-3">
+                        <h3 class="text-2xl font-semibold"><?= $product->getName() ?></h3>
+                        <h3 class="font-normal text-xl"><?= $product->getDimensions() ?></h3>
+                        <h3 class="text-xl"><?= $product->getPrice() ?>€ TTC</h3>
+                    </div>
                 </div>
-            </div>
-            <div class="flex space-x-10 bg-white p-5">
-                <img class=" h-[170px] w-[200px]" src="https://images.unsplash.com/photo-1595515106883-5d5da3043540?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y2FiaW5ldHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60" alt="Table_basse">
-                <div class="flex flex-col space-y-3">
-                    <h3 class="text-2xl font-semibold">Set de 2 meubles de rangement </h3>
-                    <h3 class="font-normal text-xl">H 90 cm, L 40 cm, P 38 cm et H 40 cm, L 100 cm, P 38 cm</h3>
-                    <h3 class="text-xl">410,99€ TTC</h3>
-                </div>
-            </div>
+            <?php } ?>
+
             <div class=" grid p-5 gap-10">
-                <h4 class="text-2xl text-right"> <span class="font-bold">Total : </span> 157€ TTC</h4>
+                <h4 class="text-2xl text-right"> <span class="font-bold">Total : </span> <?= $orderInfo["payment_amount"] ?>€ TTC</h4>
                 <h4 class="text-xl text-left"> <span class="font-bold">Moyen de paiement : </span> <br />
-                    Carte N° XXXX XXXX XXXX 4781
+                    Carte N° <?= $data["payment_type"] ?>
                 </h4>
                 <div class="grid gap-y-1">
-                    <h4 class="text-xl text-left"> <span class="font-bold">Retrait dans votre magasin : </span> </h4>
-                    <h3 class="text-orange text-xl font-semibold">OKAZ Villeneuve-le-Roi</h3>
-                    <p class="text-lg"> <span class="font-bold">Adresse : </span>15 Avenue Dumarché, 94290 Villeneuve-le-Roi </p>
+                    <h4 class="text-xl text-left"> <span class="font-bold">Livraison à domicile : </span> </h4>
+                    <p class="text-lg"> <span class="font-bold">Adresse : </span><?= $user["address"] . ", " . $user["postal_code"] . " " . $user["city"] ?></p>
                 </div>
             </div>
             <p class="text-center text-3xl uppercase mt-14 text-darkblue">Merci pour votre commande</p>
         </div>
-
-
     </div>
 
 
 </section>
-
-<?php require_once './includes/footer.php'; ?>
+<?php
+$_SESSION['okaz_logged_user']["orderComplete"] == 'yes';
+$ordermodel->transferCartToOrder();
+require_once './includes/footer.php'; ?>

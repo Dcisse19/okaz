@@ -1,8 +1,12 @@
 <?php
 require_once './includes/header.php';
+if ($_SESSION['okaz_logged_user']["orderComplete"] == 'yes') {
+    header("Location: index.php");
+}
 isLogged();
-
-
+require_once './src/OrderModel.php';
+$ordermodel = new OrderModel();
+$ordermodel->insertOrderInfo();
 
 $title = 'Je passe commande';
 $subTitle = '';
@@ -72,20 +76,20 @@ require_once './includes/title.php';
     <div class="container mx-auto bg-eggshell px-16 py-20">
         <p class="text-center text-3xl uppercase mb-20 text-darkblue font-semibold">Paiement de votre commande</p>
 
-        <form action="recap.php" class="px-20">
+        <form action="" class="px-20" method="POST">
             <div class="mb-4">
-                <label class="block mb-2 text-lg" for="email">N° de carte bancaire</label>
-                <input value="" class="border rounded border-gray-200 py-2 px-4 w-full outline-slate-800 shadow-lg" placeholder="N° de carte bancaire" type="text" name="card_number" id="card_number" required>
+                <label class="block mb-2 text-lg" for="card_number">N° de carte bancaire</label>
+                <input value="" minlength="16" maxlength="16" class="border rounded border-gray-200 py-2 px-4 w-full outline-slate-800 shadow-lg" placeholder="N° de carte bancaire" type="text" name="card_number" id="card_number">
             </div>
 
             <div class="flex space-x-4">
                 <div class="">
-                    <label class="block mb-2 text-lg" for="password">Date d'expiration</label>
-                    <input class="border rounded border-gray-200 py-2 px-4 w-full outline-slate-800 shadow-lg" placeholder="MM/AA" type="text" name="expiration_date" id="expiration_date" required>
+                    <label class="block mb-2 text-lg" for="expiration_date">Date d'expiration</label>
+                    <input minlength="5" maxlength="5" class="border rounded border-gray-200 py-2 px-4 w-full outline-slate-800 shadow-lg" placeholder="MM/AA" type="text" name="expiration_date" id="expiration_date">
                 </div>
                 <div class="">
-                    <label class="block mb-2 text-lg" for="password">Code CVV</label>
-                    <input class="border rounded border-gray-200 py-2 px-4 w-full outline-slate-800 shadow-lg" placeholder="Code CVV" type="text"  name="cvv_code" id="cvv_code" required>
+                    <label class="block mb-2 text-lg" for="cvv_code">Code CVV</label>
+                    <input minlength="3" maxlength="3" class="border rounded border-gray-200 py-2 px-4 w-full outline-slate-800 shadow-lg" placeholder="Code CVV" type="text" name="cvv_code" id="cvv_code">
                 </div>
             </div>
 

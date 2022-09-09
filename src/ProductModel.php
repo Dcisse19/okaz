@@ -8,7 +8,8 @@ class ProductModel extends MainModel
     public function getProductsByCategory()
     {
         $CategoryId = checkQueryId();
-        $query = $this->pdo->query("SELECT * FROM `dda_product` WHERE `id_dda_product_category` = $CategoryId");
+        $availability = 1;
+        $query = $this->pdo->query("SELECT * FROM `dda_product` WHERE (`id_dda_product_category` = $CategoryId AND `availability`= $availability )");
         $products = $query->fetchAll(PDO::FETCH_CLASS, "Product");
 
         if (!$products) {

@@ -77,7 +77,7 @@ require_once './includes/title.php';
     <!-- END OF PROGRESS BAR  -->
     <hr class="block mx-auto w-2/3 border-darkgrey border-t-0 border-b-2 mb-32" />
     <div class="container mx-auto bg-eggshell px-16 py-20">
-        <?php if (empty($cart)) { ?>
+        <?php if (empty($cart) || !empty($productNumber["errorNoCart"])) { ?>
             <div class="flex flex-col justify-center">
                 <p class="text-center font-semibold text-3xl uppercase mb-20 text-darkblue">Votre panier est vide</p>
                 <div class="block m-auto">

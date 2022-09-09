@@ -15,7 +15,7 @@ class CartModel extends MainModel
         $user = getLoggedUser();
         $userId = $user["id"];
         $query = $this->pdo->query("
-        SELECT `id_dda_users`, `product_id` FROM `dda_cart`
+        SELECT `id_dda_users`, `product_id`, `cart_id` FROM `dda_cart`
         JOIN `dda_cart_products` ON `dda_cart_products`.`cart_id` = `dda_cart`.`id`
         WHERE `id_dda_users` = $userId;
       ");
@@ -29,12 +29,29 @@ class CartModel extends MainModel
         // voir le panier même si aucun livre n'a été ajouté.
     }
 
+    public function getCartById(){
+        $user = getLoggedUser();
+        $userId = $user["id"];
+        $query = $this->pdo->query("SELECT * FROM `dda_cart` WHERE id_dda_users = $userId");
+        $cart = $query->fetch(PDO::FETCH_ASSOC);
+        // dd($cart);
+        return $cart;
+    }
+
     public function getProductNumberByCart()
     {
+        $data = [
+            "errorNoCart" => ""
+        ];
 
         $user = getLoggedUser();
         $query = $this->pdo->query("SELECT * FROM dda_cart WHERE id_dda_users = " .  $user["id"]);
         $cartId = $query->fetch(PDO::FETCH_ASSOC);
+        if (!$cartId) {
+            $data["errorNoCart"] =  "Le panier est vide";
+            return $data;
+        }
+
 
         $query = $this->pdo->query("SELECT COUNT(`product_id`) as `product_number` FROM `dda_cart_products` 
         WHERE `cart_id` = " . $cartId["id"]);
@@ -51,7 +68,7 @@ class CartModel extends MainModel
         foreach ($cart as $product) {
             $total = $total + $product->getPrice();
         }
-        return $total;
+        return number_format($total, 2, '.', ' ');
     }
 
     /**
@@ -59,14 +76,15 @@ class CartModel extends MainModel
      */
     public function addToCart($productId)
     {
+
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             // 1ère étape: vérifier si le panier existe ou pas
-
             $data = [
                 "errorProduct_exist" => ""
             ];
 
             $user = getLoggedUser();
+            if(!$user) $this->redirect("login.php"); // si l'utilisateur n'est pas connecté 
             $query = $this->pdo->query("SELECT * FROM dda_cart WHERE id_dda_users = " . $user["id"]);
             $cart = $query->fetch(PDO::FETCH_ASSOC);
 

@@ -22,6 +22,7 @@ class UserModel extends MainModel
     {
         $user = $this->searchUser();
         $data = [
+            "id" => $user->getId(),
             "firstname" => $user->getFirstname(),
             "lastname" => $user->getLastname(),
             "email" => $user->getEmail(),
@@ -184,6 +185,7 @@ class UserModel extends MainModel
                     "role" => $user->getRole(),
                     "firstname" => $user->getFirstname(),
                     "lastname" => $user->getLastname(),
+                    "orderComplete" => ""
                 ];
                 $this->redirect("shop.php");
             } else return $error;

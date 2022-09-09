@@ -10,9 +10,9 @@ $storemodel = new StoreModel();
 $store = $storemodel->getStoreByProduct();
 $error = $cartmodel->addToCart($product->getId());
 
-$title = 'Les tables'; // change selon l'id de la catégorie
-$subTitle = "Trouvez votre bonheur en parcourant notre catalogue de tables d'occasion"; // change selon l'id de la catégorie
-require_once './includes/title.php';
+// $title = 'Les tables'; // change selon l'id de la catégorie
+// $subTitle = "Trouvez votre bonheur en parcourant notre catalogue de tables d'occasion"; // change selon l'id de la catégorie
+// require_once './includes/title.php';
 ?>
 
 <!-- Contenu de la page -->
@@ -20,11 +20,13 @@ require_once './includes/title.php';
     <div class="container mx-auto">
 
         <!-- Présentation produit -->
-        <div class="px-32">
-            <h2 class="text-center text-4xl text-darkblue font-semibold mb-14 uppercase"><?= $product->getName() ?></h2>
-            <?php if(isset($error) && !empty($error["errorProduct_exist"])) {?>
-                <p class="text-red-400 text-center text-xl mb-14"><?= $error["errorProduct_exist"] ?></p>
-            <?php }  ?>
+        <div class="px-28">
+            <div class="flex flex-col justify-center space-y-10 mb-20">
+                <h2 class="text-center text-4xl text-darkblue font-semibold uppercase"><?= $product->getName() ?></h2>
+                <?php if (isset($error) && !empty($error["errorProduct_exist"])) { ?>
+                    <p class="text-red-500 text-center text-xl"><?= $error["errorProduct_exist"] ?></p>
+                <?php }  ?>
+            </div>
             <img class="h-[300px] w-[450px] block m-auto" src="<?= $product->getImage() ?>" alt="<?= $product->getName() ?>">
             <hr class="block mx-auto border-darkgrey border-t-0 border-b-2 my-14" />
             <!-- Description produit -->

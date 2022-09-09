@@ -12,6 +12,7 @@ class CategoryModel extends MainModel
         return $stmt->fetchAll(PDO::FETCH_CLASS, "Category");
     }
 
+    
     public function getOneCategory()
     {
         $id = checkQueryId();
