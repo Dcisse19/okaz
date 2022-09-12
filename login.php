@@ -39,7 +39,6 @@ if (isset($_GET['register']) && $_GET['register'] == 'successful') {
         <p class='mt-6'><span class='text-red-600'>* </span> Champs obligatoires</p>
         <div class="flex justify-center mt-10">
             <button class="shadow-lg rounded-full py-2 px-10 bg-orange hover-bg-darkgrey text-white font-semibold uppercase tracking-wider">Se connecter
-                <!-- <i class="fa-solid fa-paper-plane mr-2"></i> -->
             </button>
         </div>
     </form>

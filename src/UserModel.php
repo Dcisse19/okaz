@@ -11,6 +11,7 @@ class UserModel extends MainModel
     public function searchUser()
     {
         $loggedUser = getLoggedUser();
+        // dd($_SESSION["okaz_logged_user"]);
         $query = $this->pdo->query("SELECT * FROM dda_users WHERE id = " . $loggedUser['id']);
         $query->setFetchMode(PDO::FETCH_CLASS, "User");
         return $query->fetch();
@@ -53,7 +54,7 @@ class UserModel extends MainModel
                 "errorTelephone" => "",
                 "errorPostal_code" => "",
                 "errorConfirm" => "",
-                "errorEmail_exist" => "",
+                "errorEmail_exist" => ""
             ];
 
             // On stock chacun de nos inputs dans une variable
@@ -81,7 +82,7 @@ class UserModel extends MainModel
             $password = $_POST["password_signup"];
             $confirm = $_POST["confirm"];
 
-            $query = $this->pdo->query("SELECT * FROM `dda_users` WHERE email = $email"); // pb ici quand on entre un nouvel e-mail
+            $query = $this->pdo->query("SELECT * FROM `dda_users` WHERE email = '$email'"); 
             $query->setFetchMode(PDO::FETCH_CLASS, "User");
             $user = $query->fetch();
 
@@ -100,9 +101,7 @@ class UserModel extends MainModel
             if (!filter_var($postal_code, FILTER_VALIDATE_FLOAT)) {
                 $data["errorPostal_code"] = "Merci de remplir un code postal valide";
             }
-            // if (gettype($telephone) !== "integer") {
-            //     $data["errorTelephone"] = "Merci de remplir un numéro de téléphone valide";
-            // }
+   
 
             if ($password !== $confirm) {
                 $data["errorConfirm"] = "Les mots de passe ne correspondent pas";

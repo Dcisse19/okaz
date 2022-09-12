@@ -1,8 +1,8 @@
 <?php
 require_once './includes/header.php';
-// dd($_SESSION);
 if ($_SESSION['okaz_logged_user']["orderComplete"] == 'yes') {
-    header("Location: index.php");
+    $_SESSION['okaz_logged_user']["orderComplete"] = '';
+    header("Location: orders.php");
     exit;
 }
 require_once './src/CartModel.php';

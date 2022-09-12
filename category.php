@@ -25,7 +25,7 @@ $products = $productmodel->getProductsByCategory();
             <p class="font-semibold text-xl text-orange">ou</p>
             <div class="">
                 <select value="" class="border rounded-lg border-darkgrey py-2 px-4 w-full outline-orange shadow-lg bg-white" name="select_store" id="select_store">
-                    <option class="" value="">-- Sélectionnez un magasin --</option>
+                    <option class="" value="">-- Sélectionner un magasin --</option>
                     <option class="" value="">Okaz - Villeneuve-le-Roi</option>
                     <option class="" value="">Okaz - Evry</option>
                     <option class="" value="">Okaz - Coignières</option>

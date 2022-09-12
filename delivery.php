@@ -2,11 +2,12 @@
 require_once "./src/UserModel.php";
 require_once './includes/header.php';
 if ($_SESSION['okaz_logged_user']["orderComplete"] == 'yes') {
+    $_SESSION['okaz_logged_user']["orderComplete"] = '';
     header("Location: index.php");
     exit;
 }
 $userModel = new UserModel();
-$user = $userModel->getUser(); 
+$user = $userModel->getUser();
 isLogged();
 
 $title = 'Je passe commande';
@@ -21,10 +22,12 @@ require_once './includes/title.php';
     <div class="flex mb-32">
 
         <div class="flex-1 content-center">
-            <div class="w-10 h-10 bg-grey border-darkgrey mx-auto rounded-full text-lg font-semibold flex place-items-center mb-2">
-                <!-- <i class="fas fa-regular fa-check"></i> -->
-                <span class="text-center w-full">1</span>
-            </div>
+            <a href="cart.php">
+                <div class="w-10 h-10 bg-grey border-darkgrey mx-auto rounded-full text-lg font-semibold flex place-items-center mb-2">
+                    <!-- <i class="fas fa-regular fa-check"></i> -->
+                    <span class="text-center w-full">1</span>
+                </div>
+            </a>
             <p class="text-sm text-center">Panier</p>
         </div>
 
@@ -89,7 +92,7 @@ require_once './includes/title.php';
         <div class="flex space-x-6">
             <div class="container  mx-auto w-[500px] bg-white p-5 flex flex-col content-center items-center space-y-3">
                 <p class="text-xl">Livraison à votre domicile au :</p>
-                <p class="text-lg font-bold"><?= $user["address"] . ", " . $user["postal_code"] . " " . $user["city"]?></p>
+                <p class="text-lg font-bold"><?= $user["address"] . ", " . $user["postal_code"] . " " . $user["city"] ?></p>
                 <!-- <div class=" bg-eggshell hover-bg-darkgrey w-fit rounded-full py-1 px-6 block"> -->
                 <a href="modify_profile.php" class="hover-text-orange  underline text-md tracking-wide">
                     <p class="text-center">Modifier l'adresse</p>

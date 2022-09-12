@@ -66,33 +66,60 @@ $error = $cartmodel->addToCart($product->getId());
         <div class="container mx-auto p-6 bg-eggshell mt-20">
             <h3 class="text-3xl font-semibold text-darkblue mb-10 text-center">Dans la même catégorie</h3>
             <div class="flex items-center space-x-6">
+                <div class="slide flex items-center space-x-6">
+                    <div class="bg-white p-5 rounded-lg">
+                        <img class="h-[150px] w-[220px] mb-3" src=" https://media.istockphoto.com/photos/old-coffee-table-picture-id525954841?k=20&m=525954841&s=612x612&w=0&h=eVjoqEw6aoNbcwxmx6UbmHmiKUkzFhWU0JdSZXUCCqk=" alt="Table_basse_style_scandinave">
+                        <p class="text-lg font-semibold text-center">Table basse style scandinave</p>
+                        <p class="text-lg font-bold text-center">59,80€</p>
+                    </div>
 
-                <div class="bg-white p-5 rounded-lg">
-                    <img class="h-[150px] w-[220px] mb-3" src=" https://media.istockphoto.com/photos/old-coffee-table-picture-id525954841?k=20&m=525954841&s=612x612&w=0&h=eVjoqEw6aoNbcwxmx6UbmHmiKUkzFhWU0JdSZXUCCqk=" alt="Table_basse_style_scandinave">
-                    <p class="text-lg font-semibold text-center">Table basse style scandinave</p>
-                    <p class="text-lg font-bold text-center">59,80€</p>
+                    <div class="bg-white p-5 rounded-lg">
+                        <img class="h-[150px] w-[220px] mb-3" src=" https://media.istockphoto.com/photos/stylish-bright-yellow-chair-chair-in-room-with-ears-and-armrest-picture-id1304184858?k=20&m=1304184858&s=612x612&w=0&h=EK2mwhWbCMMU8WxCoi9cb5BZS-bFzy8QpdYxLhclsE0=" alt="Table_basse_style_scandinave">
+                        <p class="text-lg font-semibold text-center">Table basse style scandinave</p>
+                        <p class="text-lg font-bold text-center">59,80€</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-lg">
+                        <img class="h-[150px] w-[220px] mb-3" src=" https://i.ibb.co/Wn754t5/buffet.jpg" alt="Table_basse_style_scandinave">
+                        <p class="text-lg font-semibold text-center">Table basse style scandinave</p>
+                        <p class="text-lg font-bold text-center">59,80€</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-lg">
+                        <img class="h-[150px] w-[220px] mb-3" src=" https://i.ibb.co/Wn754t5/buffet.jpg" alt="Table_basse_style_scandinave">
+                        <p class="text-lg font-semibold text-center">Table basse style scandinave</p>
+                        <p class="text-lg font-bold text-center">59,80€</p>
+                    </div>
                 </div>
+                
+                <!-- <div class="slide flex items-center space-x-6">
+                    <div class="bg-white p-5 rounded-lg">
+                        <img class="h-[150px] w-[220px] mb-3" src=" https://media.istockphoto.com/photos/old-coffee-table-picture-id525954841?k=20&m=525954841&s=612x612&w=0&h=eVjoqEw6aoNbcwxmx6UbmHmiKUkzFhWU0JdSZXUCCqk=" alt="Table_basse_style_scandinave">
+                        <p class="text-lg font-semibold text-center">Table basse style scandinave</p>
+                        <p class="text-lg font-bold text-center">59,80€</p>
+                    </div>
 
-                <div class="bg-white p-5 rounded-lg">
-                    <img class="h-[150px] w-[220px] mb-3" src=" https://media.istockphoto.com/photos/stylish-bright-yellow-chair-chair-in-room-with-ears-and-armrest-picture-id1304184858?k=20&m=1304184858&s=612x612&w=0&h=EK2mwhWbCMMU8WxCoi9cb5BZS-bFzy8QpdYxLhclsE0=" alt="Table_basse_style_scandinave">
-                    <p class="text-lg font-semibold text-center">Table basse style scandinave</p>
-                    <p class="text-lg font-bold text-center">59,80€</p>
-                </div>
+                    <div class="bg-white p-5 rounded-lg">
+                        <img class="h-[150px] w-[220px] mb-3" src=" https://media.istockphoto.com/photos/stylish-bright-yellow-chair-chair-in-room-with-ears-and-armrest-picture-id1304184858?k=20&m=1304184858&s=612x612&w=0&h=EK2mwhWbCMMU8WxCoi9cb5BZS-bFzy8QpdYxLhclsE0=" alt="Table_basse_style_scandinave">
+                        <p class="text-lg font-semibold text-center">Table basse style scandinave</p>
+                        <p class="text-lg font-bold text-center">59,80€</p>
+                    </div>
 
-                <div class="bg-white p-5 rounded-lg">
-                    <img class="h-[150px] w-[220px] mb-3" src=" https://i.ibb.co/Wn754t5/buffet.jpg" alt="Table_basse_style_scandinave">
-                    <p class="text-lg font-semibold text-center">Table basse style scandinave</p>
-                    <p class="text-lg font-bold text-center">59,80€</p>
-                </div>
+                    <div class="bg-white p-5 rounded-lg">
+                        <img class="h-[150px] w-[220px] mb-3" src=" https://i.ibb.co/Wn754t5/buffet.jpg" alt="Table_basse_style_scandinave">
+                        <p class="text-lg font-semibold text-center">Table basse style scandinave</p>
+                        <p class="text-lg font-bold text-center">59,80€</p>
+                    </div>
 
-                <div class="bg-white p-5 rounded-lg">
-                    <img class="h-[150px] w-[220px] mb-3" src=" https://i.ibb.co/Wn754t5/buffet.jpg" alt="Table_basse_style_scandinave">
-                    <p class="text-lg font-semibold text-center">Table basse style scandinave</p>
-                    <p class="text-lg font-bold text-center">59,80€</p>
-                </div>
+                    <div class="bg-white p-5 rounded-lg">
+                        <img class="h-[150px] w-[220px] mb-3" src=" https://i.ibb.co/Wn754t5/buffet.jpg" alt="Table_basse_style_scandinave">
+                        <p class="text-lg font-semibold text-center">Table basse style scandinave</p>
+                        <p class="text-lg font-bold text-center">59,80€</p>
+                    </div>
+                </div> -->
 
-                <button>
-                    <i class=" ml-3 fas fa-regular fa-chevron-right fa-3x text-orange"></i>
+                <button onclick="moveSlide(1)">
+                    <i class="ml-3 fas fa-regular fa-chevron-right fa-3x text-orange"></i>
                 </button>
             </div>
 

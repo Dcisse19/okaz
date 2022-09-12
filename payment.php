@@ -1,13 +1,15 @@
 <?php
 require_once './includes/header.php';
+// dd($_SESSION);
 if ($_SESSION['okaz_logged_user']["orderComplete"] == 'yes') {
+    $_SESSION['okaz_logged_user']["orderComplete"] = '';
     header("Location: index.php");
     exit;
 }
 isLogged();
 require_once './src/OrderModel.php';
 $ordermodel = new OrderModel();
-$ordermodel->insertOrderInfo();
+$error = $ordermodel->insertOrderInfo();
 
 $title = 'Je passe commande';
 $subTitle = '';
@@ -21,10 +23,11 @@ require_once './includes/title.php';
     <div class="flex mb-32">
 
         <div class="flex-1 content-center">
-            <div class="w-10 h-10 bg-grey border-darkgrey mx-auto rounded-full text-lg font-semibold flex place-items-center mb-2">
-                <!-- <i class="fas fa-regular fa-check"></i> -->
-                <span class="text-center w-full">1</span>
-            </div>
+            <a href="cart.php">
+                <div class="w-10 h-10 bg-grey border-darkgrey mx-auto rounded-full text-lg font-semibold flex place-items-center mb-2">
+                    <span class="text-center w-full">1</span>
+                </div>
+            </a>
             <p class="text-sm text-center">Panier</p>
         </div>
 
@@ -37,9 +40,11 @@ require_once './includes/title.php';
 
 
         <div class="flex-1">
-            <div class="w-10 h-10 bg-grey borde-darkgrey mx-auto rounded-full text-lg font-semibold flex items-center mb-2">
-                <span class="text-center w-full">2</span>
-            </div>
+            <a href="delivery.php">
+                <div class="w-10 h-10 bg-grey borde-darkgrey mx-auto rounded-full text-lg font-semibold flex items-center mb-2">
+                    <span class="text-center w-full">2</span>
+                </div>
+            </a>
             <p class="text-sm text-center">Livraison</p>
         </div>
 
@@ -80,17 +85,56 @@ require_once './includes/title.php';
         <form action="" class="px-20" method="POST">
             <div class="mb-4">
                 <label class="block mb-2 text-lg" for="card_number">N° de carte bancaire</label>
-                <input value="" minlength="16" maxlength="16" class="border rounded border-gray-200 py-2 px-4 w-full outline-slate-800 shadow-lg" placeholder="N° de carte bancaire" type="text" name="card_number" id="card_number">
+                <input value="" minlength="16" maxlength="16" class="border rounded border-gray-200 py-2 px-4 w-full outline-slate-800 shadow-lg" placeholder="N° de carte bancaire" type="text" name="card_number" id="card_number" required>
+                <?php if (isset($error) && !empty($error["errorCardNumber"])) { ?>
+                    <p class="text-red-400"><?= $error["errorCardNumber"] ?></p>
+                <?php } ?>
             </div>
 
-            <div class="flex space-x-4">
+            <div class="flex space-x-10">
                 <div class="">
                     <label class="block mb-2 text-lg" for="expiration_date">Date d'expiration</label>
-                    <input minlength="5" maxlength="5" class="border rounded border-gray-200 py-2 px-4 w-full outline-slate-800 shadow-lg" placeholder="MM/AA" type="text" name="expiration_date" id="expiration_date">
+                    <div class="flex justify-center items-center space-x-2">
+                        <select class="border rounded border-gray-200 py-2 px-4 w-full outline-slate-800 shadow-lg" name="expiration_month" id="expiration_month" required>
+                            <option value="">--MM--</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                        <p class="text-xl">/</p>
+                        <select class="border rounded border-gray-200 py-2 px-4 w-full outline-slate-800 shadow-lg" name="expiration_year" id="expiration_year" required>
+                            <option value="">--AA--</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                        </select>
+                    </div>
+                    <!-- <input class="border rounded border-gray-200 py-2 px-4 w-full outline-slate-800 shadow-lg" placeholder="MM/AA" type="text" name="expiration_date" id="expiration_date" required> -->
+                    <?php if (isset($error) && !empty($error["errorExpirationDate"])) { ?>
+                        <p class="text-red-400 text-center"><?= $error["errorExpirationDate"] ?></p>
+                    <?php } ?>
                 </div>
                 <div class="">
                     <label class="block mb-2 text-lg" for="cvv_code">Code CVV</label>
-                    <input minlength="3" maxlength="3" class="border rounded border-gray-200 py-2 px-4 w-full outline-slate-800 shadow-lg" placeholder="Code CVV" type="text" name="cvv_code" id="cvv_code">
+                    <input minlength="3" maxlength="3" class="border rounded border-gray-200 py-2 px-4 w-full outline-slate-800 shadow-lg" placeholder="Code CVV" type="text" name="cvv_code" id="cvv_code" required>
+                    <?php if (isset($error) && !empty($error["errorCVV"])) { ?>
+                        <p class="text-red-400 text-center"><?= $error["errorCVV"] ?></p>
+                    <?php } ?>
                 </div>
             </div>
 
