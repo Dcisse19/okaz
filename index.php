@@ -1,5 +1,8 @@
 <?php
 require_once './includes/header.php';
+require_once './src/ProductModel.php';
+$productmodel = new ProductModel();
+$products = $productmodel->getFiveLastsProducts();
 // dd($_SESSION);
 ?>
 
@@ -36,41 +39,14 @@ require_once './includes/header.php';
                     <i class="fas fa-regular fa-angle-left fa-2x"></i>
                 </div>
             </a>
-            <div class="slide w-[700px]">
-                <img class="w-full h-[400px] object-cover" src="https://www.kindacode.com/wp-content/uploads/2022/07/flower-1.jpeg">
-                <a href="#">
-                    <div class="w-full px-5 py-3 bg-zinc-600 hover:bg-zinc-800 text-center text-white">Nom de l'article</div>
+            <?php foreach($products as $product){ ?>
+            <div class="slide w-[550px]">
+                <img class="w-full h-[400px]" src="<?= $product->getImage()?>">
+                <a href="product_page.php?id=<?= $product->getId() ?>">
+                    <div class="w-full px-5 py-3 bg-zinc-600 hover:bg-zinc-800 text-center text-white"><?= $product->getName()?></div>
                 </a>
             </div>
-
-            <div class="slide w-[700px]">
-                <img class="w-full h-[400px] object-cover" src="https://www.kindacode.com/wp-content/uploads/2022/07/flower-2.jpeg">
-                <a href="#">
-                    <div class="w-full px-5 py-3 bg-zinc-600 hover:bg-zinc-800 text-center text-white ">Nom de l'article</div>
-                </a>
-            </div>
-
-            <div class="slide w-[700px]">
-                <img class="w-full h-[400px] object-cover" src="https://www.kindacode.com/wp-content/uploads/2022/07/flower-3.jpeg">
-                <a href="#">
-                    <div class="w-full px-5 py-3 bg-zinc-600 hover:bg-zinc-800 text-center text-white ">Nom de l'article</div>
-                </a>
-            </div>
-
-            <div class="slide w-[700px]">
-                <img class="w-full h-[400px] object-cover" src="https://www.kindacode.com/wp-content/uploads/2022/07/flower-1.jpeg">
-                <a href="#">
-                    <div class="w-full px-5 py-3 bg-zinc-600 hover:bg-zinc-800 text-center text-white ">Nom de l'article</div>
-                </a>
-
-            </div>
-            <div class="slide w-[700px]">
-                <img class="w-full h-[400px] object-cover" src="https://www.kindacode.com/wp-content/uploads/2022/07/flower-2.jpeg">
-                <a href="#">
-                    <div class="w-full px-5 py-3 bg-zinc-600 hover:bg-zinc-800 text-center text-white ">Nom de l'article</div>
-                </a>
-            </div>
-
+            <?php } ?>
             <!-- Next button -->
             <a onclick="moveSlide(1)">
                 <div class="rounded-full bg-blue hover-bg-darkgrey py-3 px-5">

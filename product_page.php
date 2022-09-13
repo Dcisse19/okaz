@@ -9,6 +9,7 @@ $product = $productmodel->getOneProduct();
 $storemodel = new StoreModel();
 $store = $storemodel->getStoreByProduct();
 $error = $cartmodel->addToCart($product->getId());
+$products = $productmodel->getProducts();
 
 // $title = 'Les tables'; // change selon l'id de la catégorie
 // $subTitle = "Trouvez votre bonheur en parcourant notre catalogue de tables d'occasion"; // change selon l'id de la catégorie
@@ -39,7 +40,7 @@ $error = $cartmodel->addToCart($product->getId());
                     <p class="text-lg"> <span class="font-bold">Couleur : </span><?= $product->getColor() ?></p>
                 </div>
 
-                <p class="text-right text-orange text-3xl font-bold"><?= $product->getPrice() ?>€</p>
+                <p class="text-right text-orange text-3xl font-bold"><?= number_format($product->getPrice(), 2, ',', ' '); ?>€</p>
             </div>
 
             <div class="flex space-x-10 justify-center ">
@@ -62,70 +63,131 @@ $error = $cartmodel->addToCart($product->getId());
             <hr class="block mx-auto border-darkgrey border-t-0 border-b-2 my-10 " />
         </div>
 
-        <!-- Produits similaires -->
-        <div class="container mx-auto p-6 bg-eggshell mt-20">
-            <h3 class="text-3xl font-semibold text-darkblue mb-10 text-center">Dans la même catégorie</h3>
-            <div class="flex items-center space-x-6">
-                <div class="slide flex items-center space-x-6">
-                    <div class="bg-white p-5 rounded-lg">
-                        <img class="h-[150px] w-[220px] mb-3" src=" https://media.istockphoto.com/photos/old-coffee-table-picture-id525954841?k=20&m=525954841&s=612x612&w=0&h=eVjoqEw6aoNbcwxmx6UbmHmiKUkzFhWU0JdSZXUCCqk=" alt="Table_basse_style_scandinave">
-                        <p class="text-lg font-semibold text-center">Table basse style scandinave</p>
-                        <p class="text-lg font-bold text-center">59,80€</p>
-                    </div>
+        <!-- Carroussel -->
+        <!-- Implement the carousel 
+        <div class="js-product-carousel flex space-x-3 justify-between mx-auto items-center">
 
-                    <div class="bg-white p-5 rounded-lg">
-                        <img class="h-[150px] w-[220px] mb-3" src=" https://media.istockphoto.com/photos/stylish-bright-yellow-chair-chair-in-room-with-ears-and-armrest-picture-id1304184858?k=20&m=1304184858&s=612x612&w=0&h=EK2mwhWbCMMU8WxCoi9cb5BZS-bFzy8QpdYxLhclsE0=" alt="Table_basse_style_scandinave">
-                        <p class="text-lg font-semibold text-center">Table basse style scandinave</p>
-                        <p class="text-lg font-bold text-center">59,80€</p>
-                    </div>
-
-                    <div class="bg-white p-5 rounded-lg">
-                        <img class="h-[150px] w-[220px] mb-3" src=" https://i.ibb.co/Wn754t5/buffet.jpg" alt="Table_basse_style_scandinave">
-                        <p class="text-lg font-semibold text-center">Table basse style scandinave</p>
-                        <p class="text-lg font-bold text-center">59,80€</p>
-                    </div>
-
-                    <div class="bg-white p-5 rounded-lg">
-                        <img class="h-[150px] w-[220px] mb-3" src=" https://i.ibb.co/Wn754t5/buffet.jpg" alt="Table_basse_style_scandinave">
-                        <p class="text-lg font-semibold text-center">Table basse style scandinave</p>
-                        <p class="text-lg font-bold text-center">59,80€</p>
-                    </div>
+            Previous button 
+            <a class="js-carousel-prev">
+                <div class="rounded-full bg-orange hover-bg-darkgrey py-3 px-5">
+                    <i class="fas fa-regular fa-angle-left fa-2x"></i>
                 </div>
-                
-                <!-- <div class="slide flex items-center space-x-6">
-                    <div class="bg-white p-5 rounded-lg">
-                        <img class="h-[150px] w-[220px] mb-3" src=" https://media.istockphoto.com/photos/old-coffee-table-picture-id525954841?k=20&m=525954841&s=612x612&w=0&h=eVjoqEw6aoNbcwxmx6UbmHmiKUkzFhWU0JdSZXUCCqk=" alt="Table_basse_style_scandinave">
-                        <p class="text-lg font-semibold text-center">Table basse style scandinave</p>
-                        <p class="text-lg font-bold text-center">59,80€</p>
+            </a>
+            <div class="js-product-list flex space-x-3 mx-auto items-center">
+                <?php //foreach ($products as $product_two) { 
+                ?>
+                    <div class="slide w-[200px] product">
+                        <img class="w-full h-[150px]" src="<?php // $product_two->getImage() 
+                                                            ?>">
+                        <a href="product_page.php?id=<?php // $product_two->getId() 
+                                                        ?>">
+                            <div class="w-full px-5 py-3 bg-zinc-600 hover:bg-zinc-800 text-center text-white"><?php // $product_two->getName() 
+                                                                                                                ?></div>
+                        </a>
                     </div>
-
-                    <div class="bg-white p-5 rounded-lg">
-                        <img class="h-[150px] w-[220px] mb-3" src=" https://media.istockphoto.com/photos/stylish-bright-yellow-chair-chair-in-room-with-ears-and-armrest-picture-id1304184858?k=20&m=1304184858&s=612x612&w=0&h=EK2mwhWbCMMU8WxCoi9cb5BZS-bFzy8QpdYxLhclsE0=" alt="Table_basse_style_scandinave">
-                        <p class="text-lg font-semibold text-center">Table basse style scandinave</p>
-                        <p class="text-lg font-bold text-center">59,80€</p>
-                    </div>
-
-                    <div class="bg-white p-5 rounded-lg">
-                        <img class="h-[150px] w-[220px] mb-3" src=" https://i.ibb.co/Wn754t5/buffet.jpg" alt="Table_basse_style_scandinave">
-                        <p class="text-lg font-semibold text-center">Table basse style scandinave</p>
-                        <p class="text-lg font-bold text-center">59,80€</p>
-                    </div>
-
-                    <div class="bg-white p-5 rounded-lg">
-                        <img class="h-[150px] w-[220px] mb-3" src=" https://i.ibb.co/Wn754t5/buffet.jpg" alt="Table_basse_style_scandinave">
-                        <p class="text-lg font-semibold text-center">Table basse style scandinave</p>
-                        <p class="text-lg font-bold text-center">59,80€</p>
-                    </div>
-                </div> -->
-
-                <button onclick="moveSlide(1)">
-                    <i class="ml-3 fas fa-regular fa-chevron-right fa-3x text-orange"></i>
-                </button>
+                <?php //} 
+                ?>
             </div>
+            Next button 
+            <a class="js-carousel-next">
+                <div class="rounded-full bg-blue hover-bg-darkgrey py-3 px-5">
+                    <i class="fas fa-regular fa-angle-right fa-2x"></i>
+                </div>
+            </a>
+        </div> -- > -->
 
+        <div class=" flex justify-between mx-auto items-center">
+            <a id = "buttonprev" onclick="moveSlide(-1)">
+                <div class="rounded-full bg-orange hover-bg-darkgrey py-3 px-5">
+                    <i class="fas fa-regular fa-angle-left fa-2x"></i>
+                </div>
+            </a>
+            <div class="flex space-x-3 mx-auto items-center">
+                <?php foreach ($products as $product) { ?>
+                    <div class="w-[200px] slide">
+                        <img class="w-full h-[150px]" src="<?= $product->getImage() ?>">
+                        <a href="product_page.php?id=<?= $product->getId() ?>">
+                            <div class="w-full px-5 py-3 bg-zinc-600 hover:bg-zinc-800 text-center text-white"><?= $product->getName() ?></div>
+                        </a>
+                    </div>
+                <?php } ?>
+            </div>
+            <!-- Next button -->
+            <a id = "buttonnext" onclick="moveSlide(1)">
+                <div class="rounded-full bg-blue hover-bg-darkgrey py-3 px-5">
+                    <i class="fas fa-regular fa-angle-right fa-2x"></i>
+                </div>
+            </a>
         </div>
+        <!-- <div class="h-[300px] js-product-carousel">
+            <div class="carousel__view">
+                <span class="carousel__control js-carousel-prev"><i class="icon">previous</i></span>
+                <span href="#" class="carousel__control js-carousel-next"><i class="icon">next</i></span>
+                <ul class="product-list js-product-list">
+                    <li class="product-list__item">
+                        <div data-slide="1" class="product">
+                            <img src="https://images.unsplash.com/photo-1487600849525-7d8eccadd679?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fGNhYmluZXR8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60" alt="">
+                        </div>
+                    </li>
+                    <li class="product-list__item">
+                        <div data-slide="2" class="product">
+                            <img src="https://media.istockphoto.com/photos/old-coffee-table-picture-id525954841?k=20&m=525954841&s=612x612&w=0&h=eVjoqEw6aoNbcwxmx6UbmHmiKUkzFhWU0JdSZXUCCqk=" alt="">
+                        </div>
+                    </li>
+                    <li class="product-list__item">
+                        <div data-slide="3" class="product">
+                            <img src="https://images.unsplash.com/photo-1602145461313-26c587cc0ca9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzV8fGxhbXB8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60" alt="">
+                        </div>
+                    </li>
+                    <li class="product-list__item">
+                        <div data-slide="4" class="product">
+                            <img src="https://images.unsplash.com/photo-1543512214-4f76e81f8bfc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fGxhbXB8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60" alt="">
+                        </div>
+                    </li>
+                    <li class="product-list__item">
+                        <div data-slide="5" class="product">
+                            <img src="https://images.unsplash.com/photo-1543512214-4f76e81f8bfc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fGxhbXB8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60" alt="">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div> -->
     </div>
 </section>
+<!-- <div class="container mx-auto p-6 bg-eggshell mt-20">
+    <h3 class="text-3xl font-semibold text-darkblue mb-10 text-center">Dans la même catégorie</h3>
+    <div class="flex items-center space-x-6">
+        <div class="slide flex items-center space-x-6">
+            <div class="bg-white p-5 rounded-lg">
+                <img class="h-[150px] w-[220px] mb-3" src=" https://media.istockphoto.com/photos/old-coffee-table-picture-id525954841?k=20&m=525954841&s=612x612&w=0&h=eVjoqEw6aoNbcwxmx6UbmHmiKUkzFhWU0JdSZXUCCqk=" alt="Table_basse_style_scandinave">
+                <p class="text-lg font-semibold text-center">Table basse style scandinave</p>
+                <p class="text-lg font-bold text-center">59,80€</p>
+            </div>
+
+            <div class="bg-white p-5 rounded-lg">
+                <img class="h-[150px] w-[220px] mb-3" src=" https://media.istockphoto.com/photos/stylish-bright-yellow-chair-chair-in-room-with-ears-and-armrest-picture-id1304184858?k=20&m=1304184858&s=612x612&w=0&h=EK2mwhWbCMMU8WxCoi9cb5BZS-bFzy8QpdYxLhclsE0=" alt="Table_basse_style_scandinave">
+                <p class="text-lg font-semibold text-center">Table basse style scandinave</p>
+                <p class="text-lg font-bold text-center">59,80€</p>
+            </div>
+
+            <div class="bg-white p-5 rounded-lg">
+                <img class="h-[150px] w-[220px] mb-3" src=" https://i.ibb.co/Wn754t5/buffet.jpg" alt="Table_basse_style_scandinave">
+                <p class="text-lg font-semibold text-center">Table basse style scandinave</p>
+                <p class="text-lg font-bold text-center">59,80€</p>
+            </div>
+
+            <div class="bg-white p-5 rounded-lg">
+                <img class="h-[150px] w-[220px] mb-3" src=" https://i.ibb.co/Wn754t5/buffet.jpg" alt="Table_basse_style_scandinave">
+                <p class="text-lg font-semibold text-center">Table basse style scandinave</p>
+                <p class="text-lg font-bold text-center">59,80€</p>
+            </div>
+        </div>
+
+        <button onclick="moveSlide(1)">
+            <i class="ml-3 fas fa-regular fa-chevron-right fa-3x text-orange"></i>
+        </button>
+    </div>
+</div> -->
 
 <!-- Modale produit disponible dans magasin -->
 <section id="storeModal" class="fixed hidden inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">

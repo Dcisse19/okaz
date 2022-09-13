@@ -93,7 +93,7 @@ require_once './includes/title.php';
                     <div class="flex flex-col space-y-3">
                         <h3 class="text-2xl font-semibold"><?= $product->getName() ?></h3>
                         <h3 class="font-normal text-xl"><?= $product->getDimensions() ?></h3>
-                        <h3 class="text-xl"><?= $product->getPrice() ?>€ TTC</h3>
+                        <h3 class="text-xl"><?= number_format($product->getPrice(), 2, ',', ' '); ?>€ TTC</h3>
                     </div>
                 </div>
             <?php } ?>

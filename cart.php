@@ -102,7 +102,7 @@ require_once './includes/title.php';
                             <h3 class="text-2xl font-semibold"><?= $product->getName() ?></h3>
                         </a>
                         <h3 class="font-normal text-xl"><?= $product->getDimensions() ?></h3>
-                        <h3 class="text-xl"><?= $product->getPrice() ?>€ TTC</h3>
+                        <h3 class="text-xl"><?= number_format($product->getPrice(), 2, ',', ' '); ?>€ TTC</h3>
                         <form action="cart.php?product_id=<?= $product->getId() ?>" method="POST">
                             <button class="hover-text-orange underline">Retirer du panier</button>
                         </form>

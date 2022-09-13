@@ -20,4 +20,15 @@ class StoreModel extends MainModel {
         } 
         return $store;
     }
+
+    public function getStore() {
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST["select_store"])){
+            $storeId = $_POST["select_store"];
+            $query = $this->pdo->query("SELECT * FROM dda_stores WHERE id = $storeId");
+            $query->setFetchMode(PDO::FETCH_CLASS, "Store");
+            $store = $query->fetch();
+            return $store;
+        }
+    }
 }

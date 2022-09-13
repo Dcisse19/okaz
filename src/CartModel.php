@@ -68,7 +68,7 @@ class CartModel extends MainModel
         foreach ($cart as $product) {
             $total = $total + $product->getPrice();
         }
-        return number_format($total, 2, '.', ' ');
+        return number_format($total, 2, ',', ' ');
     }
 
     /**
