@@ -17,7 +17,7 @@
                 <h2><i class="fa-regular fa-circle-question fa-xl text-black p-5"></i>Aide & contact </h2>
             </li>
             <li class="text-center"><a href="contact.php">Nous contacter </a></li>
-            <li class=" text-center"><a href="#">FAQ</a></li>
+            <li class=" text-center"><a href="faq.php">FAQ</a></li>
         </ul>
 
     </div>

@@ -1,50 +1,5 @@
-
-// // Caroussel
-// (function() {
-//   var carousels = document.querySelectorAll('.js-product-carousel');
-
-//   [].forEach.call(carousels, function(carousel) {
-//     carouselize(carousel);
-//   });
-
-// })();
-
-// function carouselize(carousel) {
-//   var productList = carousel.querySelector('.js-product-list');
-//   var productListWidth = 0;
-//   var productListSteps = 0;
-//   var products = carousel.querySelectorAll('.product');
-//   var productAmount = 0;
-//   var productAmountVisible = 4;
-//   var carouselPrev = carousel.querySelector('.js-carousel-prev');
-//   var carouselNext = carousel.querySelector('.js-carousel-next');
-
-//   //Count all the products
-//   [].forEach.call(products, function(product) {
-//     productAmount++;
-//     productListWidth += 250;
-//     productList.style.width = productListWidth+"px";
-//   });
-
-//   carouselNext.onclick = function() {
-//     if(productListSteps < productAmount-productAmountVisible) {
-//       productListSteps++;
-//       moveProductList();
-//     }
-//   }
-//   carouselPrev.onclick = function() {
-//     if(productListSteps > 0) {
-//       productListSteps--;
-//       moveProductList();
-//     }
-//   }
-
-//   // This is a bit hacky, let me know if you find a better way to do this!
-//   // Move the carousels product-list
-//   function moveProductList() {
-//     productList.style.transform = "translateX(-"+205*productListSteps+"px)";
-//   }
-// }
+const slides = document.getElementsByClassName("slide");
+console.info(slides.length);
 
 let slideIndex = 1;
 showSlide(slideIndex);
@@ -57,19 +12,16 @@ function moveSlide(moveStep) {
 
 
 function showSlide(n) {
-  // if (n < x){
-  //  var y = x 
-  // }
-
+  console.info(n);
   let i;
   const slides = document.getElementsByClassName("slide");
   const buttonPrev = document.getElementById("buttonprev")
   const buttonNext = document.getElementById("buttonnext")
 
-  if (n == slides.length) {
-    buttonNext.style.display = "none";
+  if (n == (slides.length-2) || slides.length < 5) {
+    buttonNext.disabled = true;
   } else {
-    buttonNext.style.display = "block";
+    buttonNext.disabled = false;
   }
 
   // if (n > slides.length) { slideIndex = 1 }
@@ -82,12 +34,12 @@ function showSlide(n) {
 
   // show the active slide
   if (n == 1) {
+    buttonPrev.disabled = true;
     for (i = 0; i < 4; i++) {
-      buttonPrev.style.display = "none";
       slides[i].classList.remove('hidden');
     }
   } else {
-    buttonPrev.style.display = "block";
+    buttonPrev.disabled = false;
   }
 
   if (n > x) {
@@ -96,7 +48,7 @@ function showSlide(n) {
     } x = x + 1
   }
 
-  if (n < x) {
+  if (n <= x) {
     for (i = (n - 1); i < (n + 3); i++) {
       slides[i].classList.remove('hidden');
     } x = x - 1

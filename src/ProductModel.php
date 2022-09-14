@@ -6,7 +6,7 @@ require_once dirname(__DIR__) . "/utils/utils.php";
 class ProductModel extends MainModel
 {
     public function getProducts(){
-        $query = $this->pdo->query("SELECT * FROM `dda_product` ORDER BY `id` LIMIT 14");
+        $query = $this->pdo->query("SELECT * FROM `dda_product` ORDER BY `id` LIMIT 21");
         return $query->fetchAll(PDO::FETCH_CLASS, "Product");
     }
 
@@ -20,6 +20,24 @@ class ProductModel extends MainModel
         if (!$products) {
             redirect();
         }
+        return $products;
+    }
+
+    public function getProductsOfSameCategory()
+    {
+        $productId = checkQueryId();
+        $query = $this->pdo->query("SELECT * FROM `dda_product` WHERE `id`= $productId");
+        $query->setFetchMode(PDO::FETCH_CLASS, "Product");
+        $product = $query->fetch();
+
+        $availability = 1;
+        $categoryId = $product->getId_dda_product_category();
+        $query = $this->pdo->query("SELECT * FROM `dda_product` WHERE (`id_dda_product_category` = $categoryId AND `availability`= $availability AND `id` != $productId)");
+        $products = $query->fetchAll(PDO::FETCH_CLASS, "Product");
+
+        // if (!$products) {
+        //     redirect();
+        // }
         return $products;
     }
 
@@ -87,8 +105,7 @@ class ProductModel extends MainModel
 
             $price_min = filter_var($price_min, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
             $price_max = filter_var($price_max, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
-            dump($price_min);
-            dump($price_max);
+        
 
             $query = $this->pdo->query("SELECT * FROM dda_product WHERE (price >= $price_min AND price <= $price_max)");
             $price_results = $query->fetchAll(PDO::FETCH_CLASS, "Product");

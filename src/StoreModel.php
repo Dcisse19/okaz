@@ -31,4 +31,11 @@ class StoreModel extends MainModel {
             return $store;
         }
     }
+
+    public function getAllStores() {
+
+            $query = $this->pdo->query("SELECT * FROM dda_stores");
+            $stores = $query->fetchAll(PDO::FETCH_CLASS, "Store");
+            return $stores;       
+    }
 }

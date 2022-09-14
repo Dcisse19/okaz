@@ -8,11 +8,12 @@
         <ul class="text-white text-2xl  list-disc">
             <li class="mb-4"><a  href="#">Politique de confidentialité</a></li>
             <li class="mb-4"><a  href="#">CGU et CGV</a></li>
-            <li><a href="#">Plan du site</a></li>
+            <li><a href="site_plan.php">Plan du site</a></li>
         </ul>
         <ul class="text-white text-2xl  list-disc">
-            <li class="mb-4"><a href="#">FAQ</a></li>
-            <li><a href="#">Nous contacter</a></li>
+            <li class="mb-4"><a href="stores.php">Nos magasins</a></li>
+            <li class="mb-4"><a href="faq.php">FAQ</a></li>
+            <li><a href="contact.php">Nous contacter</a></li>
         </ul>
     </div>
 </footer>

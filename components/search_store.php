@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once dirname(__DIR__) . "/src/StoreModel.php";
 $storemodel = new StoreModel();
 $store = $storemodel->getStore();
@@ -26,26 +26,26 @@ $store = $storemodel->getStore();
     </div>
 </section>
 
-<?php if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST["select_store"])){?>
-<section id="store_searchModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
-    <div class="relative container mx-auto top-28 w-1/2 bg-white p-10">
-        <!-- <div class="container p-10"> -->
+<?php if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST["select_store"])) { ?>
+    <section id="store_searchModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
+        <div class="relative container mx-auto top-28 w-1/2 bg-white p-10">
+            <!-- <div class="container p-10"> -->
             <button class="rounded p-2 bg-blue hover-bg-darkgrey float-right">
                 <i id="closeStore_searchModal" class="fa-solid fa-xmark fa-xl"></i>
             </button>
-        <h3 class="text-orange text-3xl font-semibold text-center mb-10 uppercase"><?= $store->getStore_name(); ?></h3>
-        <div class="flex flex-col gap-y-4">
-            <p class="text-lg"> <span class="font-bold">Adresse : </span><?= $store->getStore_address(). ', '. $store->getStore_postal_code() . ' '. $store->getStore_city()?></p>
-            <p class="text-lg"> <span class="font-bold">Téléphone : </span><?= $store->getStore_telephone(); ?></p>
-            <p class="text-lg"> <span class="font-bold">Horaires d'ouverture : </span>
-            <br />Du Lundi au Vendredi : de 10h à 18h
-            <br />Samedi : de 9h30 à 19h
-            <br />Dimanche : Fermé
-        </p>
-    </div>
-    <!-- </div> -->
-</div>
-</section>
+            <h3 class="text-orange text-3xl font-semibold text-center mb-10 uppercase"><?= $store->getStore_name(); ?></h3>
+            <div class="flex flex-col gap-y-4">
+                <p class="text-lg"> <span class="font-bold">Adresse : </span><?= $store->getStore_address() . ', ' . $store->getStore_postal_code() . ' ' . $store->getStore_city() ?></p>
+                <p class="text-lg"> <span class="font-bold">Téléphone : </span><?= $store->getStore_telephone(); ?></p>
+                <p class="text-lg"> <span class="font-bold">Horaires d'ouverture : </span>
+                    <br />Du Lundi au Vendredi : de 10h à 18h
+                    <br />Samedi : de 9h30 à 19h
+                    <br />Dimanche : Fermé
+                </p>
+            </div>
+            <!-- </div> -->
+        </div>
+    </section>
 <?php } ?>
 
 <script src="./JS/search_store.js"></script>

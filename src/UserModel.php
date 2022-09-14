@@ -338,4 +338,43 @@ class UserModel extends MainModel
     //    dd("Erreur dans la logique");
      }
    }
+
+   public function registerContactForm(){
+
+    if ($_SERVER["REQUEST_METHOD"] === "POST"){
+
+        $error = [
+            "errorEmail" => "",
+            "successfulRegister" => "",
+        ];
+        
+        $name = $_POST["name"];
+        $email = $_POST["email"];
+        $subject = $_POST["subject"];
+        $message = $_POST["message"];
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $error["errorEmail"] = "Merci de remplir un email valide";
+            return $error;
+        }
+
+        $name = htmlspecialchars($name);
+        $subject = htmlspecialchars($subject);
+        $message = htmlspecialchars($message);
+        $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+
+        $query = $this->pdo->prepare("INSERT INTO dda_contact (name, email, subject, message) VALUES (:name, :email, :subject, :message)");
+        $success = $query->execute([
+            ":name" => $name,
+            ":email" => $email,
+            ":subject" => $subject,
+            ":message" => $message,
+        ]);
+
+        if ($success) {
+            $error["successfulRegister"] = "Votre message a bien été envoyé";
+            return $error;
+        }
+    }
+   }
 }

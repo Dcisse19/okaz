@@ -77,8 +77,11 @@ $products = $productmodel->getFiveLastsProducts();
         <div class="w-3/4 flex-col px-16">
             <h1 class="text-4xl text-justify font-bold uppercase  mb-10"> Qui sommes-nous ? </h1>
             <p class="text-xl tracking-wider mb-10">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores, reprehenderit pariatur? Dignissimos, voluptate eligendi rem pariatur repudiandae at, aliquid qui a, odit in ducimus illo suscipit praesentium id sed quod? Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                </br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio obcaecati dicta deleniti molestias.
+            OKAZ est une entreprise créée en 2012, qui remet en circulation des articles d'ameublement. Un dépôt-vente dans lequel on peut acheter et vendre des meubles d'occasion.                
+        </br>
+        </br>
+        Nous proposons un large choix de mobiliers : chaises, tables, lits, luminaires...
+        </br>Vous pouvez acheter nos meubles d'occasion directement en ligne ou vous rendre dans l'un de nos nombreux magasins répartis sur toute la France.
             </p>
 
             <div>

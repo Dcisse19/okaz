@@ -11,13 +11,16 @@ require_once './includes/title.php';
 <!-- Contenu de la page -->
 
 
-<section id="quiSommeNous" class="py-20 px-36 bg-white">
+<section id="quiSommeNous" class="py-14 px-36 bg-white">
     <div class="container mx-auto  flex justify-between">
-        <div class="w-3/4 grid gap-y-4">
+        <div class="w-3/4 gap-y-4">
             <h1 class="text-4xl text-justify font-bold uppercase  mb-10"> NOTRE HISTOIRE </h1>
-            <p class="text-xl tracking-wider  mb-10">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores, reprehenderit pariatur? Dignissimos, voluptate eligendi rem pariatur repudiandae at, aliquid qui a, odit in ducimus illo suscipit praesentium id sed quod? Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                </br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio obcaecati dicta deleniti molestias.
+            <p class="text-xl tracking-wider  mb-10 text-justify">
+                Notre histoire débute en 2012 avec la création de notre tout premier magasin OKAZ à Villeneuve-le-Roi en Île-de-France.
+                Très vite, l'activité se développe grâce à l'intérêt grandissant du grand public pour le marché de l'occasion. Huit années plus tard, nous possédons 9 magasins OKAZ réparties sur toute la France.
+                <br />
+                <br />
+                Nous décidons, en 2022, de développer notre activité en ligne avec la création de notre site internet OKAZ.
             </p>
         </div>
         <div class="w-1/4">
@@ -38,21 +41,21 @@ require_once './includes/title.php';
                 <h4 class="text-center text-darkblue text-2xl font-bold uppercase">Qualité</h4>
                 <i class="text-center text-orange fa-solid fa-star fa-3x"></i>
                 <p class="text-center ">
-                    “Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+                    Tous nos produits d'occasion sont contrôlés, vérifiés et leur état est certifié avant la mise en vente en ligne ou dans nos magasins.
                 </p>
             </div>
             <div class="container mx-auto p-5 w-[300px] h-[350px] bg-white grid gap-y-2 border border-orange">
                 <h4 class="text-center text-darkblue text-2xl font-bold uppercase">Fiabilité</h4>
                 <i class="text-center text-orange fa-solid fa-handshake fa-3x"></i>
                 <p class="text-center ">
-                    “Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
-                </p>
+                Nos équipes sont disponibles et demeurent à votre écoute pour toute question concernant les produits ou les services que ce soit avant ou après la vente.
+            </p>
             </div>
             <div class="container mx-auto p-5 w-[300px] h-[350px] bg-white grid gap-y-2 border border-orange">
                 <h4 class="text-center text-darkblue text-2xl font-bold uppercase">Economies</h4>
                 <i class="text-center text-orange fa-solid fa-sack-dollar fa-3x"></i>
                 <p class="text-center ">
-                    “Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+                    Réalisez des économies en achetant des meubles d'occasions haute-gamme et en proposant vos propres meubles à la vente dans nos magasins.
                 </p>
             </div>
 
@@ -60,7 +63,7 @@ require_once './includes/title.php';
                 <h4 class="text-center text-darkblue text-2xl font-bold uppercase">Respect de l'environnement</h4>
                 <i class="text-center text-orange fa-solid fa-earth-americas fa-3x"></i>
                 <p class="text-center ">
-                    “Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+                    Ne jetez plus vos anciens meubles ! Recyclez-les en les proposant à la vente. Nos équipes se chargent d'estimer votre bien au prix le plus juste.
                 </p>
             </div>
         </div>
