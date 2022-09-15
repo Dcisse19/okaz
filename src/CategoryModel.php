@@ -25,4 +25,41 @@ class CategoryModel extends MainModel
         }
         return $category;
     }
+
+    public function addCategory(){
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+            $data = [
+                "errorImage" => "",
+                "successfulAdd" => ""
+            ];
+
+            $category_name = $_POST["category_name"];
+            $category_image = $_POST["category_image"];
+            $category_description = $_POST["category_description"];
+
+            if (!filter_var($category_image, FILTER_VALIDATE_URL)) {
+                $data["errorImage"] = "Merci de rentrer une URL valide";
+                return $data;
+            }
+
+            $category_name = htmlspecialchars($category_name);
+            $category_description = htmlspecialchars($category_description);
+            $category_image = filter_var($category_image, FILTER_SANITIZE_URL);
+
+            $query = $this->pdo->prepare("INSERT INTO dda_product_category (name_category, image_category, description_category) 
+            VALUES (:name_category, :image_category, :description_category)");
+
+            $success = $query->execute([
+                ":name_category" => $category_name,
+                ":image_category" => $category_image,
+                ":description_category" => $category_description
+            ]);
+
+            if ($success){
+                $data["successfulAdd"] = "La catégorie a bien été ajoutée";
+                return $data;
+            }
+        }
+    }
 }

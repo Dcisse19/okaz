@@ -5,8 +5,8 @@ require_once dirname(__DIR__) . "/utils/utils.php";
 
 class ProductModel extends MainModel
 {
-    public function getProducts(){
-        $query = $this->pdo->query("SELECT * FROM `dda_product` ORDER BY `id` LIMIT 21");
+    public function getAllProducts(){
+        $query = $this->pdo->query("SELECT * FROM `dda_product`");
         return $query->fetchAll(PDO::FETCH_CLASS, "Product");
     }
 

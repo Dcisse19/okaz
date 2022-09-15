@@ -109,7 +109,7 @@ $results = $productmodel->getProductsByKeyword();
                     <div class="flex space-x-10">
                         <img class="h-[170px] min-w-[200px] w-[200px]" src="<?= $category->getImage_category() ?>" alt="<?= $category->getName_category() ?>">
                         <div class="flex flex-col space-y-3">
-                            <a href="category.php?id=<?= $category->getId() ?>" class="text-2xl uppercase text-orange font-semibold"><?= $category->getName_category() ?></a>
+                            <a href="categories.php?id=<?= $category->getId() ?>" class="text-2xl uppercase text-orange font-semibold"><?= $category->getName_category() ?></a>
                             <hr class="border-darkgrey border-t-0 border-b-2 mb-32" />
                             <p class=""><?= $category->getDescription_category() ?></p>
                         </div>

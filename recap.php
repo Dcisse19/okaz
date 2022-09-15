@@ -99,7 +99,7 @@ require_once './includes/title.php';
             <?php } ?>
 
             <div class=" grid p-5 gap-10">
-                <h4 class="text-2xl text-right"> <span class="font-bold">Total : </span> <?= $orderInfo["payment_amount"] ?>€ TTC</h4>
+                <h4 class="text-2xl text-right"> <span class="font-bold">Total : </span> <?= number_format($orderInfo["payment_amount"], 2, ',', ' ') ?>€ TTC</h4>
                 <h4 class="text-xl text-left"> <span class="font-bold">Moyen de paiement : </span> <br />
                     Carte N° <?= $data["payment_type"] ?>
                 </h4>
