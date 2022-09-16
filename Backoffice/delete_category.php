@@ -11,8 +11,8 @@ $categories = $categorymodel->getAllCategories();
             <article class="card" style="width: 18rem;">
                 <img src="<?= $category->getImage_category(); ?>" class="card-img-top" alt="<?= $category->getName_category(); ?>">
                 <div class="card-body">
-                    <h5 class="card-title"><?= $category->getName_category(); ?></h5>
-                    <a href="#" class="delete_btn btn btn-primary">Supprimer</a>
+                    <h5 class="card-title-first"><?= $category->getName_category(); ?></h5>
+                    <a href="delete_category_form.php?id=<?= $category->getId(); ?>" class="delete_btn btn btn-primary">Supprimer</a>
                 </div>
             </article>
         <?php } ?>

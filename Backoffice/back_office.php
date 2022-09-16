@@ -2,8 +2,8 @@
 <section class="page_main">
     <div >
         <h2>Bienvenue dans l'espace Back-office du site OKAZ</h2>
-        <p>En tant qu'administrateur, vous pouvez ajouter, modifier ou supprimer le contenu des catégories et des produits</p>
-        <p>Pour commencer, selectionner une action dans la barre de navigation au-dessus.</p>
+        <p>En tant qu'administrateur, vous pouvez ajouter, modifier ou supprimer le contenu des catégories et des produits.</p>
+        <p>Pour commencer, selectionnez une action dans la barre de navigation ci-dessus.</p>
     </div>
 </section>
 

@@ -26,30 +26,30 @@ $user = getLoggedUser();
 
 <body>
     <div class="">
-        <header class="py-3 px-20 bg-darkblue">
+        <header class="py-2 px-4 sm:px-10 md:py-3 md:px-20 bg-darkblue">
             <div class="container flex mx-auto justify-between items-center">
                 <div class="flex place-items-center gap-3">
-                    <i class="fa-brands fa-facebook-f fa-xl" style="--fa-primary-color: white"></i>
-                    <i class="fa-brands fa-instagram fa-xl"></i>
-                    <i class="fa-brands fa-twitter fa-xl"></i>
+                    <i class="fa-brands fa-facebook-f text-base sm:text-xl md:text-2xl" style="--fa-primary-color: white"></i>
+                    <i class="fa-brands fa-instagram text-base sm:text-xl md:text-2xl"></i>
+                    <i class="fa-brands fa-twitter text-base sm:text-xl md:text-2xl"></i>
                 </div>
                 <?php if ($user) { ?>
-                    <div class="flex justify-between items-center space-x-14">
-                        <div class="flex items-center space-x-5">
+                    <div class="flex justify-between items-center space-x-6 md:space-x-14">
+                        <div class="flex items-center md:space-x-5 space-x-2">
                             <?php if($_SESSION["okaz_logged_user"]["role"] == "admin") { ?>
-                            <a class="text-lg text-white hover-text-orange uppercase mr-5" href="./Backoffice/back_office.php">Back-Office</a>
+                            <a class="text-sm sm:text-base md:text-lg text-white hover-text-orange uppercase md:mr-5" href="./Backoffice/back_office.php">Back-Office</a>
                             <?php } ?>
                             <a href="myaccount.php">
-                                <div class=" bg-orange py-1 px-3 hover-bg-blue rounded-2xl flex gap-3 place-items-center">
-                                    <i class="fa-solid fa-circle-user text-white  fa-xl"></i>
-                                    <p class="text-lg text-white font-semibold">Mon compte</p>
+                                <div class=" md:bg-orange-500 sm:py-0 sm:px-2 md:px-3 md:hover:bg-blue-500 rounded-2xl flex gap-3 place-items-center ">
+                                    <i class="fa-solid fa-circle-user text-white text-base sm:text-xl md:text-2xl"></i>
+                                    <p class="sm:text-base md:text-lg text-white font-semibold hidden md:block">Mon compte</p>
                                 </div>
                             </a>
-                            <a href="cart.php"> <i class="place-self-center text-white hover:text-gray-300 fa-solid fa-cart-arrow-down fa-xl"></i></a>
+                            <a href="cart.php"> <i class="place-self-center text-white hover:text-gray-300 fa-solid fa-cart-arrow-down text-base sm:text-xl md:text-2xl"></i></a>
                         </div>
-                        <form action="logout.php" class="ml-6" method="post">
+                        <form action="logout.php" class="md:ml-6" method="post">
                             <button class="text-white hover:text-gray-300">
-                                <i class="place-self-center fa-solid fa-power-off fa-xl"></i>
+                                <i class="place-self-center fa-solid fa-power-off text-base sm:text-xl md:text-2xl"></i>
                             </button>
                         </form>
                         <!-- <a href="logout.php.php"> <i class="place-self-center text-white hover:text-gray-300 fa-solid fa-power-off fa-xl"></i></a> -->
@@ -58,12 +58,12 @@ $user = getLoggedUser();
                     <div class="flex justify-between items-center gap-5">
                         <ul class="list-none flex gap-6 justify-between items-center">
                             <li>
-                                <a class="text-lg text-white hover-text-orange" href="login.php">
-                                    <i class="fa-solid fa-arrow-right-to-bracket mr-3"></i>Connexion</a>
+                                <a class="sm:text-base md:text-lg text-white hover-text-orange" href="login.php">
+                                    <i class="fa-solid fa-arrow-right-to-bracket mr-3 text-base sm:text-xl md:text-2xl"></i>Connexion</a>
                             </li>
                             <li>
-                                <a class="text-lg text-white hover-text-orange" href="signup.php">
-                                    <i class="fa-solid fa-inbox mr-3"></i>Inscription</a>
+                                <a class="sm:text-base md:text-lg text-white hover-text-orange" href="signup.php">
+                                    <i class="fa-solid fa-inbox mr-3 text-base sm:text-xl md:text-2xl"></i>Inscription</a>
                             </li>
                         </ul>
                     </div>
@@ -71,23 +71,23 @@ $user = getLoggedUser();
             </div>
         </header>
 
-        <nav class="py-4 px-20 border-b-slate-400 border-2 bg-white ">
+        <nav class="py-3 px-4 sm:py-4  sm:px-10 md:py-4 md:px-20 border-b-slate-400 border-2 bg-white ">
             <div class="container mx-auto flex justify-between items-center">
                 <a href="index.php">
-                    <img class="w-20" src="./images/logo_okaz.png" alt="logo_okaz">
+                    <img class="w-14 sm:w-16 md:w-20" src="./images/logo_okaz.png" alt="logo_okaz">
                 </a>
-                <ul class="list-none flex gap-6 justify-between items-center">
+                <ul class="list-none flex space-x-3 sm:space-x-6 justify-between items-center">
                     <li>
-                        <a class="text-xl  text-darkgrey hover-text-orange active-text-orange" href="index.php">Acceuil</a>
+                        <a class="text-sm sm:text-lg md:text-xl text-darkgrey hover-text-orange active-text-orange" href="index.php">Acceuil</a>
                     </li>
                     <li>
-                        <a class="text-xl text-darkgrey hover-text-orange active:text-orange" href="about.php">A propos</a>
+                        <a class="text-sm sm:text-lg md:text-xl text-darkgrey hover-text-orange active:text-orange" href="about.php">A propos</a>
                     </li>
                     <li>
-                        <a class="text-xl text-darkgrey hover-text-orange active-text-orange" href="shop.php">Boutique</a>
+                        <a class="text-sm sm:text-lg md:text-xl text-darkgrey hover-text-orange active-text-orange" href="shop.php">Boutique</a>
                     </li>
                     <li>
-                        <a class="text-xl text-darkgrey hover-text-orange active-text-orange" href="contact.php">Contact</a>
+                        <a class="text-sm sm:text-lg md:text-xl text-darkgrey hover-text-orange active-text-orange" href="contact.php">Contact</a>
                     </li>
                 </ul>
             </div>

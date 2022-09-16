@@ -9,7 +9,7 @@ $product = $productmodel->getOneProduct();
 $storemodel = new StoreModel();
 $store = $storemodel->getStoreByProduct();
 $error = $cartmodel->addToCart($product->getId());
-$products = $productmodel->getProducts();
+// $products = $productmodel->getAllProducts();
 $sameCategoryProducts = $productmodel->getProductsOfSameCategory();
 // dump($sameCategoryProducts);
 

@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once dirname(__DIR__) . "/utils/utils.php";
-require_once dirname(__DIR__) .'/vendor/autoload.php';
+require_once dirname(__DIR__) . '/vendor/autoload.php';
 $whoops = new \Whoops\Run;
 $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
 $whoops->register();
@@ -9,6 +9,7 @@ $user = getLoggedUser();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,15 +25,15 @@ $user = getLoggedUser();
 <body>
     <header>
         <nav>
-            <ul class="navigate">
-                <li><a href="back_office.php">BACK OFFICE</a></li>
-                <li><a href="../index.php">ACCEUIL OKAZ</a></li>
-            </ul>
+            <div class="navigate">
+                <i class="fas fa-thin fa-arrow-left-long"></i><a href="../index.php">Retourner sur OKAZ</a>
+            </div>
             <div class="modify">
+                <a class="modify-link" href="back_office.php">BACK OFFICE</a>
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a href='#' class="modify-link dropdown-toggle" type="" data-bs-toggle="dropdown" aria-expanded="false">
                         Catégories
-                    </button>
+                    </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="add_category.php">Ajouter</a></li>
                         <li><a class="dropdown-item" href="modify_category.php">Modifier</a></li>
@@ -40,9 +41,9 @@ $user = getLoggedUser();
                     </ul>
                 </div>
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a href='#' class="modify-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Produits
-                    </button>
+                    </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="add_product.php">Ajouter</a></li>
                         <li><a class="dropdown-item" href="modify_product.php">Modifier</a></li>

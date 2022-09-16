@@ -47,7 +47,7 @@ require_once './includes/title.php';
                 <h3 class="text-center  text-orange text-4xl font-bold uppercase">#4</h3>
                 <h4 class="text-center text-2xl uppercase">Mise en vente</h4>
                 <p class="text-center text-lg ">
-                   OKAZ s’occupe de tout pour vous. Nos équipes se charge de l’exposition et de la vente sur notre site et en magasin. 
+                   OKAZ s’occupe de tout pour vous. Nos équipes se chargent de l’exposition et de la vente sur notre site et en magasin. 
                 </p>
             </div>
         </div>

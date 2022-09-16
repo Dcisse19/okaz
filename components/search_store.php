@@ -2,25 +2,19 @@
 require_once dirname(__DIR__) . "/src/StoreModel.php";
 $storemodel = new StoreModel();
 $store = $storemodel->getStore();
-// $name = $store["store_name"];
+$stores = $storemodel->getAllStores();
 // dump($store);
 
 ?>
-<section id="" class="py-28 px-36 bg-eggshell ">
+<section id="" class="py-7 px-4 sm:py-10 sm:px-16 md:py-14 md:px-20 lg:py-28 lg:px-36 bg-eggshell ">
     <div class="flex flex-col items-center">
-        <h1 class="text-4xl font-semibold uppercase font-sans mb-14 text-center" id="searchTitle"> Trouvez un magazin Okaz près de chez vous <i id="searchIcon" class="ml-4 fas fa-regular fa-magnifying-glass-location fa-lg"></i></h1>
-        <form id="searchStoreForm" action="" method="POST" class="rounded-full w-2/3 border-2 border-orange px-4 py-3 bg-white" data-bs-toggle="modal">
-            <select value="" class="select_store bg-white w-full text-lg outline-none" name="select_store" id="select_store" onchange="this.form.submit()">
+        <h1 class="text-xl sm:text-2xl md:text-4xl sm:leading-normal md:leading-snug font-semibold uppercase font-sans mb-8 md:mb-14 text-center " id="searchTitle"> Trouvez un magazin Okaz près de chez vous <i id="searchIcon" class="ml-4 fas fa-regular fa-magnifying-glass-location md:text-4xl"></i></h1>
+        <form id="searchStoreForm" action="" method="POST" class="rounded-full w-2/3 border-2 border-orange px-1 py-1 sm:px-2 sm:py-1 md:px-3 md:py-2 lg:px-4 lg:py-3 bg-white" data-bs-toggle="modal">
+            <select value="" class="select_store bg-white w-full text-sm sm:text-base md:text-lg outline-none" name="select_store" id="select_store" onchange="this.form.submit()">
                 <option value="">-- Sélectionnez un magasin --</option>
-                <option class="" value="1">Okaz - Villeneuve-le-Roi</option>
-                <option class="" value="2">Okaz - Evry</option>
-                <option class="" value="3">Okaz - Coignières</option>
-                <option class="" value="4">Okaz - Orléans</option>
-                <option class="" value="5">Okaz - Bordeaux</option>
-                <option class="" value="6">Okaz - Dunkerque</option>
-                <option class="" value="7">Okaz - Strasbourg</option>
-                <option class="" value="8">Okaz - Nantes</option>
-                <option class="" value="9">Okaz - Aix-en-Provence</option>
+                <?php foreach ($stores as $one_store) { ?>
+                    <option class="capitalize" value="<?= $one_store->getId(); ?>"><?= $one_store->getStore_Name() ; ?></option>
+                <?php } ?>
             </select>
         </form>
     </div>

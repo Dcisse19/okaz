@@ -11,7 +11,7 @@ $products = $productmodel->getAllProducts();
             <article class="card" style="width: 18rem;">
                 <img src="<?= $product->getImage(); ?>" class="card-img-top" alt="<?= $product->getName(); ?>">
                 <div class="card-body">
-                    <h5 class="card-title"><?= $product->getName(); ?></h5>
+                    <h5 class="card-title-first"><?= $product->getName(); ?></h5>
                     <a href="modify_product_form.php?id=<?= $product->getId(); ?>" class="modify_btn btn btn-primary">Modifier</a>
                 </div>
             </article>

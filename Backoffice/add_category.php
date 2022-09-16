@@ -9,7 +9,7 @@ $data = $categorymodel->addCategory();
     <?php if (isset($data) && !empty($data["successfulAdd"])) { ?>
         <p id="message"><?php echo ($data["successfulAdd"])  ?></p>
     <?php } ?>
-    <form method="POST">
+    <form class="form_post" method="POST">
         <div class="mb-4">
             <label for="category_name" class="form-label">Nom de la catégorie<span> *</span></label>
             <input value="" type="text" class="form-control" id="category_name" name="category_name" required>
