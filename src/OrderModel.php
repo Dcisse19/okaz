@@ -67,8 +67,8 @@ class OrderModel extends MainModel
 
             $cart = $cartmodel->getCart();
             $payment = $cartmodel->getFullPrice($cart);
-            $payment_amount = str_replace(' ', '', $payment);
-            $payment_amount = str_replace(',', '.', $payment);
+            $payment_reformated = str_replace(' ', '', $payment);
+            $payment_amount = str_replace(',', '.', $payment_reformated);
             $cart_id = $cartmodel->getCartById();
 
 

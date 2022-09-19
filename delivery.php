@@ -1,6 +1,7 @@
 <?php
 require_once "./src/UserModel.php";
 require_once './includes/header.php';
+dump($_SESSION['okaz_logged_user']);
 if ($_SESSION['okaz_logged_user']["orderComplete"] == 'yes') {
     $_SESSION['okaz_logged_user']["orderComplete"] = '';
     header("Location: index.php");

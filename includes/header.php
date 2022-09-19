@@ -10,7 +10,6 @@ $user = getLoggedUser();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -52,7 +51,6 @@ $user = getLoggedUser();
                                 <i class="place-self-center fa-solid fa-power-off text-base sm:text-xl md:text-2xl"></i>
                             </button>
                         </form>
-                        <!-- <a href="logout.php.php"> <i class="place-self-center text-white hover:text-gray-300 fa-solid fa-power-off fa-xl"></i></a> -->
                     </div>
                 <?php } else { ?>
                     <div class="flex justify-between items-center gap-5">
@@ -70,7 +68,6 @@ $user = getLoggedUser();
                 <?php } ?>
             </div>
         </header>
-
         <nav class="py-3 px-4 sm:py-4  sm:px-10 md:py-4 md:px-20 border-b-slate-400 border-2 bg-white ">
             <div class="container mx-auto flex justify-between items-center">
                 <a href="index.php">

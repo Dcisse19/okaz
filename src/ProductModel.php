@@ -141,8 +141,8 @@ class ProductModel extends MainModel
             $product_category = $_POST["product_category"];
             $product_store = $_POST["product_store"];
 
-            $product_price = str_replace(',', '.',$product_price);
-            $price_product = str_replace(' ', '',$product_price);
+            $price_reformated = str_replace(',', '.',$product_price);
+            $price_product = str_replace(' ', '',$price_reformated);
 
 
             if (!filter_var($price_product, FILTER_VALIDATE_FLOAT)) {
@@ -210,8 +210,8 @@ class ProductModel extends MainModel
             $product_category = $_POST["product_category"];
             $product_store = $_POST["product_store"];
 
-            $product_price = str_replace(',', '.',$product_price);
-            $price_product = str_replace(' ', '',$product_price);
+            $price_reformated = str_replace(',', '.',$product_price);
+            $price_product = str_replace(' ', '',$price_reformated);
 
 
             if (!filter_var($price_product, FILTER_VALIDATE_FLOAT)) {

@@ -1,8 +1,8 @@
 <?php
-require_once './includes/header.php';
 require_once './src/ProductModel.php';
 require_once './src/StoreModel.php';
 require_once './src/CartModel.php';
+require_once './includes/header.php';
 $productmodel = new ProductModel();
 $cartmodel = new CartModel();
 $product = $productmodel->getOneProduct();

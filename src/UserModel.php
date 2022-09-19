@@ -290,6 +290,7 @@ class UserModel extends MainModel
                     "role" => $user["role"],
                     "firstname" => $firstname,
                     "lastname" => $lastname,
+                    "orderComplete" => ""
                 ];
                 $this->redirect("profile.php");
             }

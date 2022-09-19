@@ -5,7 +5,6 @@ isLogged();
 $userModel = new UserModel();
 $errors = $userModel->updateUser();
 $user = $userModel->getUser();
-
 $title = 'Mon profil';
 $subTitle = '';
 require_once './includes/title.php';
