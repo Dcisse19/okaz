@@ -1,15 +1,11 @@
 <?php
-require_once "./src/UserModel.php";
-require_once "./includes/header.php";
+require_once './includes/phpheaders.php';
 isLogged();
-
+require_once "./src/UserModel.php";
 $userModel = new UserModel();
 $error = $userModel->modifyPassword();
 
-?>
-
-<!-- SECTION TITRE -->
-<?php
+require_once "./includes/header.php";
 $title = 'Mon profil';
 $subTitle = '';
 require_once './includes/title.php';

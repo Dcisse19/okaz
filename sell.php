@@ -1,8 +1,6 @@
 <?php
+require_once './includes/phpheaders.php';
 require_once './includes/header.php';
-
-
-
 $title = 'VENDRE SUR OKAZ';
 $subTitle = "Vous déménagez ou souhaitez renouveler votre intérieur. Vous ne savez pas quoi faire de vos anciens meubles, pourquoi ne pas les vendre? Chez Okaz, nous vous rachetons vos biens au prix le plus juste. Vous pouvez également mettre en vente vos meubles par dépôt-vente.";
 require_once './includes/title.php';

@@ -184,7 +184,6 @@ class UserModel extends MainModel
                     "role" => $user->getRole(),
                     "firstname" => $user->getFirstname(),
                     "lastname" => $user->getLastname(),
-                    "orderComplete" => ""
                 ];
                 $this->redirect("shop.php");
             } else return $error;
@@ -290,7 +289,6 @@ class UserModel extends MainModel
                     "role" => $user["role"],
                     "firstname" => $firstname,
                     "lastname" => $lastname,
-                    "orderComplete" => ""
                 ];
                 $this->redirect("profile.php");
             }

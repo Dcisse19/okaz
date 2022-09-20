@@ -1,7 +1,7 @@
 <?php
+require_once './includes/phpheaders.php';
 ini_set('display_errors', 'on');
 require_once "./src/UserModel.php";
-require_once './includes/header.php';
 $userModel = new UserModel();
 $error = $userModel->loginUser();
 // Informe l'utilisateur que l'inscription vient d'être réussi et lui demande de se connecter
@@ -10,7 +10,8 @@ if (isset($_GET['register']) && $_GET['register'] == 'successful') {
 } else {
     $subLogin = "Déja inscrit ? <br /> Merci de vous identifier";
 }
-// var_dump($_SESSION["okaz_logged_user"]);
+
+require_once './includes/header.php';
 ?>
 <!-- Déja inscrit ? <br />Merci de vous identifier -->
 <!-- Contenu de la page -->

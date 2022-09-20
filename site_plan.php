@@ -1,9 +1,9 @@
 <?php
-require_once './includes/header.php';
-
+require_once './includes/phpheaders.php';
 
 $title = 'Plan du site';
 $subTitle = '';
+require_once './includes/header.php';
 require_once './includes/title.php';
 ?>
 

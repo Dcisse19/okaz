@@ -1,16 +1,17 @@
 <?php
-require_once './includes/header.php';
-// dd($_SESSION);
-if ($_SESSION['okaz_logged_user']["orderComplete"] == 'yes') {
-    $_SESSION['okaz_logged_user']["orderComplete"] = '';
-    header("Location: index.php");
-    exit;
-}
+require_once './includes/phpheaders.php';
 isLogged();
+require_once './src/CartModel.php';
 require_once './src/OrderModel.php';
+$cm = new CartModel();
+$cart = $cm->getCart();
+if (!$cart){
+    redirection("cart.php");
+}
 $ordermodel = new OrderModel();
 $error = $ordermodel->insertOrderInfo();
 
+require_once './includes/header.php';
 $title = 'Je passe commande';
 $subTitle = '';
 require_once './includes/title.php';

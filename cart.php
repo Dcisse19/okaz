@@ -1,8 +1,9 @@
 <?php
 ini_set('display_errors', 'on');
+require_once './includes/phpheaders.php';
+isLogged();
 require_once './src/CartModel.php';
 $cm = new CartModel();
-require_once './includes/header.php';
 $cart = $cm->getCart();
 $productNumber = $cm->getProductNumberByCart();
 $total = $cm->getFullPrice($cart);
@@ -10,8 +11,8 @@ $total = $cm->getFullPrice($cart);
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $cm->removeFromCart($_GET['product_id']);
 }
-isLogged();
 
+require_once './includes/header.php';
 $title = 'Je passe commande';
 $subTitle = '';
 require_once './includes/title.php';

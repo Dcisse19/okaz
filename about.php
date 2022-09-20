@@ -1,7 +1,6 @@
 <?php
+require_once './includes/phpheaders.php';
 require_once './includes/header.php';
-
-
 
 $title = 'A propos';
 $subTitle = "Apprenez-en plus au sujet d'OKAZ";

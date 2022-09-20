@@ -1,9 +1,9 @@
 <?php
-require_once './includes/header.php';
+require_once './includes/phpheaders.php';
 require_once './src/ProductModel.php';
 $productmodel = new ProductModel();
 $products = $productmodel->getFiveLastsProducts();
-// dd($_SESSION);
+require_once './includes/header.php';
 ?>
 
 <!-- SECTION BANNIERE -->

@@ -1,16 +1,17 @@
 <?php
+require_once './includes/phpheaders.php';
 require_once "./src/UserModel.php";
-require_once './includes/header.php';
-dump($_SESSION['okaz_logged_user']);
-if ($_SESSION['okaz_logged_user']["orderComplete"] == 'yes') {
-    $_SESSION['okaz_logged_user']["orderComplete"] = '';
-    header("Location: index.php");
-    exit;
+require_once './src/CartModel.php';
+isLogged();
+$cm = new CartModel();
+$cart = $cm->getCart();
+if (!$cart){
+    redirection("cart.php");
 }
 $userModel = new UserModel();
 $user = $userModel->getUser();
-isLogged();
 
+require_once './includes/header.php';
 $title = 'Je passe commande';
 $subTitle = '';
 require_once './includes/title.php';
@@ -25,7 +26,6 @@ require_once './includes/title.php';
         <div class="flex-1 content-center">
             <a href="cart.php">
                 <div class="w-10 h-10 bg-grey border-darkgrey mx-auto rounded-full text-lg font-semibold flex place-items-center mb-2">
-                    <!-- <i class="fas fa-regular fa-check"></i> -->
                     <span class="text-center w-full">1</span>
                 </div>
             </a>
@@ -80,28 +80,15 @@ require_once './includes/title.php';
     <hr class="block mx-auto w-2/3 border-darkgrey border-t-0 border-b-2 mb-32" />
     <div class="container mx-auto bg-eggshell px-16 py-20">
         <p class="text-center text-3xl uppercase mb-20 text-darkblue font-semibold">Confirmez votre adresse de livraison</p>
-
-        <!-- <fieldset class="flex flex-col space-y-6 justify-center items-center">
-            <div class="flex space-x-6">
-                <input type="radio" id="store_delivery" name="choose_delivery" value="">
-                <div class="container mx-auto w-[500px] bg-white p-5">
-                    <p class="text-xl mb-3">Retrait dans votre magasin :</p>
-                    <h3 class="text-orange text-xl font-semibold">OKAZ Villeneuve-le-Roi</h3>
-                    <p class="text-lg"> <span class="font-bold">Adresse : </span>15 Avenue Dumarché, 94290 Villeneuve-le-Roi </p>
-                </div>
-            </div> -->
         <div class="flex space-x-6">
             <div class="container  mx-auto w-[500px] bg-white p-5 flex flex-col content-center items-center space-y-3">
                 <p class="text-xl">Livraison à votre domicile au :</p>
                 <p class="text-lg font-bold"><?= $user["address"] . ", " . $user["postal_code"] . " " . $user["city"] ?></p>
-                <!-- <div class=" bg-eggshell hover-bg-darkgrey w-fit rounded-full py-1 px-6 block"> -->
                 <a href="modify_profile.php" class="hover-text-orange  underline text-md tracking-wide">
                     <p class="text-center">Modifier l'adresse</p>
                 </a>
-                <!-- </div> -->
             </div>
         </div>
-
         <div class=" bg-orange hover-bg-darkgrey w-fit rounded-full py-2 px-8 block m-auto mt-10 ">
             <a href="payment.php" class="text-white text-lg font-semibold tracking-wider">Valider</a>
         </div>

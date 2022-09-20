@@ -1,9 +1,10 @@
 <?php
 ini_set('display_errors', 'on');
+require_once './includes/phpheaders.php';
 require_once './src/UserModel.php';
-require_once './includes/header.php';
 $usermodel = new UserModel();
 $data = $usermodel->setupUser();
+require_once './includes/header.php';
 ?>
 
 <!-- Contenu de la page -->

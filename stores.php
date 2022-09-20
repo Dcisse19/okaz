@@ -1,12 +1,13 @@
 <?php
+require_once './includes/phpheaders.php';
 require_once './src/StoreModel.php';
-require_once './includes/header.php';
 
 $storemodel = new StoreModel();
 $stores = $storemodel->getAllStores();
 
 $title = 'Nos magasins';
 $subTitle = '';
+require_once './includes/header.php';
 require_once './includes/title.php';
 ?>
 

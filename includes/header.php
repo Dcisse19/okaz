@@ -1,25 +1,17 @@
-<?php
-ini_set('display_errors', 'on');
-session_start();
-require_once dirname(__DIR__) . "/utils/utils.php";
-require_once './vendor/autoload.php';
-$whoops = new \Whoops\Run;
-$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
-$whoops->register();
-$user = getLoggedUser();
-?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
     <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./CSS/font-awesome.css">
-    <link rel="stylesheet" href="./CSS/colors.css">
     <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/colors.css">
     <title>OKAZ</title>
 </head>
 
@@ -35,8 +27,8 @@ $user = getLoggedUser();
                 <?php if ($user) { ?>
                     <div class="flex justify-between items-center space-x-6 md:space-x-14">
                         <div class="flex items-center md:space-x-5 space-x-2">
-                            <?php if($_SESSION["okaz_logged_user"]["role"] == "admin") { ?>
-                            <a class="text-sm sm:text-base md:text-lg text-white hover-text-orange uppercase md:mr-5" href="./Backoffice/back_office.php">Back-Office</a>
+                            <?php if ($_SESSION["okaz_logged_user"]["role"] == "admin") { ?>
+                                <a class="text-sm sm:text-base md:text-lg text-white hover-text-orange uppercase md:mr-5" href="./Backoffice/back_office.php">Back-Office</a>
                             <?php } ?>
                             <a href="myaccount.php">
                                 <div class=" md:bg-orange-500 sm:py-0 sm:px-2 md:px-3 md:hover:bg-blue-500 rounded-2xl flex gap-3 place-items-center ">

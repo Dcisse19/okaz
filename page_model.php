@@ -1,7 +1,7 @@
 <?php
+require_once './includes/phpheaders.php';
+
 require_once './includes/header.php';
-
-
 $title = 'Boutique';
 $subTitle = 'Ceci est la page boutique';
 require_once './includes/title.php';

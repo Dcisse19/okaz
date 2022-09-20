@@ -1,7 +1,7 @@
 <?php
+require_once './includes/phpheaders.php';
+
 require_once './includes/header.php';
-
-
 $title = 'Foire aux questions';
 $subTitle = '';
 require_once './includes/title.php';

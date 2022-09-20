@@ -1,23 +1,23 @@
 <?php
-require_once './includes/header.php';
-if ($_SESSION['okaz_logged_user']["orderComplete"] == 'yes') {
-    $_SESSION['okaz_logged_user']["orderComplete"] = '';
-    header("Location: orders.php");
-    exit;
-}
+require_once './includes/phpheaders.php';
+isLogged();
+
 require_once './src/CartModel.php';
 require_once "./src/UserModel.php";
 require_once './src/OrderModel.php';
-isLogged();
 $userModel = new UserModel();
 $cm = new CartModel();
 $ordermodel = new OrderModel();
 $user = $userModel->getUser();
 $cart = $cm->getCart();
+if (!$cart){
+    redirection("cart.php");
+}
 // dd($order);
 $orderInfo = $ordermodel->getOrderInfo();
 $data = $ordermodel->getOrderInfoByCart();
 
+require_once './includes/header.php';
 $title = 'Je passe commande';
 $subTitle = '';
 require_once './includes/title.php';
@@ -115,6 +115,5 @@ require_once './includes/title.php';
 
 </section>
 <?php
-$_SESSION['okaz_logged_user']["orderComplete"] = 'yes';
 $ordermodel->transferCartToOrder();
 require_once './includes/footer.php'; ?>

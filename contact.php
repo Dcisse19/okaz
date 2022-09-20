@@ -1,10 +1,11 @@
 <?php
-require_once './includes/header.php';
+require_once './includes/phpheaders.php';
 require_once './src/UserModel.php';
 
 $usermodel = new UserModel();
 $data = $usermodel->registerContactForm();
 
+require_once './includes/header.php';
 $title = 'contact';
 $subTitle = '';
 require_once './includes/title.php';

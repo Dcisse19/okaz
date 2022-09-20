@@ -1,9 +1,8 @@
 <?php
-require_once './includes/header.php';
 // dump($_POST);
+require_once './includes/phpheaders.php';
 $title = 'Boutique';
 $subTitle = 'Ceci est la page boutique';
-require_once './includes/title.php';
 // Include des classes
 require_once './src/CategoryModel.php';
 require_once './src/ProductModel.php';
@@ -16,6 +15,8 @@ $storemodel = new StoreModel();
 $categories = $categorymodel->getAllCategories();
 $results = $productmodel->getProductsByKeyword();
 $stores = $storemodel->getAllStores();
+require_once './includes/header.php';
+require_once './includes/title.php';
 ?>
 
 <!-- Contenu de la page -->

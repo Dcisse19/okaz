@@ -1,8 +1,8 @@
 <?php
+require_once './includes/phpheaders.php';
 require_once './src/ProductModel.php';
 require_once './src/StoreModel.php';
 require_once './src/CartModel.php';
-require_once './includes/header.php';
 $productmodel = new ProductModel();
 $cartmodel = new CartModel();
 $product = $productmodel->getOneProduct();
@@ -12,10 +12,7 @@ $error = $cartmodel->addToCart($product->getId());
 // $products = $productmodel->getAllProducts();
 $sameCategoryProducts = $productmodel->getProductsOfSameCategory();
 // dump($sameCategoryProducts);
-
-// $title = 'Les tables'; // change selon l'id de la catégorie
-// $subTitle = "Trouvez votre bonheur en parcourant notre catalogue de tables d'occasion"; // change selon l'id de la catégorie
-// require_once './includes/title.php';
+require_once './includes/header.php';
 ?>
 
 <!-- Contenu de la page -->

@@ -52,9 +52,9 @@ class OrderModel extends MainModel
             // redirige l'utilisateur vers le panier s'il est vide (empêche l'insertion d'une ligne dans la table commande sans article) 
             $cartmodel = new CartModel();
             $cart = $cartmodel->getCartById();
-            if (!$cart) {
-                $this->redirect("cart.php");
-            }
+            // if (!$cart) {
+            //     $this->redirect("cart.php");
+            // }
 
             // insertion des données du panier, de livraison et de paiement dans la BDD
 
@@ -170,12 +170,13 @@ class OrderModel extends MainModel
             $query->execute([":order_id" => $orderId, "product_id" => $product["product_id"]]);
             // $products_id[] = $product["product_id"];
         }
-        // On supprime les articles du panier et le panier ainsi que le produit (unique) dans la table produits
+        // On supprime les articles du panier et le panier ainsi que le produit (unique) dans la boutique
         $availability = 0;
         foreach ($cart as $product) {
             $query = $this->pdo->prepare("UPDATE dda_product SET availability = :availability WHERE id = " . $product["product_id"]);
-            $query = $this->pdo->query("DELETE FROM dda_cart_products WHERE product_id = " . $product["product_id"]);
             $query->execute([":availability" => $availability]);
+
+            $query = $this->pdo->query("DELETE FROM dda_cart_products WHERE product_id = " . $product["product_id"]);
         }
         $query = $this->pdo->query("DELETE FROM dda_cart WHERE id =" . $cart_id["id"]);
     }
