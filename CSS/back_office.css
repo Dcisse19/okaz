@@ -9,31 +9,33 @@ header {
 header nav {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    padding-left: 4rem;
-    padding-right: 4rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
 }
 
 
 .navigate {
     display: flex;
-    width: 13%;
-    justify-content: space-between;
+    width: 75%;
+    /* justify-content: space-between; */
     align-items: center;
 }
 
 .navigate .fas {
     color: white;
-    /* margin-right: 0.5rem; */
+    /* display: none; */
+    margin-right: 0.5rem;
 }
 
 .modify {
     display: flex;
-    justify-content: space-between;
-    width: 33%;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 25%;
+    align-items: flex-start;
 }
 
 .navigate a {
@@ -42,17 +44,28 @@ header nav {
     font-size: medium;
     text-decoration: none;
 }
-.modify .modify-link{
+
+.modify .modify-link {
     color: white;
     font-weight: 500;
-    font-size: larger;
+    font-size: small;
     text-decoration: none;
     background-color: #031926;
     border: none;
     text-transform: uppercase;
 }
 
-.navigate a:hover, .modify .modify-link:hover {
+.dropdown-menu {
+    font-size: small;
+    width: min-content;
+}
+
+.dropdown-item:hover {
+    color: #FF6B35;
+}
+
+.navigate a:hover,
+.modify .modify-link:hover {
     color: #FF6B35;
     background-color: #031926;
     border: none;
@@ -73,14 +86,16 @@ header nav {
 }
 
 .page_main {
-    padding: 10rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 6rem;
     text-align: center;
 
 }
 
 .page_main h2 {
-    font-size: 3rem;
-    margin-bottom: 4rem;
+    font-size: 2rem;
+    margin-bottom: 3rem;
 }
 
 .page_main p {
@@ -194,6 +209,7 @@ form option {
     margin-right: auto;
     margin-top: 5rem;
 }
+
 #img_delete {
     height: 100%;
     width: 500px;
@@ -204,6 +220,7 @@ form option {
     text-align: left;
     margin-bottom: 1rem;
 }
+
 #card_content .card-text {
     font-size: large;
     text-align: left;
@@ -214,8 +231,116 @@ form option {
     margin-top: 3rem;
     margin-bottom: 2rem;
 }
-#card_content .fas{
+
+#card_content .fas {
     color: rgb(225, 57, 57);
     font-size: larger;
     margin-right: 1rem;
+}
+
+@media (min-width: 768px) {
+
+    /* header */
+    header nav {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .navigate {
+        width: 25%;
+        align-items: center;
+    }
+
+
+    .modify {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 50%;
+        align-items: center;
+    }
+
+
+    .modify .modify-link {
+        font-weight: 500;
+        font-size: medium;
+    }
+
+    .dropdown-menu {
+        font-size: medium;
+    }
+
+    /* page pack-office  */
+    .page_main {
+        padding-left: 4rem;
+        padding-right: 4rem;
+
+    }
+
+    .page_main h2 {
+        font-size: 2.5rem;
+        margin-bottom: 4rem;
+    }
+
+}
+
+@media (min-width: 1024px) {
+
+    /* header */
+    header nav {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    .navigate {
+        width: 25%;
+        align-items: center;
+    }
+
+    .navigate .fas {
+        margin-right: 1rem;
+    }
+
+    .modify {
+        width: 40%;
+    }
+
+    .modify .modify-link {
+        font-weight: 500;
+        font-size: large;
+    }
+
+    .dropdown-menu {
+        font-size: medium;
+    }
+
+    /* page pack-office  */
+    .page_main {
+        padding-left: 6rem;
+        padding-right: 6rem;
+        padding-top: 10rem;
+    }
+
+    .page_main h2 {
+        font-size: 3rem;
+        margin-bottom: 4rem;
+    }
+}
+
+@media (min-width: 1285px) {
+
+    /* header */
+    header nav {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    .modify {
+        width: 30%;
+    }
+
+    /* page pack-office  */
+
 }

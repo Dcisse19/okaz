@@ -14,7 +14,7 @@ require_once './includes/header.php';
 ?>
 
 <!-- Contenu de la page -->
-<section class="container mx-auto py-10 px-8 md:p-16 lg:p-20 xl:py-26 xl:px-48">
+<section class="mb-auto container mx-auto py-10 px-8 md:p-16 lg:p-20 xl:py-26 xl:px-48">
 
     <!-- Présentation produit -->
     <div class="lg:mb-10">

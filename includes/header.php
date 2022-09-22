@@ -15,7 +15,7 @@
     <title>OKAZ</title>
 </head>
 
-<body>
+<body class= "flex flex-col h-screen">
     <div class="">
         <header class="py-2 px-4 sm:px-10 md:py-3 md:px-20 bg-darkblue">
             <div class="container flex mx-auto justify-between items-center">

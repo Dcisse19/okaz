@@ -16,7 +16,7 @@ $products = $productmodel->getProductsByCategory();
 <!-- FIN SECTION TITRE -->
 
 <!-- ------- SECTION PRODUITS --------------- -->
-<section class=" px-16 py-20 md:px-28 md:py-28 lg:px-20 xl:px-24 container mx-auto ">
+<section class="mb-auto px-16 py-20 md:px-28 md:py-28 lg:px-20 xl:px-24 container mx-auto ">
     <?php if (!$products) { ?>
         <p class="text-darkblue font-semibold text-xl sm:text-2xl lg:text-2xl xl:text-3xl text-center">Cette catégorie ne contient aucun produit pour le moment.</p>
     <?php } else { ?>

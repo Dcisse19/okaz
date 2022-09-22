@@ -73,7 +73,7 @@ require_once './includes/header.php';
 <!-- SECTION QUI SOMMES-NOUS-->
 
 <section id="quiSommeNous" class="px-7 py-9 sm:px-10 sm:py-14 md:px-20 md:py-20 lg:py-20 lg:px-28 xl:py-20 xl:px-36 bg-orange">
-    <div class="container mx-auto text-white flex flex-col space-y-6 sm:space-y-8 md:space-y-10 lg:flex-row justify-between ">
+    <div class="container mx-auto text-white flex flex-col space-y-6 sm:space-y-8 md:space-y-10 lg:flex-row lg:space-y-0 justify-between ">
         <div class="lg:w-3/4 md:w-full flex-col xl:px-16">
             <h1 class="text-2xl sm:text-3xl md:text-4xl text-justify font-bold uppercase mb-5 md:mb-10"> Qui sommes-nous ? </h1>
             <p class="sm:text-lg md:text-xl tracking-wider mb-6 md:mb-10">

@@ -20,7 +20,7 @@ require_once './includes/title.php';
 ?>
 
 <!-- Contenu de la page -->
-<section class="px-8 py-10 lg:p-20">
+<section class="mb-auto px-8 py-10 lg:p-20">
     <div class="container mx-auto">
         <h2 class="text-xl sm:text-2xl font-semibold mb-10 uppercase text-darkblue text-center lg:text-left "> Rechercher un produit</h2>
         <div class="flex flex-col lg:flex-row space-y-3  lg:space-y-0 lg:space-x-10 justify-center items-center lg:justify-start">
@@ -67,7 +67,7 @@ require_once './includes/title.php';
 <!-- </section> -->
 
 <!-- <section class="p-20"> -->
-<section class="px-5 py-14 sm:px-20 lg:px-14">
+<section class="mb-auto px-5 py-14 sm:px-20 lg:px-14">
     <div class="container mx-auto">
         <?php if ($_SERVER['REQUEST_METHOD'] === "POST") { ?>
             <?php if (!$results && empty($results["errorPriceMin"]) && empty($results["errorPriceMax"])) { ?>
