@@ -16,6 +16,7 @@ class ProductModel extends MainModel
         $availability = 1;
         $query = $this->pdo->query("SELECT * FROM `dda_product` WHERE (`id_dda_product_category` = $CategoryId AND `availability`= $availability )");
         $products = $query->fetchAll(PDO::FETCH_CLASS, "Product");
+        // $products = $query->fetchAll(PDO::FETCH_ASSOC);
 
         // if (!$products) {
         //     redirect();
@@ -65,19 +66,22 @@ class ProductModel extends MainModel
     /**
      * méthode pour rechercher par mots clés dans les catégories
      */
-    public function getProductsByKeyword(){
+    public function getProductsBySearch(){
+
+        $availability = 1;
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST["keyword_form"])){
-            
+
             $keyword = $_POST["keyword"];
             $keyword = htmlspecialchars($keyword);
-            $query = $this->pdo->query("SELECT * FROM dda_product WHERE ((description LIKE '%".$keyword."%') OR (name LIKE '%".$keyword."%'))");
+            $query = $this->pdo->query("SELECT * FROM dda_product WHERE (availability = $availability AND ((description LIKE '%".$keyword."%') OR (name LIKE '%".$keyword."%')))");
             $search_results = $query->fetchAll(PDO::FETCH_CLASS, "Product");
             return($search_results);
         }
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST["searchByStore"])){
             
             $storeId = $_POST["searchByStore"];
-            $query = $this->pdo->query("SELECT * FROM dda_product WHERE id_dda_stores = $storeId");
+            $query = $this->pdo->query("SELECT * FROM dda_product WHERE (id_dda_stores = $storeId AND availability = $availability)");
             return $query->fetchAll(PDO::FETCH_CLASS, "Product");
         }
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST["price_form"])){
@@ -108,7 +112,7 @@ class ProductModel extends MainModel
             $price_max = filter_var($price_max, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
         
 
-            $query = $this->pdo->query("SELECT * FROM dda_product WHERE (price >= $price_min AND price <= $price_max)");
+            $query = $this->pdo->query("SELECT * FROM dda_product WHERE (availability = $availability AND price >= $price_min AND price <= $price_max)");
             $price_results = $query->fetchAll(PDO::FETCH_CLASS, "Product");
             return $price_results;
         }

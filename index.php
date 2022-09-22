@@ -59,11 +59,11 @@ require_once './includes/header.php';
 
         <!-- The dots -->
         <div class="flex justify-center items-center space-x-5">
-            <div class="dot sm:w-3 sm:h-3 md:w-4 md:h-4 rounded-full cursor-pointer" onclick="currentSlide(1)"></div>
-            <div class="dot sm:w-3 sm:h-3 md:w-4 md:h-4 rounded-full cursor-pointer" onclick="currentSlide(2)"></div>
-            <div class="dot sm:w-3 sm:h-3 md:w-4 md:h-4 rounded-full cursor-pointer" onclick="currentSlide(3)"></div>
-            <div class="dot sm:w-3 sm:h-3 md:w-4 md:h-4 rounded-full cursor-pointer" onclick="currentSlide(4)"></div>
-            <div class="dot sm:w-3 sm:h-3 md:w-4 md:h-4 rounded-full cursor-pointer" onclick="currentSlide(5)"></div>
+            <div class="dot w-3 h-3 md:w-4 md:h-4 rounded-full cursor-pointer" onclick="currentSlide(1)"></div>
+            <div class="dot w-3 h-3 md:w-4 md:h-4 rounded-full cursor-pointer" onclick="currentSlide(2)"></div>
+            <div class="dot w-3 h-3 md:w-4 md:h-4 rounded-full cursor-pointer" onclick="currentSlide(3)"></div>
+            <div class="dot w-3 h-3 md:w-4 md:h-4 rounded-full cursor-pointer" onclick="currentSlide(4)"></div>
+            <div class="dot w-3 h-3 md:w-4 md:h-4 rounded-full cursor-pointer" onclick="currentSlide(5)"></div>
         </div>
     </div>
 </section>

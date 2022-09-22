@@ -13,7 +13,7 @@ require_once './includes/title.php';
 
 <!-- Contenu de la page -->
 <div class="container px-40 py-20 mx-auto block">
-    <div class="p-5 space-x-5 ">
+    <div class="p-5 space-y-5 ">
         <?php if (isset($data) && !empty($data["successfulRegister"])) { ?>
             <p class="text-red-500 text-lg mb-10 text-center"><?php echo ($data["successfulRegister"])  ?></p>
         <?php } ?>
