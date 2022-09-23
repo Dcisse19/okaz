@@ -194,6 +194,7 @@ class ProductModel extends MainModel
             }
         }
     }
+
     public function updateProduct() {
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
@@ -214,8 +215,8 @@ class ProductModel extends MainModel
             $product_category = $_POST["product_category"];
             $product_store = $_POST["product_store"];
 
-            $price_reformated = str_replace(',', '.',$product_price);
-            $price_product = str_replace(' ', '',$price_reformated);
+            $price_reformated = str_replace(',', '.', $product_price);
+            $price_product = str_replace(' ', '', $price_reformated);
 
 
             if (!filter_var($price_product, FILTER_VALIDATE_FLOAT)) {
@@ -243,18 +244,18 @@ class ProductModel extends MainModel
             $productId = checkQueryId();
 
             $query = $this->pdo->prepare("
-            UPDATE dda_product 
-            SET name = :name,
-                image = :image,
-                description = :description,
-                product_condition = :product_condition,
-                dimensions = :dimensions,
-                color = :color,
-                price = :price,
-                availability = :availability,
-                id_dda_product_category = :id_dda_product_category,
-                id_dda_stores = :id_dda_stores
-            WHERE id = :id
+                UPDATE dda_product 
+                SET name = :name,
+                    image = :image,
+                    description = :description,
+                    product_condition = :product_condition,
+                    dimensions = :dimensions,
+                    color = :color,
+                    price = :price,
+                    availability = :availability,
+                    id_dda_product_category = :id_dda_product_category,
+                    id_dda_stores = :id_dda_stores
+                WHERE id = :id
             ");
 
 
