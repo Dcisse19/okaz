@@ -67,7 +67,7 @@
                 </a>
                 <ul class="list-none flex space-x-3 sm:space-x-6 justify-between items-center">
                     <li>
-                        <a class="text-sm sm:text-lg md:text-xl text-darkgrey hover-text-orange active-text-orange" href="index.php">Acceuil</a>
+                        <a class="text-sm sm:text-lg md:text-xl text-darkgrey hover-text-orange active-text-orange" href="index.php">Accueil</a>
                     </li>
                     <li>
                         <a class="text-sm sm:text-lg md:text-xl text-darkgrey hover-text-orange active:text-orange" href="about.php">A propos</a>
