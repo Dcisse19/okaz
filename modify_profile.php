@@ -3,8 +3,8 @@ require_once './includes/phpheaders.php';
 isLogged();
 require_once "./src/UserModel.php";
 $userModel = new UserModel();
-$errors = $userModel->updateUser();
 $user = $userModel->getUser();
+$errors = $userModel->updateUser();
 
 require_once './includes/header.php';
 $title = 'Mon profil';

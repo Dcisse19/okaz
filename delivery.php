@@ -7,6 +7,7 @@ $cm = new CartModel();
 $cart = $cm->getCart();
 if (!$cart) {
     redirection("cart.php");
+    exit; // 26/09
 }
 $userModel = new UserModel();
 $user = $userModel->getUser();
@@ -84,7 +85,7 @@ require_once './includes/title.php';
             <div class="container  mx-auto w-[500px] bg-white py-5 px-3 xl:py-7 flex flex-col content-center items-center space-y-3">
                 <p class="text-base md:text-lg xl:text-xl text-center">Livraison à votre domicile au :</p>
                 <p class="text-sm md:text-base xl:text-lg font-bold"><?= $user["address"]. ", " . $user["postal_code"] . " " . $user["city"] ?></p>
-                <a href="modify_profile.php" class="hover-text-orange  underline text-md tracking-wide">
+                <a href="modify_profile.php?id=fromdelivery" class="hover-text-orange  underline text-md tracking-wide">
                     <p class="text-sm md:text-base xl:text-lg text-center">Modifier l'adresse</p>
                 </a>
             </div>
@@ -95,5 +96,6 @@ require_once './includes/title.php';
     </div>
 
 </section>
+
 
 <?php require_once './includes/footer.php'; ?>

@@ -23,12 +23,12 @@ require_once './includes/title.php';
     <div>
         <h2 class="font-semibold text-darkblue text-2xl lg:text-3xl mb-5 ">Boutique</h2>
         <ul class="text-lg lg:text-xl pl-10 list-disc flex flex-col space-y-2">
-            <li><a href="http://localhost/okaz/category.php?id=1">Tables</a></li>
-            <li><a href="http://localhost/okaz/category.php?id=2">Chaises et fauteuils</a></li>
-            <li><a href="http://localhost/okaz/category.php?id=3">Canapés</a></li>
-            <li><a href="http://localhost/okaz/category.php?id=4">Meubles de rangement</a></li>
-            <li><a href="http://localhost/okaz/category.php?id=5">Lits</a></li>
-            <li><a href="http://localhost/okaz/category.php?id=6">Luminaires</a></li>
+            <li><a href="http://localhost/okaz/categories.php?id=1">Tables</a></li>
+            <li><a href="http://localhost/okaz/categories.php?id=2">Chaises et fauteuils</a></li>
+            <li><a href="http://localhost/okaz/categories.php?id=3">Canapés</a></li>
+            <li><a href="http://localhost/okaz/categories.php?id=4">Meubles de rangement</a></li>
+            <li><a href="http://localhost/okaz/categories.php?id=5">Lits</a></li>
+            <li><a href="http://localhost/okaz/categories.php?id=6">Luminaires</a></li>
         </ul>
     </div>
     <div class="">
