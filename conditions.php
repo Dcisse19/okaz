@@ -11,7 +11,7 @@ require_once './includes/title.php';
 <!-- Contenu de la page -->
 <div class="container py-16 px-7 mb-15 md:py-20 md:px-14 lg:px-20 lg:py-24 xl:py-32 xl:px-28">
     <h2 class="text-center font-semibold text-darkblue text-2xl md:text-3xl lg:text-5xl  mb-10 md:mb-16 lg:mb-20 ">Conditions genérales d'utilisation et de vente d'OKAZ</h2>
-    <p class="text-justify lg:text-lg xl:text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum corporis adipisci numquam, accusantium beatae, ratione debitis dicta vitae quidem modi consequuntur accusamus saepe nobis molestias rerum, odio porro dignissimos quia!
+    <p class="lg:text-lg xl:text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum corporis adipisci numquam, accusantium beatae, ratione debitis dicta vitae quidem modi consequuntur accusamus saepe nobis molestias rerum, odio porro dignissimos quia!
     Et quasi qui nemo, provident natus facilis ad labore. 
     <br /> Asperiores voluptates repudiandae eveniet totam, magni, amet similique necessitatibus quis quos labore odit! Aperiam alias totam quae laborum maiores accusantium magnam?
     Dignissimos quibusdam omnis non voluptas voluptatem eveniet explicabo accusamus eos dolorem vel nemo, perferendis, itaque molestiae culpa. <br />Voluptatibus voluptas culpa modi, sunt perspiciatis blanditiis earum nobis quo accusamus minima facilis.
@@ -33,7 +33,7 @@ require_once './includes/title.php';
     <br />Rem saepe obcaecati voluptates a officiis dolorum impedit sit cum, vitae dolore ut inventore atque iusto, praesentium sed eligendi aperiam amet sequi nesciunt soluta dicta laborum quisquam molestias nisi! Quis?
     Excepturi corrupti ipsam sint similique?</p>
 
-    <p class="text-justify lg:text-lg xl:text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum corporis adipisci numquam, accusantium beatae, ratione debitis dicta vitae quidem modi consequuntur accusamus saepe nobis molestias rerum, odio porro dignissimos quia!
+    <p class="lg:text-lg xl:text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum corporis adipisci numquam, accusantium beatae, ratione debitis dicta vitae quidem modi consequuntur accusamus saepe nobis molestias rerum, odio porro dignissimos quia!
     Et quasi qui nemo, provident natus facilis ad labore. 
     <br /> Asperiores voluptates repudiandae eveniet totam, magni, amet similique necessitatibus quis quos labore odit! Aperiam alias totam quae laborum maiores accusantium magnam?
     Dignissimos quibusdam omnis non voluptas voluptatem eveniet explicabo accusamus eos dolorem vel nemo, perferendis, itaque molestiae culpa. <br />Voluptatibus voluptas culpa modi, sunt perspiciatis blanditiis earum nobis quo accusamus minima facilis.

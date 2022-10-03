@@ -25,10 +25,10 @@ require_once './includes/title.php';
 
         <div class="container mx-auto w-3/4 pl-2 md:pl-10 pb-10 flex flex-col space-y-4">
             <?php if (!$orders) { ?>
-                <div class="flex flex-col justify-center space-y-10">
-                    <p class="text-2xl font-semibold text-center text-darkblue">Vous n'avez aucune commande pour le moment</p>
+                <div class="mt-10 flex flex-col justify-center space-y-10">
+                    <p class="text-lg md:text-xl lg:text-2xl font-semibold text-center text-darkblue">Vous n'avez aucune commande pour le moment</p>
                     <div class="block mx-auto">
-                        <a href="shop.php" class="py-3 px-8 rounded-lg bg-orange hover-bg-darkgrey text-white font-semibold text-lg uppercase">
+                        <a href="shop.php" class="py-2 px-4 lg:py-3 lg:px-6 rounded-lg bg-orange hover-bg-darkgrey text-white font-semibold text-xs md:text-sm lg:text-lg uppercase">
                             Commencer mes achats <i class="fas fa-regular fa-cart-plus text-white ml-2 fa-xl"></i>
                         </a>
                     </div>
